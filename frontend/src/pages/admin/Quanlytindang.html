@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Duyệt bài chuyên sâu - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body  class="flex h-screen overflow-hidden text-on-surface unified-layout">
+    <!-- Shared Component: SideNavBar -->
+    <!-- Applying structural and layout styles directly from JSON instructions -->
+    <aside
+        class="h-screen w-64 fixed left-0 top-0 bg-white border-r border-outline-variant flex flex-col p-4 space-y-2 z-50">
+        <div class="mb-8 px-2 flex items-center gap-3">
+            <span class="font-title-md text-title-md font-bold text-primary">UrbanNest</span>
+        </div>
+        <div class="flex items-center gap-3 mb-6 px-2">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+                <img alt="Admin Profile" class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTJYw52tysZ0-Jm7PBYw5dDfDPNL_mLJKAvH-EuCxEJjD5rDulqSNfe41SeaJ689dYASLDl6e7Q849Pe1jfKvSfBMBeioRYQ9p64Mh37Jl1SIi-A7yFtTF4JbZd9Dx8glFrcZcYzZZWNdjC98yY107hszjmXYNAwMXhTYiHHk1jGl5cW0bbBovzoDZaVA94iLOtnR9-mBoUlZZl9kWqBA1cGPQEcMbJ0BxnFWK3P2B0I5hh7gmkESLp--9t2cwIv7M2CijqHCdws">
+            </div>
+            <div class="flex flex-col">
+                <span class="font-label-md text-label-md text-primary font-semibold">Admin Profile</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Quản trị viên</span>
+            </div>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Dashboard.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                <span class="font-label-md text-label-md">Tổng quan</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Quanlynguoidung/Quanlynguoidung.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+                <span class="font-label-md text-label-md">Quản lý người dùng</span>
+            </a>
+            <a class="flex items-center gap-3 bg-secondary-container text-primary rounded-lg px-4 py-3 font-semibold transition-all"
+                href="Quanlytindang.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+                <span class="font-label-md text-label-md">Quản lý tin đăng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Duyetbai.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="fact_check">fact_check</span>
+                <span class="font-label-md text-label-md">Duyệt bài</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Phantichdulieu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="insights">insights</span>
+                <span class="font-label-md text-label-md">Phân tích dữ liệu</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Caidat.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                <span class="font-label-md text-label-md">Cài đặt</span>
+            </a>
+        </nav>
+        <div class="pt-4 border-t border-outline-variant space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                <span class="font-label-md text-label-md">Hỗ trợ</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                <span class="font-label-md text-label-md">Đăng xuất</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="admin-main-container">
+        <!-- Header Section -->
+        <header class="admin-page-header">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-2">Duyệt bài chuyên sâu</h1>
+                <p class="font-body-md text-body-md text-on-surface-variant">Có <strong
+                        class="text-primary font-semibold">14</strong> tin đăng đang chờ kiểm duyệt.</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <button class="admin-btn admin-btn-secondary">
+                    <span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Lọc theo
+                </button>
+                <button class="admin-btn admin-btn-secondary">
+                    <span class="material-symbols-outlined text-[18px]">sort</span>
+                    Mới nhất
+                </button>
+            </div>
+        </header>
+        <!-- List Content -->
+        <div class="py-4">
+            <div class="flex flex-col gap-stack-md">
+                <!-- Review Card 1 -->
+                <article class="group admin-card flex flex-col xl:flex-row gap-6 transition-all hover:shadow-sm">
+                    <!-- Thumbnail -->
+                    <div
+                        class="w-full xl:w-[280px] h-[180px] shrink-0 rounded overflow-hidden border border-outline-variant/20 relative">
+                        <div
+                            class="absolute top-2 left-2 bg-error-container text-on-error-container font-label-md text-[10px] px-2 py-1 rounded-full uppercase tracking-wider font-bold z-10 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[12px]">warning</span>
+                            Giá bất thường
+                        </div>
+                        <img alt="Apartment Interior"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A pristine, professionally lit interior shot of a modern urban apartment living room. The space is styled with high-end minimalist furniture, featuring a sleek grey sofa and a glass coffee table over a neutral rug. Large floor-to-ceiling windows flood the room with bright, natural daylight, casting soft shadows. The overall aesthetic perfectly aligns with a sophisticated, achromatic-plus design system, emphasizing clean lines, crisp white walls, and uncluttered spaciousness."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_0wfp3xfTIaU2-GDOd7dtq1UCjNdmaX0Kqx2akMJJDzLJSadkUTUbdK2dG3LCR3USiEt3YDdbDcXhxXAG9YUKE3tD4eHLdPMsKv8YfDLxUlsxBMQJMGSoc1McLG0NxOsxK39WsgFXo9SsWIhOCzZUM-FwfRMw4kvrzgBa2POUSYsYLipGem7Tanwufc8lZQlQrRIuMNxdgYx6KB579HqYNis_d88tRO7Rd9Y_7RLZU422o24fAFId0mK3VNJxUc1friLbOQe52UE" />
+                    </div>
+                    <!-- Content -->
+                    <div class="flex-1 flex flex-col">
+                        <div class="flex items-start justify-between gap-4 mb-2">
+                            <h3
+                                class="font-title-lg text-title-lg text-primary group-hover:text-secondary transition-colors">
+                                Căn hộ Dịch vụ Cao cấp Vinhomes Central Park - View Sông
+                            </h3>
+                            <span
+                                class="font-label-md text-label-md text-on-surface-variant whitespace-nowrap bg-surface-container px-2 py-1 rounded">2
+                                giờ trước</span>
+                        </div>
+                        <div class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                            Cho thuê căn hộ 2 phòng ngủ cao cấp, đầy đủ nội thất nhập khẩu. Tầng trung view trực diện
+                            sông Sài Gòn. Tiện ích nội khu đẳng cấp 5 sao: hồ bơi, gym, công viên. Giá siêu rẻ chỉ 5
+                            triệu/tháng (cần kiểm tra lại).
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 pt-4 border-t border-outline-variant/20">
+                            <div>
+                                <span class="admin-label mb-1">Người
+                                    đăng</span>
+                                <span
+                                    class="font-body-sm text-body-sm font-medium text-primary flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[16px]">verified_user</span> Trần V.
+                                </span>
+                            </div>
+                            <div>
+                                <span class="admin-label mb-1">Danh
+                                    mục</span>
+                                <span class="font-body-sm text-body-sm font-medium text-primary">Căn hộ</span>
+                            </div>
+                            <div>
+                                <span class="admin-label mb-1">Giá
+                                    báo</span>
+                                <span class="font-body-sm text-body-sm font-medium text-error">5,000,000 đ</span>
+                            </div>
+                            <div>
+                                <span class="admin-label mb-1">Hành
+                                    động tự động</span>
+                                <span class="font-body-sm text-body-sm font-medium text-on-surface-variant">Gắn cờ kiểm
+                                    duyệt</span>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div class="mt-auto flex items-center gap-3 justify-end">
+                            <button
+                                class="admin-btn admin-btn-secondary text-error hover:bg-error-container border-error/20"
+                                onclick="openRejectModal('ID-10293')">
+                                Từ chối
+                            </button>
+                            <button class="admin-btn admin-btn-primary">
+                                <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                                Duyệt nhanh
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!-- Review Card 2 -->
+                <article class="group admin-card flex flex-col xl:flex-row gap-6 transition-all hover:shadow-sm">
+                    <!-- Thumbnail -->
+                    <div
+                        class="w-full xl:w-[280px] h-[180px] shrink-0 rounded overflow-hidden border border-outline-variant/20 relative">
+                        <div
+                            class="absolute top-2 left-2 bg-secondary-container text-on-secondary-container font-label-md text-[10px] px-2 py-1 rounded-full uppercase tracking-wider font-bold z-10 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[12px]">info</span>
+                            Ảnh chất lượng thấp
+                        </div>
+                        <img alt="Room Interior"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 blur-[2px]"
+                            data-alt="A slightly blurry and underexposed photograph of a basic bedroom interior, typical of a budget rental listing. The room contains a simple bed frame, a small wooden desk, and off-white walls. The lighting is uneven, appearing to be a mix of dim daylight and harsh overhead fluorescent light. The overall image lacks sharpness and professional styling, intentionally rendered to simulate a user-uploaded photo that triggers a quality moderation filter in a high-end platform."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcxMG7wKnxT1TJRs0Vxa3IIECjSu_61vz5alssYvKTvI_lKqtqoW0YEseKDdBWsif9UcWPVeOZTC5mHfgF-6bmmRyJmUKlNtXhByRQWH-bc8lkoAI5IicaY5AWVsVx0chbbmUDmVGwjjtOXnfCELqRttLZ7kSSWk8hIOAmokHgdVl0aHUkH8CyUJSwnWXeTPW9xsmzCQkeZWk_sPfbBxW0XiwGxDzDDdRoewIPihjXShxtE22jwxjc3XRtviA2kRgOJ3m7XfwAM4E" />
+                    </div>
+                    <!-- Content -->
+                    <div class="flex-1 flex flex-col">
+                        <div class="flex items-start justify-between gap-4 mb-2">
+                            <h3
+                                class="font-title-lg text-title-lg text-primary group-hover:text-secondary transition-colors">
+                                Phòng trọ Studio khép kín ngay trung tâm Quận 3
+                            </h3>
+                            <span
+                                class="font-label-md text-label-md text-on-surface-variant whitespace-nowrap bg-surface-container px-2 py-1 rounded">5
+                                giờ trước</span>
+                        </div>
+                        <div class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                            Phòng mới xây, diện tích 25m2, có cửa sổ thoáng mát. Điện nước giá nhà nước. Gần đại học
+                            Kinh Tế, tiện đi lại. Yêu cầu cọc 1 tháng, hợp đồng tối thiểu 6 tháng. Miễn trung gian.
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 pt-4 border-t border-outline-variant/20">
+                            <div>
+                                <span class="admin-label mb-1">Người
+                                    đăng</span>
+                                <span class="font-body-sm text-body-sm font-medium text-primary">Nguyễn H.</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block font-label-md text-[10px] text-on-surface-variant uppercase tracking-wider mb-1">Danh
+                                    mục</span>
+                                <span class="font-body-sm text-body-sm font-medium text-primary">Phòng trọ</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="block font-label-md text-[10px] text-on-surface-variant uppercase tracking-wider mb-1">Giá
+                                    báo</span>
+                                <span class="font-body-sm text-body-sm font-medium text-primary">3,500,000 đ</span>
+                            </div>
+                            <div>
+                                <span class="admin-label mb-1">Độ
+                                    tin cậy AI</span>
+                                <span class="font-body-sm text-body-sm font-medium text-secondary">75% - Đạt</span>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div class="mt-auto flex items-center gap-3 justify-end">
+                            <button
+                                class="admin-btn admin-btn-secondary text-error hover:bg-error-container border-error/20"
+                                onclick="openRejectModal('ID-44021')">
+                                Từ chối
+                            </button>
+                            <button class="admin-btn admin-btn-primary">
+                                <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                                Duyệt nhanh
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <!-- Pagination / Load More (Placeholder) -->
+            <div class="mt-8 flex justify-center">
+                <button class="admin-btn admin-btn-secondary px-8">
+                    Tải thêm tin đăng
+                </button>
+            </div>
+        </div>
+    </main>
+    <!-- Reject Modal Overlay (Hidden by default) -->
+    <div class="fixed inset-0 z-50 bg-surface/80 backdrop-blur-md hidden flex items-center justify-center p-4 transition-opacity duration-300 opacity-0"
+        id="rejectModalOverlay">
+        <!-- Modal Content -->
+        <div class="relative admin-card w-full max-w-lg flex flex-col shadow-xl overflow-hidden"
+            id="rejectModalContent">
+            <!-- Modal Header -->
+            <div
+                class="px-6 py-4 border-b border-outline-variant/30 flex items-center justify-between bg-error-container/20">
+                <h3 class="font-title-lg text-title-lg text-primary flex items-center gap-2">
+                    <span class="material-symbols-outlined text-error">gavel</span>
+                    Từ chối tin đăng
+                </h3>
+                <button
+                    class="text-on-surface-variant hover:text-error transition-colors p-1 rounded hover:bg-surface-variant"
+                    onclick="closeRejectModal()">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6">
+                <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                    Bạn đang chuẩn bị từ chối tin đăng <strong
+                        class="text-primary font-mono bg-surface-variant px-1 rounded" id="modalPostId"></strong>. Vui
+                    lòng cung cấp lý do để thông báo cho người dùng.
+                </p>
+                <form class="space-y-4" id="rejectForm">
+                    <div class="admin-form-group">
+                        <label class="admin-label">Lý do từ chối (Mẫu nhanh)</label>
+                        <select class="admin-select">
+                            <option>Chọn một lý do...</option>
+                            <option>Giá không hợp lý/Có dấu hiệu lừa đảo</option>
+                            <option>Hình ảnh kém chất lượng/Không rõ ràng</option>
+                            <option>Nội dung trùng lặp với tin khác</option>
+                            <option>Vi phạm chính sách nền tảng</option>
+                            <option>Khác (Nhập chi tiết bên dưới)</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label class="admin-label" for="rejectReason">Chi tiết thêm (Bắt buộc nếu chọn Khác)</label>
+                        <textarea class="admin-textarea" id="rejectReason"
+                            placeholder="Nhập mô tả chi tiết lý do từ chối để người dùng có thể chỉnh sửa..."
+                            rows="4"></textarea>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div
+                class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-end gap-3">
+                <button class="admin-btn admin-btn-secondary" onclick="closeRejectModal()">
+                    Hủy bỏ
+                </button>
+                <button class="admin-btn admin-btn-secondary text-error hover:bg-error-container border-error/20">
+                    <span class="material-symbols-outlined text-[18px]">send</span>
+                    Xác nhận từ chối
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Micro-interactions Script -->
+    <script>
+        const modalOverlay = document.getElementById('rejectModalOverlay');
+        const modalContent = document.getElementById('rejectModalContent');
+        const modalPostIdSpan = document.getElementById('modalPostId');
+
+        function openRejectModal(postId) {
+            modalPostIdSpan.textContent = postId;
+            modalOverlay.classList.remove('hidden');
+            // Small delay to allow display:flex to apply before animating opacity
+            setTimeout(() => {
+                modalOverlay.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeRejectModal() {
+            modalOverlay.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            // Wait for transition to finish before hiding
+            setTimeout(() => {
+                modalOverlay.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modalOverlay.classList.contains('hidden')) {
+                closeRejectModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

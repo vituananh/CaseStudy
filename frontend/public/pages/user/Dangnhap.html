@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Đăng nhập - UrbanNest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script src="../../assets/js/auth.js"></script>
+
+</head>
+
+<body class="bg-surface-bright text-on-surface min-h-screen flex flex-col font-body-md text-body-md">
+    <!-- Background Artistic Element -->
+    <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover opacity-10 blur-md scale-105"
+            data-alt="A wide-angle, high-resolution photograph of a sun-drenched, modern minimalist apartment interior in Vinh city, featuring large floor-to-ceiling windows and clean architectural lines. The lighting is soft and airy, creating a professional and transparent atmosphere with a high-key light mode aesthetic. Subtle deep navy and amber accents appear in the decor, maintaining brand consistency. The image is artistically blurred to provide a non-distracting, premium background for a user interface."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDlb9d1HfGrCYb2yaTsN0tvlSU6_QPOXsUbM1wtrzaMX4ol4IA0bYpd4V8rz7Z184Fwv9BTgneJXg09Gpm6f7C1Y-cRNHqNDfEvxTlRjazjYaH6DZ_3Udh3dn0FANdQ3-1NysFnU_AcKM247ryxnV7qmahXdft90Et7gTqqPrhkUjTZE64wluG5yxBaiXw8TJvZNywtTaXXO0ae38zQWdNb5o7r_rTohtzF3IIu0FCpSTwuMUnJMzb3THq0w-XGn-ywFa0IF7GNu4">
+    </div>
+
+    <div style="zoom: 0.8; min-height: 100vh; display: flex; flex-direction: column; position: relative; z-index: 10;">
+    <main
+        class="flex-grow flex items-center justify-center px-margin-mobile md:px-margin-desktop py-12 relative overflow-hidden">
+        <!-- Login Container -->
+        <div class="relative z-10 w-full max-w-[480px]">
+            <!-- Brand Identity -->
+            <div class="text-center mb-8">
+                <a href="Trangchu.html" class="inline-flex items-center gap-2.5 text-primary mb-4">
+                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-[20px]" style="font-variation-settings:'FILL' 1;">nest_multi_room</span>
+                    </div>
+                    <span class="font-display-lg text-headline-lg font-black tracking-tight">UrbanNest</span>
+                </a>
+                <p class="text-on-surface-variant font-body-sm text-body-sm">Tìm kiếm không gian sống lý tưởng tại Vinh
+                </p>
+            </div>
+            <!-- Card -->
+            <div
+                class="bg-surface-container-lowest border border-outline-variant/30 p-8 md:p-10 rounded-xl shadow-xl shadow-primary-container/5 backdrop-blur-sm">
+                <header class="mb-8">
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Chào mừng trở lại</h2>
+                    <p class="text-on-surface-variant font-body-sm text-body-sm">Vui lòng nhập thông tin để truy cập tài
+                        khoản</p>
+                </header>
+                <form id="login-form" action="#" class="space-y-6">
+                    <!-- Email Field -->
+                    <div class="space-y-2">
+                        <label
+                            class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider"
+                            for="email">Địa chỉ Email</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">mail</span>
+                            <input
+                                class="w-full pl-12 pr-4 py-3.5 bg-surface-container-low border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-lg transition-all font-body-sm text-body-sm text-on-surface placeholder:text-outline/60"
+                                id="email" name="email" placeholder="name@example.com" required="" type="email">
+                        </div>
+                    </div>
+                    <!-- Password Field -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label
+                                class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider"
+                                for="password">Mật khẩu</label>
+                            <a class="font-label-md text-label-md text-on-tertiary-container hover:text-primary-container font-semibold transition-colors"
+                                href="#">Quên mật khẩu?</a>
+                        </div>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">lock</span>
+                            <input
+                                class="w-full pl-12 pr-12 py-3.5 bg-surface-container-low border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-lg transition-all font-body-sm text-body-sm text-on-surface placeholder:text-outline/60"
+                                id="password" name="password" placeholder="••••••••" required="" type="password">
+                            <button
+                                class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors"
+                                type="button">
+                                <span class="material-symbols-outlined">visibility</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Remember Me & Policy -->
+                    <div class="flex items-center space-x-3">
+                        <input
+                            class="w-5 h-5 rounded-lg border-outline-variant text-primary-container focus:ring-primary-container"
+                            id="remember" name="remember" type="checkbox">
+                        <label class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer select-none"
+                            for="remember">Ghi nhớ đăng nhập</label>
+                    </div>
+                    <!-- Submit Button -->
+                    <button
+                        class="w-full py-4 bg-primary-container text-on-primary font-title-md text-title-md rounded-lg shadow-lg shadow-primary-container/20 hover:bg-primary transition-all duration-300 active:scale-[0.99]"
+                        type="submit">
+                        Đăng nhập
+                    </button>
+                </form>
+                <!-- Alternative Login -->
+                <div class="mt-8">
+                    <div class="relative flex items-center mb-6">
+                        <div class="flex-grow border-t border-outline-variant/50"></div>
+                        <span
+                            class="flex-shrink mx-4 font-label-md text-label-md text-outline uppercase tracking-widest">Hoặc
+                            đăng nhập với</span>
+                        <div class="flex-grow border-t border-outline-variant/50"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button
+                            class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low hover:border-outline transition-all duration-200">
+                            <img alt="Google" class="w-5 h-5"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5PHbhiZXIwt16tjFup_pFBpnBp0KXhG6KB1895z-h71pnSh_zo2jl-JGi-By3FGk4qaHDwSLTHrb4n8A8Bvp8HiuygY69_JsFRzyDaOE0Kt5mogSBYVPHq-yHkzmqUc8QLTd7AB8w-FxTprnkFvyn0zyhPjflBqh4IYkj4qJjlMzkfhuKOz7Ta9B3IHkZye5GHG5KuaZAFuOJSTCh8RjqU5DtUvpe7KynVPdQMnqW7WVxhoEdaKij1p5Y8CZlz_4tbCxXtnWVlxw">
+                            <span>Google</span>
+                        </button>
+                        <button
+                            class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low hover:border-outline transition-all duration-200">
+                            <img alt="Facebook" class="w-5 h-5"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBetfAM0FOSg6q7HHzfdRFBD7hc662PfiAgNL9Y3rZtch0b3dezB56rlcUtbu7BHsVyY37CD9h2ec5EJB8-t27z9ELA_5t0-vX5yiStnbLgvhkl4Vt8lPyjDTjjie0i-UgAZa9SLmfxvQaiLQgd4qsA_wZS8RWI3lRTd8qi3kXkP8aL4-2yILmSHAPnZrRg5RVaXxjlcGY0bTuERRkp54zvgkrlA4ze_oZ_e07uNkAGx1DsFY0oK4bISwszTPKq0qIB5q9z2F8CHFE">
+                            <span>Facebook</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Footer Link -->
+                <div class="mt-10 text-center border-t border-outline-variant/20 pt-6">
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Chưa có tài khoản?
+                        <a class="text-on-tertiary-container font-bold hover:underline ml-1" href="Dangky.html">Đăng
+                            ký ngay</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Support Footer -->
+            <div class="mt-8 flex justify-center gap-8">
+                <a class="font-label-md text-label-md text-outline hover:text-on-surface transition-colors uppercase tracking-[0.15em]"
+                    href="#">Hỗ trợ</a>
+                <a class="font-label-md text-label-md text-outline hover:text-on-surface transition-colors uppercase tracking-[0.15em]"
+                    href="#">Điều khoản</a>
+                <a class="font-label-md text-label-md text-outline hover:text-on-surface transition-colors uppercase tracking-[0.15em]"
+                    href="#">Bảo mật</a>
+            </div>
+        </div>
+    </main>
+    </div>
+</body>
+
+</html>

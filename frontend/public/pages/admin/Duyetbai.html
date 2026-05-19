@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Duyệt bài - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script src="../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+    <main class="admin-main">
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center justify-between">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg text-primary font-bold">Duyệt bài</h1>
+                <p class="text-on-surface-variant text-sm">Có <strong class="text-primary">14</strong> tin đăng đang chờ kiểm duyệt.</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <select class="text-sm py-2 px-3 rounded-xl border border-outline-variant focus:border-primary outline-none bg-white">
+                    <option>Tất cả danh mục</option>
+                    <option>Phòng trọ</option>
+                    <option>Căn hộ</option>
+                    <option>Nhà nguyên căn</option>
+                </select>
+                <button class="flex items-center gap-1.5 text-sm border border-outline-variant px-4 py-2 rounded-xl hover:bg-surface-container transition-colors bg-white">
+                    <span class="material-symbols-outlined text-[16px]">filter_list</span>
+                    Lọc
+                </button>
+            </div>
+        </header>
+
+        <div class="flex-1 px-8 py-6 space-y-4">
+            <!-- Review Card -->
+            <article class="bg-white rounded-2xl border border-outline-variant shadow-sm p-6 flex flex-col xl:flex-row gap-6 hover:shadow-md transition-shadow group">
+                <div class="w-full xl:w-64 h-44 rounded-xl overflow-hidden flex-shrink-0 relative">
+                    <div class="absolute top-2 left-2 z-10 flex items-center gap-1 bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-full border border-red-200">
+                        <span class="material-symbols-outlined text-[12px]">warning</span>
+                        Giá bất thường
+                    </div>
+                    <img alt="Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_0wfp3xfTIaU2-GDOd7dtq1UCjNdmaX0Kqx2akMJJDzLJSadkUTUbdK2dG3LCR3USiEt3YDdbDcXhxXAG9YUKE3tD4eHLdPMsKv8YfDLxUlsxBMQJMGSoc1McLG0NxOsxK39WsgFXo9SsWIhOCzZUM-FwfRMw4kvrzgBa2POUSYsYLipGem7Tanwufc8lZQlQrRIuMNxdgYx6KB579HqYNis_d88tRO7Rd9Y_7RLZU422o24fAFId0mK3VNJxUc1friLbOQe52UE">
+                </div>
+                <div class="flex-1 flex flex-col min-w-0">
+                    <div class="flex items-start justify-between gap-4 mb-2">
+                        <h3 class="font-title-lg text-primary font-bold group-hover:text-secondary transition-colors">
+                            Căn hộ Dịch vụ Cao cấp Vinhomes Central Park - View Sông
+                        </h3>
+                        <span class="text-[11px] text-on-surface-variant bg-surface-container px-2 py-1 rounded-lg flex-shrink-0">2 giờ trước</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">
+                        Cho thuê căn hộ 2 phòng ngủ cao cấp, đầy đủ nội thất nhập khẩu. Tầng trung view trực diện sông Sài Gòn. Giá siêu rẻ chỉ 5 triệu/tháng (cần kiểm tra lại).
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 border-t border-outline-variant/50 mb-4">
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Người đăng</p>
+                            <p class="text-xs font-semibold text-primary flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px] text-green-600">verified_user</span>
+                                Trần Văn A.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Danh mục</p>
+                            <p class="text-xs font-semibold text-primary">Căn hộ</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Giá báo</p>
+                            <p class="text-xs font-bold text-red-600">5,000,000 đ</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">AI Score</p>
+                            <p class="text-xs font-semibold text-amber-600">42% – Rủi ro cao</p>
+                        </div>
+                    </div>
+                    <div class="mt-auto flex items-center gap-3 justify-end">
+                        <a href="Quanlytindang/Suatindang.html"
+                           class="text-sm text-on-surface-variant border border-outline-variant px-4 py-2 rounded-xl hover:bg-surface-container transition-colors">
+                            Xem chi tiết
+                        </a>
+                        <a href="Quanlytindang/Capnhattrangthai.html"
+                           class="flex items-center gap-1.5 text-sm text-red-600 border border-red-200 bg-red-50 px-4 py-2 rounded-xl hover:bg-red-100 transition-colors font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">cancel</span>
+                            Từ chối
+                        </a>
+                        <button onclick="this.innerHTML='<span class=\'material-symbols-outlined text-[16px]\'>check_circle</span> Đã duyệt'; this.classList.add('bg-green-600'); this.disabled=true;"
+                                class="flex items-center gap-1.5 text-sm bg-primary text-white px-4 py-2 rounded-xl hover:bg-primary/90 transition-colors font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                            Duyệt nhanh
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bg-white rounded-2xl border border-outline-variant shadow-sm p-6 flex flex-col xl:flex-row gap-6 hover:shadow-md transition-shadow group">
+                <div class="w-full xl:w-64 h-44 rounded-xl overflow-hidden flex-shrink-0 relative">
+                    <div class="absolute top-2 left-2 z-10 flex items-center gap-1 bg-secondary-container text-primary text-[10px] font-bold px-2 py-1 rounded-full border border-outline-variant/50">
+                        <span class="material-symbols-outlined text-[12px]">info</span>
+                        Ảnh mờ
+                    </div>
+                    <img alt="Post 2" class="w-full h-full object-cover blur-sm group-hover:scale-105 transition-transform duration-500"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcxMG7wKnxT1TJRs0Vxa3IIECjSu_61vz5alssYvKTvI_lKqtqoW0YEseKDdBWsif9UcWPVeOZTC5mHfgF-6bmmRyJmUKlNtXhByRQWH-bc8lkoAI5IicaY5AWVsVx0chbbmUDmVGwjjtOXnfCELqRttLZ7kSSWk8hIOAmokHgdVl0aHUkH8CyUJSwnWXeTPW9xsmzCQkeZWk_sPfbBxW0XiwGxDzDDdRoewIPihjXShxtE22jwxjc3XRtviA2kRgOJ3m7XfwAM4E">
+                </div>
+                <div class="flex-1 flex flex-col min-w-0">
+                    <div class="flex items-start justify-between gap-4 mb-2">
+                        <h3 class="font-title-lg text-primary font-bold group-hover:text-secondary transition-colors">
+                            Phòng trọ Studio khép kín ngay trung tâm Quận 3
+                        </h3>
+                        <span class="text-[11px] text-on-surface-variant bg-surface-container px-2 py-1 rounded-lg flex-shrink-0">5 giờ trước</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">
+                        Phòng mới xây, diện tích 25m2, có cửa sổ thoáng mát. Điện nước giá nhà nước. Gần đại học Kinh Tế, tiện đi lại.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 border-t border-outline-variant/50 mb-4">
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Người đăng</p>
+                            <p class="text-xs font-semibold text-primary">Nguyễn H.</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Danh mục</p>
+                            <p class="text-xs font-semibold text-primary">Phòng trọ</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">Giá báo</p>
+                            <p class="text-xs font-semibold text-primary">3,500,000 đ</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">AI Score</p>
+                            <p class="text-xs font-semibold text-green-600">75% – Đạt</p>
+                        </div>
+                    </div>
+                    <div class="mt-auto flex items-center gap-3 justify-end">
+                        <a href="Quanlytindang/Suatindang.html"
+                           class="text-sm text-on-surface-variant border border-outline-variant px-4 py-2 rounded-xl hover:bg-surface-container transition-colors">
+                            Xem chi tiết
+                        </a>
+                        <a href="Quanlytindang/Capnhattrangthai.html"
+                           class="flex items-center gap-1.5 text-sm text-red-600 border border-red-200 bg-red-50 px-4 py-2 rounded-xl hover:bg-red-100 transition-colors font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">cancel</span>
+                            Từ chối
+                        </a>
+                        <button onclick="this.innerHTML='<span class=\'material-symbols-outlined text-[16px]\'>check_circle</span> Đã duyệt'; this.classList.add('bg-green-600'); this.disabled=true;"
+                                class="flex items-center gap-1.5 text-sm bg-primary text-white px-4 py-2 rounded-xl hover:bg-primary/90 transition-colors font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                            Duyệt nhanh
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <div class="flex justify-center pt-2">
+                <button class="flex items-center gap-2 text-sm text-on-surface-variant border border-outline-variant px-6 py-2.5 rounded-xl hover:bg-surface-container transition-colors bg-white">
+                    <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                    Tải thêm tin đăng
+                </button>
+            </div>
+        </div>
+
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant mt-auto">
+            <span>© 2024 UrbanNest Admin Panel</span>
+        </footer>
+    </main>
+</body>
+</html>

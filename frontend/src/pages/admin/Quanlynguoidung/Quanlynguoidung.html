@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quản lý người dùng - UrbanNest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body  class="text-on-background font-body-md antialiased flex unified-layout">
+    <!-- JSON Component: SideNavBar -->
+    <aside
+        class="h-screen w-64 fixed left-0 top-0 bg-white border-r border-outline-variant flex flex-col p-4 space-y-2 z-50">
+        <div class="mb-8 px-2 flex items-center gap-3">
+            <span class="font-title-md text-title-md font-bold text-primary">UrbanNest</span>
+        </div>
+        <div class="flex items-center gap-3 mb-6 px-2">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+                <img alt="Admin Profile" class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTJYw52tysZ0-Jm7PBYw5dDfDPNL_mLJKAvH-EuCxEJjD5rDulqSNfe41SeaJ689dYASLDl6e7Q849Pe1jfKvSfBMBeioRYQ9p64Mh37Jl1SIi-A7yFtTF4JbZd9Dx8glFrcZcYzZZWNdjC98yY107hszjmXYNAwMXhTYiHHk1jGl5cW0bbBovzoDZaVA94iLOtnR9-mBoUlZZl9kWqBA1cGPQEcMbJ0BxnFWK3P2B0I5hh7gmkESLp--9t2cwIv7M2CijqHCdws">
+            </div>
+            <div class="flex flex-col">
+                <span class="font-label-md text-label-md text-primary font-semibold">Admin Profile</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Quản trị viên</span>
+            </div>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="../Dashboard.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                <span class="font-label-md text-label-md">Tổng quan</span>
+            </a>
+            <a class="flex items-center gap-3 bg-secondary-container text-primary rounded-lg px-4 py-3 font-semibold transition-all"
+                href="Quanlynguoidung.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+                <span class="font-label-md text-label-md">Quản lý người dùng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="../Quanlytindang.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+                <span class="font-label-md text-label-md">Quản lý tin đăng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="../Duyetbai.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="fact_check">fact_check</span>
+                <span class="font-label-md text-label-md">Duyệt bài</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="../Phantichdulieu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="insights">insights</span>
+                <span class="font-label-md text-label-md">Phân tích dữ liệu</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="../Caidat.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                <span class="font-label-md text-label-md">Cài đặt</span>
+            </a>
+        </nav>
+        <div class="pt-4 border-t border-outline-variant space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                <span class="font-label-md text-label-md">Hỗ trợ</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                <span class="font-label-md text-label-md">Đăng xuất</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="admin-main-container">
+        <div class="space-y-stack-lg">
+            <!-- Header Section -->
+            <header class="admin-page-header mb-0 border-b-0 pb-0">
+                <div>
+                    <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Quản lý người dùng</h1>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Quản lý tài khoản, phân quyền và theo dõi hoạt động hệ thống.</p>
+                </div>
+                <a href="Themnguoidung.html" class="admin-btn admin-btn-primary">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">person_add</span>
+                    Thêm người dùng mới
+                </a>
+            </header>
+
+            <!-- Sub-navigation Tabs -->
+            <div class="flex border-b border-outline-variant mb-6 px-1">
+                <a href="Quanlynguoidung.html" class="px-6 py-3 font-title-sm text-title-sm border-b-2 border-primary text-primary -mb-[1px]">Danh sách</a>
+                <a href="Lichsu.html" class="px-6 py-3 font-title-sm text-title-sm text-on-surface-variant hover:text-primary transition-colors">Nhật ký hoạt động</a>
+            </div>
+            <!-- Filters & Actions Area -->
+            <section class="admin-card flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between p-4">
+                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                    <!-- Search Input -->
+                    <div class="relative w-full sm:w-64">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant"
+                            style="font-size: 20px;">search</span>
+                        <input class="admin-input pl-10" placeholder="Tìm kiếm tên, email..." type="text" />
+                    </div>
+                    <!-- Role Filter -->
+                    <div class="relative w-full sm:w-48">
+                        <select class="admin-select pr-10">
+                            <option value="">Tất cả vai trò</option>
+                            <option value="admin">Admin</option>
+                            <option value="broker">Môi giới</option>
+                            <option value="landlord">Chủ nhà</option>
+                            <option value="tenant">Người thuê</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none"
+                            style="font-size: 20px;">expand_more</span>
+                    </div>
+                    <!-- Status Filter -->
+                    <div class="relative w-full sm:w-48">
+                        <select class="admin-select pr-10">
+                            <option value="">Tất cả trạng thái</option>
+                            <option value="active">Hoạt động</option>
+                            <option value="locked">Bị khóa</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none"
+                            style="font-size: 20px;">expand_more</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+                    <span>Hiển thị 1-10 của 245</span>
+                </div>
+            </section>
+            <!-- Data Table Section -->
+            <section class="admin-table-container overflow-x-auto">
+                <table class="admin-table min-w-[800px]">
+                    <thead>
+                        <tr>
+                            <th
+                                class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+                                ID</th>
+                            <th
+                                class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+                                Tên người dùng</th>
+                            <th
+                                class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+                                Email</th>
+                            <th
+                                class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+                                Vai trò</th>
+                            <th
+                                class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+                                Trạng thái</th>
+                            <th
+                                class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+                                Ngày tham gia</th>
+                            <th
+                                class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">
+                                Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant">
+                        <!-- Row 1 -->
+                        <tr class="hover:bg-surface-bright transition-colors group">
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">#UN-1042</td>
+                            <td class="py-4 px-6">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden flex-shrink-0">
+                                        <img alt="Avatar" class="w-full h-full object-cover"
+                                            src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                                    </div>
+                                    <span class="font-title-md text-title-md text-primary">Nguyễn Văn A</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface">nva.admin@urbannest.vn</td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface border border-outline-variant/50">
+                                    Admin
+                                </span>
+                            </td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-[#F1F5F9] text-primary-container">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                                    Hoạt động
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">12/10/2023</td>
+                            <td class="py-4 px-6 text-right">
+                                <div
+                                    class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <a href="Suanguoidung.html"
+                                        class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-md transition-colors"
+                                        title="Sửa">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+                                    </a>
+                                    <button
+                                        class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container rounded-md transition-colors"
+                                        title="Xóa"
+                                        onclick="openDeleteUserModal('#UN-1042', 'Nguyễn Văn A')">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr class="hover:bg-surface-bright transition-colors group">
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">#UN-2188</td>
+                            <td class="py-4 px-6">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden flex-shrink-0">
+                                        <img alt="Avatar" class="w-full h-full object-cover"
+                                            src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                                    </div>
+                                    <span class="font-title-md text-title-md text-primary">Trần Thị Bích</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface">bich.tran@gmail.com</td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface border border-outline-variant/50">
+                                    Chủ nhà
+                                </span>
+                            </td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-[#F1F5F9] text-primary-container">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                                    Hoạt động
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">05/11/2023</td>
+                            <td class="py-4 px-6 text-right">
+                                <div
+                                    class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <a href="Suanguoidung.html"
+                                        class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-md transition-colors"
+                                        title="Sửa">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+                                    </a>
+                                    <button
+                                        class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container rounded-md transition-colors"
+                                        title="Xóa"
+                                        onclick="openDeleteUserModal('#UN-2188', 'Trần Thị Bích')">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr class="hover:bg-surface-bright transition-colors group">
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">#UN-3091</td>
+                            <td class="py-4 px-6">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden flex-shrink-0 flex items-center justify-center text-on-surface-variant bg-surface-variant">
+                                        <span class="font-label-md text-label-md">LM</span>
+                                    </div>
+                                    <span class="font-title-md text-title-md text-primary">Lê Minh C</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface">minh.c_broker@hotmail.com
+                            </td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface border border-outline-variant/50">
+                                    Môi giới
+                                </span>
+                            </td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-[#F1F5F9] text-outline">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                                    Bị khóa
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">20/01/2024</td>
+                            <td class="py-4 px-6 text-right">
+                                <div
+                                    class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <a href="Suanguoidung.html"
+                                        class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-md transition-colors"
+                                        title="Sửa">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+                                    </a>
+                                    <button
+                                        class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container rounded-md transition-colors"
+                                        title="Xóa"
+                                        onclick="openDeleteUserModal('#UN-3091', 'Lê Minh C')">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Row 4 -->
+                        <tr class="hover:bg-surface-bright transition-colors group">
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">#UN-4502</td>
+                            <td class="py-4 px-6">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden flex-shrink-0">
+                                        <img alt="Avatar" class="w-full h-full object-cover"
+                                            src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                                    </div>
+                                    <span class="font-title-md text-title-md text-primary">Phạm Hương D</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface">huongd.tenant@gmail.com</td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface border border-outline-variant/50">
+                                    Người thuê
+                                </span>
+                            </td>
+                            <td class="py-4 px-6">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-[#F1F5F9] text-primary-container">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                                    Hoạt động
+                                </span>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">02/03/2024</td>
+                            <td class="py-4 px-6 text-right">
+                                <div
+                                    class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <a href="Suanguoidung.html"
+                                        class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                                        title="Sửa">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+                                    </a>
+                                    <button
+                                        class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container rounded-md transition-colors"
+                                        title="Xóa"
+                                        onclick="openDeleteUserModal('#UN-4502', 'Phạm Hương D')">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Pagination -->
+                <div
+                    class="flex items-center justify-between px-6 py-4 border-t border-outline-variant bg-surface-container-lowest">
+                    <button
+                        class="px-3 py-1.5 border border-outline-variant rounded-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors disabled:opacity-50"
+                        disabled="">Trước</button>
+                    <div class="flex gap-1">
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded-md bg-primary-container text-on-primary font-label-md text-label-md">1</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded-md text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors">2</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded-md text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors">3</button>
+                        <span
+                            class="w-8 h-8 flex items-center justify-center text-on-surface-variant font-label-md text-label-md">...</span>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded-md text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors">25</button>
+                    </div>
+                    <button
+                        class="px-3 py-1.5 border border-outline-variant rounded-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors">Tiếp</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <!-- Modal: Delete User Confirmation -->
+    <div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" id="deleteUserModal">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-surface-container-lowest/80 backdrop-blur-md"
+            onclick="document.getElementById('deleteUserModal').classList.add('hidden')"></div>
+        <!-- Modal Content -->
+        <div class="relative admin-card w-full max-w-sm flex flex-col shadow-sm">
+            <div class="p-6 text-center">
+                <div class="w-12 h-12 bg-error-container text-error rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="material-symbols-outlined">warning</span>
+                </div>
+                <h2 class="font-title-lg text-title-lg text-primary mb-2">Xác nhận xóa</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                    Bạn có chắc chắn muốn xóa người dùng <strong id="deleteUserName" class="text-primary"></strong>? Hành động này không thể hoàn tác.
+                </p>
+                <div class="flex flex-col gap-2">
+                    <button class="admin-btn bg-error text-white hover:bg-error/90 w-full">
+                        Xóa vĩnh viễn
+                    </button>
+                    <button class="admin-btn admin-btn-secondary w-full"
+                        onclick="document.getElementById('deleteUserModal').classList.add('hidden')">
+                        Hủy bỏ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDeleteUserModal(id, name) {
+            document.getElementById('deleteUserName').textContent = name;
+            document.getElementById('deleteUserModal').classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

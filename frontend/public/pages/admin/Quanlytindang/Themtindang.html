@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Thêm tin đăng - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+        .form-input { width: 100%; padding: 10px 14px; border: 1px solid #e1e2e9; border-radius: 12px; font-size: 14px; outline: none; background: #fff; transition: border-color .2s, box-shadow .2s; }
+        .form-input:focus { border-color: #091426; box-shadow: 0 0 0 3px rgba(9,20,38,.08); }
+        .form-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #666; margin-bottom: 6px; }
+        .upload-zone { border: 2px dashed #e1e2e9; border-radius: 16px; padding: 32px; text-align: center; transition: border-color .2s, background .2s; cursor: pointer; }
+        .upload-zone:hover { border-color: #091426; background: rgba(9,20,38,.02); }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+    <main class="admin-main">
+        <!-- Header -->
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center gap-4">
+            <a href="Quanlytindang.html" class="w-9 h-9 flex items-center justify-center rounded-xl border border-outline-variant hover:bg-surface-container transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+            </a>
+            <div class="flex flex-col">
+                <h1 class="font-headline-lg text-headline-lg text-primary font-bold leading-tight">Thêm tin đăng mới</h1>
+                <nav class="flex items-center gap-1.5 text-[11px] text-on-surface-variant">
+                    <a href="../Dashboard.html" class="hover:text-primary transition-colors">Admin</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <a href="Quanlytindang.html" class="hover:text-primary transition-colors">Quản lý tin đăng</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <span class="text-primary font-semibold">Thêm mới</span>
+                </nav>
+            </div>
+            <div class="ml-auto flex items-center gap-3">
+                <button type="button" onclick="document.getElementById('main-form').reset()"
+                        class="px-4 py-2 rounded-xl border border-outline-variant text-sm text-on-surface-variant hover:bg-surface-container transition-colors">
+                    Đặt lại
+                </button>
+                <button type="submit" form="main-form"
+                        class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary/90 active:scale-95 transition-all shadow-sm">
+                    <span class="material-symbols-outlined text-[18px]">save</span>
+                    Lưu tin đăng
+                </button>
+            </div>
+        </header>
+
+        <div class="flex-1 px-8 py-6">
+            <form id="main-form" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left Column: Main Info -->
+                <div class="lg:col-span-2 space-y-5">
+                    <!-- Basic Info Card -->
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-5">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">article</span>
+                            Thông tin cơ bản
+                        </h2>
+                        <div>
+                            <label class="form-label">Tiêu đề tin đăng <span class="text-red-500">*</span></label>
+                            <input class="form-input" type="text" placeholder="Ví dụ: Phòng trọ cao cấp, khép kín, gần ĐH Vinh" required>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="form-label">Danh mục <span class="text-red-500">*</span></label>
+                                <select class="form-input" required>
+                                    <option value="">-- Chọn danh mục --</option>
+                                    <option>Phòng trọ</option>
+                                    <option>Căn hộ</option>
+                                    <option>Nhà nguyên căn</option>
+                                    <option>Chung cư mini</option>
+                                    <option>Ký túc xá</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Người đăng <span class="text-red-500">*</span></label>
+                                <select class="form-input" required>
+                                    <option value="">-- Chọn người dùng --</option>
+                                    <option>Nguyễn Văn An</option>
+                                    <option>Trần Thị Bích</option>
+                                    <option>Lê Hoàng Nam</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Mô tả chi tiết <span class="text-red-500">*</span></label>
+                            <textarea class="form-input" rows="5" placeholder="Mô tả chi tiết về phòng trọ, tiện nghi, nội quy..." required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-5">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">location_on</span>
+                            Địa chỉ & Vị trí
+                        </h2>
+                        <div>
+                            <label class="form-label">Địa chỉ đầy đủ <span class="text-red-500">*</span></label>
+                            <input class="form-input" type="text" placeholder="Số nhà, đường, phường, quận, thành phố" required>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <label class="form-label">Tỉnh / Thành phố</label>
+                                <select class="form-input">
+                                    <option>Nghệ An</option>
+                                    <option>Hà Nội</option>
+                                    <option>TP. HCM</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Quận / Huyện</label>
+                                <input class="form-input" type="text" placeholder="Thành phố Vinh">
+                            </div>
+                            <div>
+                                <label class="form-label">Phường / Xã</label>
+                                <input class="form-input" type="text" placeholder="Hưng Dũng">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Images Card -->
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">photo_library</span>
+                            Hình ảnh
+                        </h2>
+                        <div class="upload-zone">
+                            <span class="material-symbols-outlined text-4xl text-on-surface-variant mb-2 block">cloud_upload</span>
+                            <p class="text-sm font-semibold text-primary">Kéo thả ảnh vào đây</p>
+                            <p class="text-xs text-on-surface-variant mt-1">hoặc <button type="button" class="text-primary underline">chọn từ máy tính</button></p>
+                            <p class="text-[10px] text-on-surface-variant mt-2">PNG, JPG, WEBP • Tối đa 10 ảnh • Mỗi ảnh ≤ 5MB</p>
+                        </div>
+                        <input type="file" class="hidden" multiple accept="image/*">
+                    </div>
+                </div>
+
+                <!-- Right Column: Pricing & Settings -->
+                <div class="space-y-5">
+                    <!-- Pricing -->
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">payments</span>
+                            Giá & Chi phí
+                        </h2>
+                        <div>
+                            <label class="form-label">Giá thuê / tháng <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <input class="form-input pr-10" type="number" placeholder="0" required>
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-on-surface-variant font-bold">đ</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Tiền đặt cọc</label>
+                            <div class="relative">
+                                <input class="form-input pr-10" type="number" placeholder="0">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-on-surface-variant font-bold">đ</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="form-label">Tiền điện</label>
+                                <input class="form-input" type="text" placeholder="đ/kWh">
+                            </div>
+                            <div>
+                                <label class="form-label">Tiền nước</label>
+                                <input class="form-input" type="text" placeholder="đ/m³">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">straighten</span>
+                            Thông số
+                        </h2>
+                        <div>
+                            <label class="form-label">Diện tích (m²)</label>
+                            <input class="form-input" type="number" placeholder="0">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="form-label">Số phòng ngủ</label>
+                                <select class="form-input">
+                                    <option>Studio</option>
+                                    <option>1 PN</option>
+                                    <option>2 PN</option>
+                                    <option>3+ PN</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Toilet</label>
+                                <select class="form-input">
+                                    <option>Chung</option>
+                                    <option>Khép kín</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Nội thất</label>
+                            <select class="form-input">
+                                <option>Không nội thất</option>
+                                <option>Nội thất cơ bản</option>
+                                <option>Đầy đủ nội thất</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Publish Settings -->
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+                            Cài đặt đăng
+                        </h2>
+                        <div>
+                            <label class="form-label">Trạng thái <span class="text-red-500">*</span></label>
+                            <select class="form-input" required>
+                                <option value="draft">Bản nháp</option>
+                                <option value="pending">Chờ duyệt</option>
+                                <option value="published">Đăng luôn</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Ngày hết hạn</label>
+                            <input class="form-input" type="date">
+                        </div>
+                        <div>
+                            <label class="form-label">Gói hiển thị</label>
+                            <select class="form-input">
+                                <option>Thường</option>
+                                <option>Ưu tiên</option>
+                                <option>VIP</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant">
+                            <input type="checkbox" id="featured" class="rounded text-primary focus:ring-primary/20 border-outline-variant">
+                            <label for="featured" class="text-sm text-primary font-medium cursor-pointer">Tin nổi bật</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant mt-auto">
+            <span>© 2024 UrbanNest Admin Panel</span>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('main-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.submitter;
+            btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span> Đang lưu...';
+            btn.disabled = true;
+            setTimeout(() => {
+                window.location.href = 'Quanlytindang.html';
+            }, 1200);
+        });
+    </script>
+</body>
+</html>

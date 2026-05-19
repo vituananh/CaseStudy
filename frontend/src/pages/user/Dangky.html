@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+
+<title>Dangky</title>
+</head>
+
+<body  class="bg-background text-on-surface font-body-md min-h-screen flex flex-col unified-layout">
+    <div style="zoom: 0.63; min-height: 100vh; display: flex; flex-direction: column;">
+    <main class="flex-grow flex items-center justify-center py-12 px-margin-mobile md:px-margin-desktop">
+        <div
+            class="max-w-[1100px] w-full grid grid-cols-1 md:grid-cols-2 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/50">
+            <!-- Left Side: Informational (White Theme) -->
+            <div
+                class="hidden md:flex flex-col justify-between p-12 bg-surface-container-lowest border-r border-outline-variant/30">
+                <div class="z-10">
+                    <div class="flex items-center gap-2 mb-12">
+                        <span class="material-symbols-outlined text-primary text-4xl"
+                            data-icon="nest_multi_room">nest_multi_room</span>
+                        <h1 class="text-title-lg font-black tracking-tight text-primary">UrbanNest</h1>
+                    </div>
+                    <h2 class="font-display-lg text-display-lg leading-tight mb-6 text-on-background">Tìm tổ ấm mơ ước
+                        tại Vinh.</h2>
+                    <p class="font-body-lg text-on-surface-variant max-w-sm">
+                        Tham gia cộng đồng UrbanNest để tìm kiếm và quản lý phòng trọ một cách chuyên nghiệp, minh bạch
+                        và hiệu quả nhất.
+                    </p>
+                </div>
+                <div class="relative z-10 grid grid-cols-1 gap-4 mt-8">
+                    <div
+                        class="flex items-start gap-4 p-5 rounded-xl bg-surface-container-low border border-outline-variant/20">
+                        <div class="bg-primary/5 p-2 rounded-lg">
+                            <span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+                        </div>
+                        <div>
+                            <p class="font-title-md text-primary">Tin cậy</p>
+                            <p class="font-body-sm text-on-surface-variant">Thông tin được xác thực 100% bởi đội ngũ
+                                UrbanNest.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 p-5 rounded-xl bg-surface-container-low border border-outline-variant/20">
+                        <div class="bg-primary/5 p-2 rounded-lg">
+                            <span class="material-symbols-outlined text-primary" data-icon="speed">speed</span>
+                        </div>
+                        <div>
+                            <p class="font-title-md text-primary">Nhanh chóng</p>
+                            <p class="font-body-sm text-on-surface-variant">Kết nối trực tiếp với chủ trọ chỉ trong vài
+                                phút.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Side: Registration Form (White Theme) -->
+            <div class="p-8 md:p-12 flex flex-col justify-center bg-surface-container-lowest">
+                <div class="mb-10">
+                    <h3 class="font-headline-lg text-headline-lg text-on-background mb-2">Đăng ký tài khoản</h3>
+                    <p class="font-body-md text-on-surface-variant">Đã có tài khoản? <a
+                            class="text-primary font-semibold hover:underline" href="Dangnhap.html">Đăng nhập
+                            ngay</a></p>
+                </div>
+                <form class="space-y-6">
+                    <!-- Name Field -->
+                    <div class="space-y-2">
+                        <label
+                            class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block">Họ
+                            và tên</label>
+                        <div class="relative">
+                            <input
+                                class="w-full bg-surface-container-lowest border border-outline rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-on-surface"
+                                placeholder="Nguyễn Văn A" type="text">
+                            <p class="text-error text-label-md font-medium mt-1.5 flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[16px]" data-icon="error">error</span>
+                                Vui lòng nhập họ và tên
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Email & Phone Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label
+                                class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block">Email</label>
+                            <input
+                                class="w-full bg-surface-container-lowest border border-outline rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-on-surface"
+                                placeholder="email@example.com" type="email">
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block">Số
+                                điện thoại</label>
+                            <input
+                                class="w-full bg-surface-container-lowest border border-outline rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-on-surface"
+                                placeholder="09xx xxx xxx" type="tel">
+                        </div>
+                    </div>
+                    <!-- Account Type Radio Buttons -->
+                    <div class="space-y-3">
+                        <label
+                            class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block">Loại
+                            tài khoản</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <label
+                                class="relative flex items-center p-4 border border-outline rounded-xl cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5 group">
+                                <input checked="" class="hidden peer" name="account_type" type="radio">
+                                <div class="flex flex-col">
+                                    <span
+                                        class="font-title-md text-on-background group-has-[:checked]:text-primary">Người
+                                        tìm phòng</span>
+                                    <span class="text-label-md text-on-surface-variant">Tôi muốn thuê</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined ml-auto text-outline group-has-[:checked]:text-primary"
+                                    data-icon="person_search">person_search</span>
+                            </label>
+                            <label
+                                class="relative flex items-center p-4 border border-outline rounded-xl cursor-pointer hover:bg-surface-container-low transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/5 group">
+                                <input class="hidden peer" name="account_type" type="radio">
+                                <div class="flex flex-col">
+                                    <span class="font-title-md text-on-background group-has-[:checked]:text-primary">Chủ
+                                        trọ</span>
+                                    <span class="text-label-md text-on-surface-variant">Tôi muốn cho thuê</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined ml-auto text-outline group-has-[:checked]:text-primary"
+                                    data-icon="real_estate_agent">real_estate_agent</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Password Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label
+                                class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block">Mật
+                                khẩu</label>
+                            <input
+                                class="w-full bg-surface-container-lowest border border-outline rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-on-surface"
+                                placeholder="••••••••" type="password">
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block">Nhập
+                                lại mật khẩu</label>
+                            <input
+                                class="w-full bg-surface-container-lowest border border-outline rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all text-on-surface"
+                                placeholder="••••••••" type="password">
+                        </div>
+                    </div>
+                    <!-- Terms Checkbox -->
+                    <div class="flex items-start gap-3 pt-2">
+                        <input
+                            class="mt-1 w-5 h-5 rounded border-outline text-primary focus:ring-primary transition-all"
+                            id="terms" type="checkbox">
+                        <label class="font-body-sm text-on-surface-variant leading-relaxed" for="terms">
+                            Tôi đồng ý với <a class="text-primary font-semibold underline" href="Trangchu.html">Điều khoản dịch
+                                vụ</a> và <a class="text-primary font-semibold underline" href="Trangchu.html">Chính sách bảo
+                                mật</a> của UrbanNest.
+                        </label>
+                    </div>
+                    <!-- Register Button (Deep Slate/Primary) -->
+                    <button
+                        class="w-full bg-primary text-on-primary font-title-lg py-4 rounded-xl hover:bg-primary/90 shadow-sm active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+                        type="submit">
+                        Đăng ký ngay
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                    <!-- Alternate Login -->
+                    <div class="relative py-2">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-outline-variant/30"></div>
+                        </div>
+                        <div class="relative flex justify-center text-xs uppercase"><span
+                                class="bg-surface-container-lowest px-4 text-on-surface-variant font-label-md tracking-widest">Hoặc
+                                đăng ký bằng</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button
+                            class="flex items-center justify-center gap-3 py-3 border border-outline rounded-xl hover:bg-surface-container-low transition-all font-body-sm font-semibold text-on-background"
+                            type="button">
+                            <img alt="Google" class="w-5 h-5"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj0laNVidilBeROifVDsJ3B6thAGNEmVbhy9NBsTgevL2X0zoYMGfAJ15twKgk1nqOWht6hC_eTE780Sm8FKojxjRIk6lA6vXqxxRQGeSin0YpwH681y5tE3T0ZVQSW9bqafHpPRSCKzJb2dar-3Zcm4JsBB7ayIZvkCmDnTtWGp71Vv1a53e9f9tWCRVJXdY0jydZkyeFJ9m5QmGoKUfwU308HulZBitr_8CRgnLATGLxP8W9infiRypfw_O_cIRDTrker_UOXEk">
+                            Google
+                        </button>
+                        <button
+                            class="flex items-center justify-center gap-3 py-3 border border-outline rounded-xl hover:bg-surface-container-low transition-all font-body-sm font-semibold text-on-background"
+                            type="button">
+                            <span class="material-symbols-outlined text-[#1877F2]" data-icon="facebook"
+                                style="font-variation-settings: 'FILL' 1;">facebook</span>
+                            Facebook
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer
+        class="w-full py-8 px-margin-desktop border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-container-lowest">
+        <p class="font-body-sm text-on-surface-variant">© 2024 UrbanNest - Nền tảng tìm kiếm phòng trọ uy tín tại Vinh.
+        </p>
+        <div class="flex gap-8">
+            <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="Trangchu.html">Về chúng
+                tôi</a>
+            <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="Trangchu.html">Hỗ trợ</a>
+            <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="Trangchu.html">Liên hệ</a>
+        </div>
+    </footer>
+    </div>
+</body>
+
+</html>

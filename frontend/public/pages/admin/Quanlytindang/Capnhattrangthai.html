@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Cập nhật trạng thái - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+        .status-option { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; border: 2px solid #e1e2e9; cursor: pointer; transition: all .2s; }
+        .status-option:hover { border-color: #091426; background: rgba(9,20,38,.02); }
+        .status-option input[type=radio]:checked ~ * { color: inherit; }
+        .status-option:has(input:checked) { border-color: #091426; background: rgba(9,20,38,.04); }
+        .form-input { width: 100%; padding: 10px 14px; border: 1px solid #e1e2e9; border-radius: 12px; font-size: 14px; outline: none; background: #fff; transition: border-color .2s, box-shadow .2s; }
+        .form-input:focus { border-color: #091426; box-shadow: 0 0 0 3px rgba(9,20,38,.08); }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+    <main class="admin-main">
+        <!-- Header -->
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center gap-4">
+            <a href="Quanlytindang.html" class="w-9 h-9 flex items-center justify-center rounded-xl border border-outline-variant hover:bg-surface-container transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+            </a>
+            <div class="flex flex-col">
+                <h1 class="font-headline-lg text-headline-lg text-primary font-bold leading-tight">Cập nhật trạng thái</h1>
+                <nav class="flex items-center gap-1.5 text-[11px] text-on-surface-variant">
+                    <a href="../Dashboard.html" class="hover:text-primary transition-colors">Admin</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <a href="Quanlytindang.html" class="hover:text-primary transition-colors">Quản lý tin đăng</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <span class="text-primary font-semibold">Cập nhật trạng thái #9281</span>
+                </nav>
+            </div>
+        </header>
+
+        <div class="flex-1 px-8 py-6 max-w-3xl mx-auto w-full space-y-6">
+            <!-- Post preview -->
+            <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm flex items-center gap-5">
+                <div class="w-20 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                    <img alt="Post" class="w-full h-full object-cover"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_0wfp3xfTIaU2-GDOd7dtq1UCjNdmaX0Kqx2akMJJDzLJSadkUTUbdK2dG3LCR3USiEt3YDdbDcXhxXAG9YUKE3tD4eHLdPMsKv8YfDLxUlsxBMQJMGSoc1McLG0NxOsxK39WsgFXo9SsWIhOCzZUM-FwfRMw4kvrzgBa2POUSYsYLipGem7Tanwufc8lZQlQrRIuMNxdgYx6KB579HqYNis_d88tRO7Rd9Y_7RLZU422o24fAFId0mK3VNJxUc1friLbOQe52UE">
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-bold text-primary mb-1">Phòng trọ cao cấp gần ĐH Vinh</p>
+                    <div class="flex flex-wrap items-center gap-3 text-[11px] text-on-surface-variant">
+                        <span>ID: <strong class="text-primary">#9281</strong></span>
+                        <span>•</span>
+                        <span>Người đăng: <strong class="text-primary">Nguyễn Văn An</strong></span>
+                        <span>•</span>
+                        <span>Ngày đăng: <strong>24/05/2024</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="text-[10px] font-semibold">Trạng thái hiện tại:</span>
+                        <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">Chờ duyệt</span>
+                    </div>
+                </div>
+                <a href="Suatindang.html" class="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-outline-variant text-xs text-on-surface-variant hover:bg-surface-container transition-colors flex-shrink-0">
+                    <span class="material-symbols-outlined text-[14px]">edit</span>
+                    Chỉnh sửa
+                </a>
+            </div>
+
+            <!-- Status selection -->
+            <form id="status-form" class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-5">
+                <h2 class="font-title-md text-primary font-semibold">Chọn trạng thái mới</h2>
+
+                <div class="space-y-3">
+                    <label class="status-option" id="opt-approved">
+                        <input type="radio" name="status" value="approved" class="text-primary focus:ring-primary/20 border-outline-variant">
+                        <div class="w-9 h-9 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-primary">Duyệt tin đăng</p>
+                            <p class="text-xs text-on-surface-variant">Tin đăng sẽ được hiển thị công khai trên trang người dùng.</p>
+                        </div>
+                    </label>
+
+                    <label class="status-option">
+                        <input type="radio" name="status" value="pending" class="text-primary focus:ring-primary/20 border-outline-variant" checked>
+                        <div class="w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-amber-600 text-[20px]">schedule</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-primary">Giữ chờ duyệt</p>
+                            <p class="text-xs text-on-surface-variant">Tin đăng chờ thêm thông tin hoặc kiểm duyệt tiếp.</p>
+                        </div>
+                    </label>
+
+                    <label class="status-option">
+                        <input type="radio" name="status" value="rejected" class="text-primary focus:ring-primary/20 border-outline-variant">
+                        <div class="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-red-600 text-[20px]">cancel</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-primary">Từ chối tin đăng</p>
+                            <p class="text-xs text-on-surface-variant">Tin sẽ bị ẩn và người đăng sẽ được thông báo lý do.</p>
+                        </div>
+                    </label>
+
+                    <label class="status-option">
+                        <input type="radio" name="status" value="hidden" class="text-primary focus:ring-primary/20 border-outline-variant">
+                        <div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-on-surface-variant text-[20px]">visibility_off</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-primary">Ẩn tạm thời</p>
+                            <p class="text-xs text-on-surface-variant">Tin đăng bị ẩn khỏi kết quả tìm kiếm nhưng chưa bị xóa.</p>
+                        </div>
+                    </label>
+
+                    <label class="status-option">
+                        <input type="radio" name="status" value="expired" class="text-primary focus:ring-primary/20 border-outline-variant">
+                        <div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-on-surface-variant text-[20px]">event_busy</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-primary">Đánh dấu hết hạn</p>
+                            <p class="text-xs text-on-surface-variant">Đánh dấu tin đã hết hiệu lực, yêu cầu gia hạn để tiếp tục.</p>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Reject reason (shown when reject is selected) -->
+                <div id="reject-reason-section" class="hidden space-y-3 p-4 bg-red-50 border border-red-200 rounded-xl">
+                    <label class="block text-xs font-bold text-red-700 uppercase tracking-wider">Lý do từ chối <span class="text-red-500">*</span></label>
+                    <select class="form-input border-red-200 focus:border-red-400">
+                        <option value="">-- Chọn lý do --</option>
+                        <option>Giá không hợp lý / Có dấu hiệu lừa đảo</option>
+                        <option>Hình ảnh kém chất lượng / Không rõ ràng</option>
+                        <option>Nội dung trùng lặp với tin khác</option>
+                        <option>Vi phạm chính sách nền tảng</option>
+                        <option>Thiếu thông tin bắt buộc</option>
+                        <option>Khác (nhập bên dưới)</option>
+                    </select>
+                    <textarea class="form-input border-red-200 focus:border-red-400" rows="3"
+                              placeholder="Nhập mô tả chi tiết để người dùng có thể chỉnh sửa và đăng lại..."></textarea>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="notify-user" class="rounded text-red-600 border-red-300 focus:ring-red-400/20" checked>
+                        <label for="notify-user" class="text-xs font-medium text-red-700 cursor-pointer">Gửi thông báo tới người đăng</label>
+                    </div>
+                </div>
+
+                <!-- Note field -->
+                <div>
+                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Ghi chú nội bộ (không hiển thị với người dùng)</label>
+                    <textarea class="form-input" rows="2" placeholder="Ghi chú cho nhóm admin..."></textarea>
+                </div>
+
+                <!-- Action buttons -->
+                <div class="flex items-center justify-end gap-3 pt-2 border-t border-outline-variant">
+                    <a href="Quanlytindang.html" class="px-4 py-2.5 rounded-xl border border-outline-variant text-sm text-on-surface-variant hover:bg-surface-container transition-colors">
+                        Hủy
+                    </a>
+                    <button type="submit"
+                            class="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary/90 active:scale-95 transition-all shadow-sm">
+                        <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        Xác nhận cập nhật
+                    </button>
+                </div>
+            </form>
+
+            <!-- Audit log -->
+            <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm">
+                <h2 class="font-title-md text-primary font-semibold mb-4">Lịch sử trạng thái</h2>
+                <div class="relative pl-5 space-y-4">
+                    <div class="absolute left-2 top-0 bottom-0 w-px bg-outline-variant"></div>
+                    <div class="relative flex items-start gap-3">
+                        <div class="w-3 h-3 rounded-full bg-amber-500 absolute -left-[5px] top-1 ring-2 ring-white"></div>
+                        <div class="pl-2">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span class="text-xs font-bold text-primary">Gửi chờ duyệt</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">Chờ duyệt</span>
+                            </div>
+                            <p class="text-[10px] text-on-surface-variant mt-0.5">24/05/2024, 08:42 • Nguyễn Văn An (người đăng)</p>
+                        </div>
+                    </div>
+                    <div class="relative flex items-start gap-3">
+                        <div class="w-3 h-3 rounded-full bg-outline-variant absolute -left-[5px] top-1 ring-2 ring-white"></div>
+                        <div class="pl-2">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span class="text-xs font-bold text-primary">Tin đăng được tạo</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant">Bản nháp</span>
+                            </div>
+                            <p class="text-[10px] text-on-surface-variant mt-0.5">24/05/2024, 08:30 • Nguyễn Văn An</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant mt-auto">
+            <span>© 2024 UrbanNest Admin Panel</span>
+        </footer>
+    </main>
+
+    <script>
+        // Show/hide reject reason section
+        document.querySelectorAll('input[name="status"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                const rejectSection = document.getElementById('reject-reason-section');
+                rejectSection.classList.toggle('hidden', radio.value !== 'rejected' || !radio.checked);
+            });
+        });
+
+        // Form submit
+        document.getElementById('status-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.submitter;
+            const selected = document.querySelector('input[name="status"]:checked')?.value;
+            btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span> Đã cập nhật!';
+            btn.classList.add('bg-green-600');
+            btn.disabled = true;
+            setTimeout(() => window.location.href = 'Quanlytindang.html', 1200);
+        });
+    </script>
+</body>
+</html>

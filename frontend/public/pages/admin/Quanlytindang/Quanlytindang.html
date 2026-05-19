@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Quản lý tin đăng - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+    <main class="admin-main">
+        <!-- Top Header -->
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center justify-between">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg text-primary font-bold">Quản lý tin đăng</h1>
+                <p class="text-on-surface-variant text-sm">Danh sách toàn bộ tin đăng trên hệ thống.</p>
+            </div>
+            <a href="Themtindang.html"
+               class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary/90 active:scale-95 transition-all shadow-sm">
+                <span class="material-symbols-outlined text-[18px]">add</span>
+                Thêm tin đăng
+            </a>
+        </header>
+
+        <div class="flex-1 px-8 py-6 space-y-5">
+            <!-- Filters & Search -->
+            <div class="bg-white rounded-2xl border border-outline-variant p-4 shadow-sm flex flex-wrap items-center gap-3">
+                <div class="relative flex-1 min-w-[200px]">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+                    <input class="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none bg-surface-container-low"
+                           placeholder="Tìm theo tiêu đề, người đăng..." type="text">
+                </div>
+                <select class="text-sm py-2 px-3 rounded-xl border border-outline-variant focus:border-primary outline-none bg-white">
+                    <option>Tất cả trạng thái</option>
+                    <option>Chờ duyệt</option>
+                    <option>Đã duyệt</option>
+                    <option>Bị từ chối</option>
+                    <option>Hết hạn</option>
+                </select>
+                <select class="text-sm py-2 px-3 rounded-xl border border-outline-variant focus:border-primary outline-none bg-white">
+                    <option>Tất cả danh mục</option>
+                    <option>Phòng trọ</option>
+                    <option>Căn hộ</option>
+                    <option>Nhà nguyên căn</option>
+                    <option>Chung cư mini</option>
+                </select>
+                <select class="text-sm py-2 px-3 rounded-xl border border-outline-variant focus:border-primary outline-none bg-white">
+                    <option>Mới nhất</option>
+                    <option>Cũ nhất</option>
+                    <option>Giá cao → thấp</option>
+                    <option>Giá thấp → cao</option>
+                </select>
+                <button class="flex items-center gap-1.5 text-sm text-on-surface-variant border border-outline-variant px-4 py-2 rounded-xl hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-[16px]">tune</span>
+                    Lọc nâng cao
+                </button>
+            </div>
+
+            <!-- Stats Chips -->
+            <div class="flex flex-wrap gap-3">
+                <div class="bg-white border border-outline-variant rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span class="text-xs font-semibold text-primary">1,284</span>
+                    <span class="text-xs text-on-surface-variant">Tổng số tin</span>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-2.5 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                    <span class="text-xs font-semibold text-amber-700">14</span>
+                    <span class="text-xs text-amber-600">Chờ duyệt</span>
+                </div>
+                <div class="bg-green-50 border border-green-200 rounded-xl px-4 py-2.5 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span class="text-xs font-semibold text-green-700">1,198</span>
+                    <span class="text-xs text-green-600">Đã duyệt</span>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl px-4 py-2.5 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                    <span class="text-xs font-semibold text-red-700">72</span>
+                    <span class="text-xs text-red-600">Bị từ chối</span>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="bg-white rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-surface-container-low border-b border-outline-variant">
+                            <tr>
+                                <th class="px-4 py-3">
+                                    <input type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary/20">
+                                </th>
+                                <th class="px-4 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Tin đăng</th>
+                                <th class="px-4 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Người đăng</th>
+                                <th class="px-4 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Danh mục</th>
+                                <th class="px-4 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Giá</th>
+                                <th class="px-4 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Trạng thái</th>
+                                <th class="px-4 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Ngày đăng</th>
+                                <th class="px-4 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold text-right">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant">
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-surface-container/40 transition-colors group">
+                                <td class="px-4 py-3"><input type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary/20"></td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+                                            <img alt="Post" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_0wfp3xfTIaU2-GDOd7dtq1UCjNdmaX0Kqx2akMJJDzLJSadkUTUbdK2dG3LCR3USiEt3YDdbDcXhxXAG9YUKE3tD4eHLdPMsKv8YfDLxUlsxBMQJMGSoc1McLG0NxOsxK39WsgFXo9SsWIhOCzZUM-FwfRMw4kvrzgBa2POUSYsYLipGem7Tanwufc8lZQlQrRIuMNxdgYx6KB579HqYNis_d88tRO7Rd9Y_7RLZU422o24fAFId0mK3VNJxUc1friLbOQe52UE">
+                                        </div>
+                                        <div class="flex flex-col min-w-0">
+                                            <span class="text-xs font-semibold text-primary truncate max-w-[200px]">Phòng trọ cao cấp gần ĐH Vinh</span>
+                                            <span class="text-[10px] text-on-surface-variant">#9281</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 rounded-full bg-surface-container overflow-hidden flex-shrink-0">
+                                            <img alt="user" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_oesoV75mZN1cAjthWegrdxS4fA8wgGMcN5Yu2b_YLRWrUldOkYeBUuZSlXncK6jZF5oh0OLorOecM_ooR-IAy7QXCBwlg-ZyTyCR9jwrDFiR5QZ5QZEHzIpXTGhQzVzIPJ_IiQLvnwJ8F4MPtw36PIeQ5nD4qFrEg9buLuvEWXUq20nmGGPnGJFjqYkJKSwUbWBp1ByjKU7PMpvYbcPfXBazo41Mlr8Dl_9dOenwjXkPHr_Um79qfmnVkua33-v58KVXpSsmGKg">
+                                        </div>
+                                        <span class="text-xs font-medium text-primary">Nguyễn Văn An</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3"><span class="text-xs text-on-surface-variant">Phòng trọ</span></td>
+                                <td class="px-4 py-3"><span class="text-xs font-semibold text-primary">3,500,000đ</span></td>
+                                <td class="px-4 py-3">
+                                    <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">Chờ duyệt</span>
+                                </td>
+                                <td class="px-4 py-3"><span class="text-xs text-on-surface-variant">24/05/2024</span></td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <a href="Suatindang.html" title="Chỉnh sửa"
+                                           class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-all">
+                                            <span class="material-symbols-outlined text-[16px]">edit</span>
+                                        </a>
+                                        <a href="Capnhattrangthai.html" title="Cập nhật trạng thái"
+                                           class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-amber-50 text-on-surface-variant hover:text-amber-600 transition-all">
+                                            <span class="material-symbols-outlined text-[16px]">update</span>
+                                        </a>
+                                        <button title="Xóa"
+                                                class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-red-50 text-on-surface-variant hover:text-red-600 transition-all">
+                                            <span class="material-symbols-outlined text-[16px]">delete</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr class="hover:bg-surface-container/40 transition-colors group">
+                                <td class="px-4 py-3"><input type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary/20"></td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+                                            <img alt="Post" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJWC5ZRdmEVxMJRWgIn5zzwm9o_NQynO2Tm7hi81pJ5p8vDmSqJXEYOMSUFGTZJdVdq-Sv6IfaqSfLc6qeih8i9-HEkohuIydcSP3txiMv_XsT-Uq3wN_Qtdo3FNgi5X8zC0B1It9TovcXAzpamhrCn_n9_xHJ3myxBNz42-z2xGARGBRRNoNsio">
+                                        </div>
+                                        <div class="flex flex-col min-w-0">
+                                            <span class="text-xs font-semibold text-primary truncate max-w-[200px]">Căn hộ Studio Vinhomes Central Park</span>
+                                            <span class="text-[10px] text-on-surface-variant">#9275</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 rounded-full bg-surface-container overflow-hidden flex-shrink-0">
+                                            <img alt="user" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMYbCFhhvA-VB_pphuZHyH4nZgvZ0mi4B7RCfFWHotQFzJ1skl74HYjZck9jCUMIiO6iFmtw8vvx2eLaRaHabXOaYJvKd59jphLuw-I9ZENdLkfsFYyeDbYsPOsGrIEjH1FomwEZ9J2ztU2r6foLAn7dPwQbQuTby767MLU-4vkaZ41wfwfrl4tXVi6ztb4CJlqrpMeTwBN77PNQXjLVSWdguy_j0Uy_R-LqayDsBMwk8QnRzoxodfHmLZ2Ll13vqA1I0G0ze4zDY">
+                                        </div>
+                                        <span class="text-xs font-medium text-primary">Trần Thị Bích</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3"><span class="text-xs text-on-surface-variant">Căn hộ</span></td>
+                                <td class="px-4 py-3"><span class="text-xs font-semibold text-primary">8,000,000đ</span></td>
+                                <td class="px-4 py-3">
+                                    <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-50 text-green-700 border border-green-200">Đã duyệt</span>
+                                </td>
+                                <td class="px-4 py-3"><span class="text-xs text-on-surface-variant">23/05/2024</span></td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <a href="Suatindang.html" title="Chỉnh sửa"
+                                           class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-all">
+                                            <span class="material-symbols-outlined text-[16px]">edit</span>
+                                        </a>
+                                        <a href="Capnhattrangthai.html" title="Cập nhật trạng thái"
+                                           class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-amber-50 text-on-surface-variant hover:text-amber-600 transition-all">
+                                            <span class="material-symbols-outlined text-[16px]">update</span>
+                                        </a>
+                                        <button title="Xóa"
+                                                class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-red-50 text-on-surface-variant hover:text-red-600 transition-all">
+                                            <span class="material-symbols-outlined text-[16px]">delete</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr class="hover:bg-surface-container/40 transition-colors group">
+                                <td class="px-4 py-3"><input type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary/20"></td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+                                            <img alt="Post" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVgcG7STIe2T8TwEZu5hxeXmyUJTfHs8u2QtDaXnWlT4K5B8GNGZJ5Tq1OFFe6uEzqyAECAj9KxHJCZ1TRePCch2xr0SQwt489bn2ztGgfQ6-wj6ZXapPuUi1yil7AWHr1OGwrM-hV-P2Lw5rxs6A9xmqj9QOYxnEz0hOl9zElr3w213mnOFV8BfsG-rvK7BT94C_mIKRcdDubALi3Y5EnOTxhLvCsAJimXNfrXWF3MgXhIzeWGG9B9_vFRcDQJuJH_lCwWtkhi-k">
+                                        </div>
+                                        <div class="flex flex-col min-w-0">
+                                            <span class="text-xs font-semibold text-primary truncate max-w-[200px]">Nhà nguyên căn 3 tầng, Hưng Dũng</span>
+                                            <span class="text-[10px] text-on-surface-variant">#9268</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0">
+                                            <span class="material-symbols-outlined text-[14px] text-on-surface-variant">person</span>
+                                        </div>
+                                        <span class="text-xs font-medium text-primary">Lê Hoàng Nam</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3"><span class="text-xs text-on-surface-variant">Nhà nguyên căn</span></td>
+                                <td class="px-4 py-3"><span class="text-xs font-semibold text-primary">12,000,000đ</span></td>
+                                <td class="px-4 py-3">
+                                    <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-red-50 text-red-700 border border-red-200">Bị từ chối</span>
+                                </td>
+                                <td class="px-4 py-3"><span class="text-xs text-on-surface-variant">22/05/2024</span></td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <a href="Suatindang.html" title="Chỉnh sửa"
+                                           class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-all">
+                                            <span class="material-symbols-outlined text-[16px]">edit</span>
+                                        </a>
+                                        <a href="Capnhattrangthai.html" title="Cập nhật trạng thái"
+                                           class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-amber-50 text-on-surface-variant hover:text-amber-600 transition-all">
+                                            <span class="material-symbols-outlined text-[16px]">update</span>
+                                        </a>
+                                        <button title="Xóa"
+                                                class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-red-50 text-on-surface-variant hover:text-red-600 transition-all">
+                                            <span class="material-symbols-outlined text-[16px]">delete</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Pagination -->
+                <div class="px-6 py-4 border-t border-outline-variant flex items-center justify-between">
+                    <span class="text-xs text-on-surface-variant">Hiển thị 1–3 trong tổng số 1,284 tin</span>
+                    <div class="flex items-center gap-1">
+                        <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[16px]">chevron_left</span>
+                        </button>
+                        <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white text-xs font-bold">1</button>
+                        <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors text-xs">2</button>
+                        <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors text-xs">3</button>
+                        <span class="text-xs text-on-surface-variant px-1">...</span>
+                        <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors text-xs">128</button>
+                        <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant mt-auto">
+            <span>© 2024 UrbanNest Admin Panel</span>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-primary transition-colors">Hỗ trợ</a>
+                <a href="#" class="hover:text-primary transition-colors">Bảo mật</a>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

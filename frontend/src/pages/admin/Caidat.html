@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cài đặt hệ thống - UrbanNest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body  class="bg-background text-on-background h-screen flex overflow-hidden unified-layout">
+    <!-- SideNavBar -->
+    <aside
+        class="h-screen w-64 fixed left-0 top-0 bg-white border-r border-outline-variant flex flex-col p-4 space-y-2 z-50">
+        <div class="mb-8 px-2 flex items-center gap-3">
+            <span class="font-title-md text-title-md font-bold text-primary">UrbanNest</span>
+        </div>
+        <div class="flex items-center gap-3 mb-6 px-2">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+                <img alt="Admin Profile" class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTJYw52tysZ0-Jm7PBYw5dDfDPNL_mLJKAvH-EuCxEJjD5rDulqSNfe41SeaJ689dYASLDl6e7Q849Pe1jfKvSfBMBeioRYQ9p64Mh37Jl1SIi-A7yFtTF4JbZd9Dx8glFrcZcYzZZWNdjC98yY107hszjmXYNAwMXhTYiHHk1jGl5cW0bbBovzoDZaVA94iLOtnR9-mBoUlZZl9kWqBA1cGPQEcMbJ0BxnFWK3P2B0I5hh7gmkESLp--9t2cwIv7M2CijqHCdws">
+            </div>
+            <div class="flex flex-col">
+                <span class="font-label-md text-label-md text-primary font-semibold">Admin Profile</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Quản trị viên</span>
+            </div>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Dashboard.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                <span class="font-label-md text-label-md">Tổng quan</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Quanlynguoidung/Quanlynguoidung.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+                <span class="font-label-md text-label-md">Quản lý người dùng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Quanlytindang.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+                <span class="font-label-md text-label-md">Quản lý tin đăng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Duyetbai.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="fact_check">fact_check</span>
+                <span class="font-label-md text-label-md">Duyệt bài</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Phantichdulieu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="insights">insights</span>
+                <span class="font-label-md text-label-md">Phân tích dữ liệu</span>
+            </a>
+            <a class="flex items-center gap-3 bg-secondary-container text-primary rounded-lg px-4 py-3 font-semibold transition-all"
+                href="Caidat.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                <span class="font-label-md text-label-md">Cài đặt</span>
+            </a>
+        </nav>
+        <div class="pt-4 border-t border-outline-variant space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                <span class="font-label-md text-label-md">Hỗ trợ</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                <span class="font-label-md text-label-md">Đăng xuất</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="admin-main-container overflow-y-auto">
+        <!-- Header -->
+        <header class="admin-page-header border-b border-outline-variant pb-stack-md">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Cài đặt hệ thống</h1>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-2">Quản lý cấu hình toàn cầu, bảo mật và
+                    phân quyền truy cập.</p>
+            </div>
+            <div class="flex gap-4">
+                <button class="admin-btn admin-btn-secondary">Hủy</button>
+                <button class="admin-btn admin-btn-primary">Lưu thay đổi</button>
+            </div>
+        </header>
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-gutter">
+            <!-- Cấu hình chung (Spans 2 columns on large screens) -->
+            <section class="xl:col-span-2 admin-card flex flex-col gap-6">
+                <div class="flex items-center gap-2 border-b border-outline-variant pb-4">
+                    <span class="material-symbols-outlined text-secondary">tune</span>
+                    <h2 class="font-title-lg text-title-lg text-on-surface">Cấu hình chung</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="admin-form-group">
+                        <label class="admin-label">Tên hiển thị hệ thống</label>
+                        <input class="admin-input" type="text" value="UrbanNest VN" />
+                    </div>
+                    <div class="admin-form-group">
+                        <label class="admin-label">Email liên hệ hỗ trợ</label>
+                        <input class="admin-input" type="email" value="support@urbannest.vn" />
+                    </div>
+                    <div class="admin-form-group md:col-span-2">
+                        <label class="admin-label">Mô tả Meta (SEO)</label>
+                        <textarea class="admin-textarea resize-none" rows="3">Nền tảng tìm kiếm phòng trọ uy tín, chất lượng cao tại Việt Nam.</textarea>
+                    </div>
+                    <div class="admin-form-group">
+                        <label class="admin-label">Ngôn ngữ mặc định</label>
+                        <select class="admin-select">
+                            <option>Tiếng Việt</option>
+                            <option>English</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2 justify-center pt-6">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input checked=""
+                                class="w-5 h-5 rounded border-outline-variant text-primary-container focus:ring-primary-container"
+                                type="checkbox" />
+                            <span class="font-body-md text-body-md text-on-surface">Cho phép đăng ký người dùng
+                                mới</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+            <!-- Bảo mật API (Spans 1 column) -->
+            <section class="admin-card flex flex-col gap-6">
+                <div class="flex items-center gap-2 border-b border-outline-variant pb-4">
+                    <span class="material-symbols-outlined text-secondary">api</span>
+                    <h2 class="font-title-lg text-title-lg text-on-surface">Bảo mật API</h2>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/50">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-title-md text-title-md text-on-surface">Production Key</h3>
+                                <p class="admin-label">Tạo ngày 12/10/2023</p>
+                            </div>
+                            <span
+                                class="bg-[#F1F5F9] text-primary-container px-2 py-1 rounded font-label-md text-label-md">Active</span>
+                        </div>
+                        <div class="flex items-center gap-2 mt-2">
+                            <input
+                                class="flex-1 bg-transparent border-none p-0 font-body-sm text-body-sm text-on-surface focus:ring-0"
+                                readonly="" type="password" value="sk_live_123456789" />
+                            <button class="text-secondary hover:text-primary transition-colors" title="Sao chép">
+                                <span class="material-symbols-outlined text-[18px]">content_copy</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/50">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-title-md text-title-md text-on-surface">Test Key</h3>
+                                <p class="admin-label">Tạo ngày 01/11/2023</p>
+                            </div>
+                            <span
+                                class="bg-[#F1F5F9] text-primary-container px-2 py-1 rounded font-label-md text-label-md">Active</span>
+                        </div>
+                        <div class="flex items-center gap-2 mt-2">
+                            <input
+                                class="flex-1 bg-transparent border-none p-0 font-body-sm text-body-sm text-on-surface focus:ring-0 truncate"
+                                readonly="" type="text" value="sk_test_abcdefghi" />
+                            <button class="text-secondary hover:text-primary transition-colors" title="Sao chép">
+                                <span class="material-symbols-outlined text-[18px]">content_copy</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="admin-btn admin-btn-secondary w-full border-dashed">
+                        <span class="material-symbols-outlined">add</span>
+                        Tạo khóa mới
+                    </button>
+                </div>
+            </section>
+            <!-- Phân quyền vai trò (Full width below) -->
+            <section class="xl:col-span-3 admin-card flex flex-col gap-6">
+                <div class="flex justify-between items-center border-b border-outline-variant pb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">admin_panel_settings</span>
+                        <h2 class="font-title-lg text-title-lg text-on-surface">Phân quyền vai trò</h2>
+                    </div>
+                    <button class="text-primary-container font-title-md text-title-md hover:underline">Quản lý nâng
+                        cao</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Admin Role -->
+                    <div class="border border-outline-variant rounded-lg p-5 flex flex-col gap-4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="material-symbols-outlined text-error">shield</span>
+                            <h3 class="font-title-md text-title-md text-on-surface">Quản trị viên</h3>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant h-10">Toàn quyền truy cập hệ thống,
+                            quản lý người dùng và cài đặt cốt lõi.</p>
+                        <div class="flex -space-x-2 mt-auto pt-4 border-t border-outline-variant/30">
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-variant border-2 border-surface-container-lowest flex items-center justify-center text-xs font-bold text-on-surface">
+                                A</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-variant border-2 border-surface-container-lowest flex items-center justify-center text-xs font-bold text-on-surface">
+                                T</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-container-high border-2 border-surface-container-lowest flex items-center justify-center text-xs font-medium text-on-surface-variant">
+                                +2</div>
+                        </div>
+                    </div>
+                    <!-- Moderator Role -->
+                    <div
+                        class="border border-outline-variant rounded-lg p-5 flex flex-col gap-4 relative overflow-hidden">
+                        <!-- Subtle active indicator -->
+                        <div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="material-symbols-outlined text-secondary">gavel</span>
+                            <h3 class="font-title-md text-title-md text-on-surface">Người kiểm duyệt</h3>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant h-10">Quản lý tin đăng, phê duyệt
+                            nội dung và hỗ trợ giải quyết tranh chấp.</p>
+                        <div class="flex -space-x-2 mt-auto pt-4 border-t border-outline-variant/30">
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-variant border-2 border-surface-container-lowest flex items-center justify-center text-xs font-bold text-on-surface">
+                                H</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-variant border-2 border-surface-container-lowest flex items-center justify-center text-xs font-bold text-on-surface">
+                                K</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-variant border-2 border-surface-container-lowest flex items-center justify-center text-xs font-bold text-on-surface">
+                                L</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-container-high border-2 border-surface-container-lowest flex items-center justify-center text-xs font-medium text-on-surface-variant">
+                                +8</div>
+                        </div>
+                    </div>
+                    <!-- Landlord Role -->
+                    <div class="border border-outline-variant rounded-lg p-5 flex flex-col gap-4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="material-symbols-outlined text-secondary">real_estate_agent</span>
+                            <h3 class="font-title-md text-title-md text-on-surface">Chủ nhà</h3>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant h-10">Đăng tin cho thuê, quản lý
+                            phòng và tương tác với người thuê.</p>
+                        <div class="flex mt-auto pt-4 border-t border-outline-variant/30 items-center justify-between">
+                            <span class="admin-label">Mặc định đăng ký
+                                mới</span>
+                            <span
+                                class="bg-[#F1F5F9] text-primary-container px-2 py-1 rounded font-label-md text-label-md">1,245
+                                User</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

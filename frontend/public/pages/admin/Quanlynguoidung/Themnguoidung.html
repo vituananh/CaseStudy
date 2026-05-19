@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Thêm người dùng - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+        .form-input { width: 100%; padding: 10px 14px; border: 1px solid #e1e2e9; border-radius: 12px; font-size: 14px; outline: none; background: #fff; transition: border-color .2s, box-shadow .2s; }
+        .form-input:focus { border-color: #091426; box-shadow: 0 0 0 3px rgba(9,20,38,.08); }
+        .form-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #666; margin-bottom: 6px; }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+    <main class="admin-main">
+        <!-- Header -->
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center gap-4">
+            <a href="Quanlynguoidung.html" class="w-9 h-9 flex items-center justify-center rounded-xl border border-outline-variant hover:bg-surface-container transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+            </a>
+            <div class="flex flex-col">
+                <h1 class="font-headline-lg text-headline-lg text-primary font-bold leading-tight">Thêm người dùng mới</h1>
+                <nav class="flex items-center gap-1.5 text-[11px] text-on-surface-variant">
+                    <a href="../Dashboard.html" class="hover:text-primary transition-colors">Admin</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <a href="Quanlynguoidung.html" class="hover:text-primary transition-colors">Quản lý người dùng</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <span class="text-primary font-semibold">Thêm mới</span>
+                </nav>
+            </div>
+            <div class="ml-auto flex items-center gap-3">
+                <button type="button" onclick="document.getElementById('add-form').reset()"
+                        class="px-4 py-2 rounded-xl border border-outline-variant text-sm text-on-surface-variant hover:bg-surface-container transition-colors">
+                    Đặt lại
+                </button>
+                <button type="submit" form="add-form"
+                        class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary/90 active:scale-95 transition-all shadow-sm">
+                    <span class="material-symbols-outlined text-[18px]">person_add</span>
+                    Tạo tài khoản
+                </button>
+            </div>
+        </header>
+
+        <div class="flex-1 px-8 py-6">
+            <form id="add-form" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left: Avatar -->
+                <div class="lg:col-span-1 space-y-5">
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm flex flex-col items-center gap-4">
+                        <h2 class="font-title-md text-primary font-semibold self-start flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">account_circle</span>
+                            Ảnh đại diện
+                        </h2>
+                        <div class="relative group cursor-pointer">
+                            <div class="w-36 h-36 rounded-full border-2 border-dashed border-outline-variant flex items-center justify-center bg-surface-container overflow-hidden hover:border-primary transition-colors">
+                                <span class="material-symbols-outlined text-5xl text-on-surface-variant group-hover:text-primary group-hover:scale-110 transition-all">add_photo_alternate</span>
+                            </div>
+                            <input type="file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                        </div>
+                        <p class="text-xs text-on-surface-variant text-center">PNG, JPG • Tối đa 2MB<br>Khuyến nghị: 400×400px</p>
+                    </div>
+
+                    <!-- Account Settings -->
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+                            Cài đặt tài khoản
+                        </h2>
+                        <div>
+                            <label class="form-label">Vai trò <span class="text-red-500">*</span></label>
+                            <select class="form-input" required>
+                                <option value="tenant">Người thuê</option>
+                                <option value="owner">Chủ nhà</option>
+                                <option value="broker">Môi giới</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Trạng thái <span class="text-red-500">*</span></label>
+                            <select class="form-input" required>
+                                <option value="active">Hoạt động</option>
+                                <option value="pending">Chờ xác minh</option>
+                                <option value="locked">Bị khóa</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant">
+                            <input type="checkbox" id="verified" class="rounded text-primary focus:ring-primary/20 border-outline-variant">
+                            <label for="verified" class="text-sm text-primary font-medium cursor-pointer">Đánh dấu đã xác minh KYC</label>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant">
+                            <input type="checkbox" id="send-email" class="rounded text-primary focus:ring-primary/20 border-outline-variant" checked>
+                            <label for="send-email" class="text-sm text-primary font-medium cursor-pointer">Gửi email chào mừng</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Personal Info -->
+                <div class="lg:col-span-2 space-y-5">
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-5">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">person</span>
+                            Thông tin cá nhân
+                        </h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="form-label">Họ và tên <span class="text-red-500">*</span></label>
+                                <input class="form-input" type="text" placeholder="Nguyễn Văn A" required>
+                            </div>
+                            <div>
+                                <label class="form-label">Số điện thoại</label>
+                                <input class="form-input" type="tel" placeholder="090...">
+                            </div>
+                            <div>
+                                <label class="form-label">Email <span class="text-red-500">*</span></label>
+                                <input class="form-input" type="email" placeholder="example@email.com" required>
+                            </div>
+                            <div>
+                                <label class="form-label">Ngày sinh</label>
+                                <input class="form-input" type="date">
+                            </div>
+                            <div>
+                                <label class="form-label">Giới tính</label>
+                                <select class="form-input">
+                                    <option value="">-- Chọn --</option>
+                                    <option>Nam</option>
+                                    <option>Nữ</option>
+                                    <option>Khác</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Thành phố</label>
+                                <select class="form-input">
+                                    <option value="">-- Chọn tỉnh/thành --</option>
+                                    <option>Nghệ An</option>
+                                    <option>Hà Nội</option>
+                                    <option>TP. Hồ Chí Minh</option>
+                                    <option>Đà Nẵng</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">lock</span>
+                            Thông tin đăng nhập
+                        </h2>
+                        <div>
+                            <label class="form-label">Tên đăng nhập (username)</label>
+                            <input class="form-input" type="text" placeholder="Tự tạo nếu để trống">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="form-label">Mật khẩu ban đầu <span class="text-red-500">*</span></label>
+                                <input class="form-input" type="password" required>
+                            </div>
+                            <div>
+                                <label class="form-label">Xác nhận mật khẩu <span class="text-red-500">*</span></label>
+                                <input class="form-input" type="password" required>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant">
+                            <input type="checkbox" id="force-change" class="rounded text-primary focus:ring-primary/20 border-outline-variant" checked>
+                            <label for="force-change" class="text-sm text-primary font-medium cursor-pointer">Yêu cầu đổi mật khẩu khi đăng nhập lần đầu</label>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-3">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">sticky_note_2</span>
+                            Ghi chú nội bộ
+                        </h2>
+                        <textarea class="form-input" rows="3" placeholder="Ghi chú về người dùng này (chỉ admin thấy)..."></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant mt-auto">
+            <span>© 2024 UrbanNest Admin Panel</span>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('add-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.submitter;
+            btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span> Đang tạo...';
+            btn.disabled = true;
+            setTimeout(() => window.location.href = 'Quanlynguoidung.html', 1200);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Chỉnh sửa tin đăng - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+        .form-input { width: 100%; padding: 10px 14px; border: 1px solid #e1e2e9; border-radius: 12px; font-size: 14px; outline: none; background: #fff; transition: border-color .2s, box-shadow .2s; }
+        .form-input:focus { border-color: #091426; box-shadow: 0 0 0 3px rgba(9,20,38,.08); }
+        .form-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #666; margin-bottom: 6px; }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+    <main class="admin-main">
+        <!-- Header -->
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center gap-4">
+            <a href="Quanlytindang.html" class="w-9 h-9 flex items-center justify-center rounded-xl border border-outline-variant hover:bg-surface-container transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+            </a>
+            <div class="flex flex-col">
+                <h1 class="font-headline-lg text-headline-lg text-primary font-bold leading-tight">Chỉnh sửa tin đăng</h1>
+                <nav class="flex items-center gap-1.5 text-[11px] text-on-surface-variant">
+                    <a href="../Dashboard.html" class="hover:text-primary transition-colors">Admin</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <a href="Quanlytindang.html" class="hover:text-primary transition-colors">Quản lý tin đăng</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <span class="text-primary font-semibold">Chỉnh sửa #9281</span>
+                </nav>
+            </div>
+            <div class="ml-auto flex items-center gap-3">
+                <a href="Capnhattrangthai.html"
+                   class="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-outline-variant text-sm text-on-surface-variant hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-[16px]">update</span>
+                    Cập nhật trạng thái
+                </a>
+                <button type="submit" form="edit-form"
+                        class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary/90 active:scale-95 transition-all shadow-sm">
+                    <span class="material-symbols-outlined text-[18px]">save</span>
+                    Lưu thay đổi
+                </button>
+            </div>
+        </header>
+
+        <!-- Current post info banner -->
+        <div class="mx-8 mt-6 bg-secondary-container/60 border border-secondary-container rounded-2xl px-6 py-4 flex items-center gap-4">
+            <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                <img alt="Post" class="w-full h-full object-cover"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_0wfp3xfTIaU2-GDOd7dtq1UCjNdmaX0Kqx2akMJJDzLJSadkUTUbdK2dG3LCR3USiEt3YDdbDcXhxXAG9YUKE3tD4eHLdPMsKv8YfDLxUlsxBMQJMGSoc1McLG0NxOsxK39WsgFXo9SsWIhOCzZUM-FwfRMw4kvrzgBa2POUSYsYLipGem7Tanwufc8lZQlQrRIuMNxdgYx6KB579HqYNis_d88tRO7Rd9Y_7RLZU422o24fAFId0mK3VNJxUc1friLbOQe52UE">
+            </div>
+            <div class="flex-1 min-w-0">
+                <p class="text-xs text-on-surface-variant mb-1">Đang chỉnh sửa tin</p>
+                <p class="text-sm font-bold text-primary">Phòng trọ cao cấp gần ĐH Vinh</p>
+                <div class="flex items-center gap-3 mt-1">
+                    <span class="text-[10px] text-on-surface-variant">ID: #9281</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">Chờ duyệt</span>
+                    <span class="text-[10px] text-on-surface-variant">Đăng: 24/05/2024 • Nguyễn Văn An</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-1 px-8 py-6">
+            <form id="edit-form" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left: Main content -->
+                <div class="lg:col-span-2 space-y-5">
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-5">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">article</span>
+                            Thông tin cơ bản
+                        </h2>
+                        <div>
+                            <label class="form-label">Tiêu đề tin đăng <span class="text-red-500">*</span></label>
+                            <input class="form-input" type="text" value="Phòng trọ cao cấp gần ĐH Vinh" required>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="form-label">Danh mục</label>
+                                <select class="form-input">
+                                    <option selected>Phòng trọ</option>
+                                    <option>Căn hộ</option>
+                                    <option>Nhà nguyên căn</option>
+                                    <option>Chung cư mini</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Người đăng</label>
+                                <input class="form-input bg-surface-container-low" type="text" value="Nguyễn Văn An" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Mô tả chi tiết</label>
+                            <textarea class="form-input" rows="5">Phòng trọ mới xây, diện tích 30m2, có cửa sổ thoáng mát, đầy đủ nội thất cơ bản. Gần trường Đại học Vinh, tiện đi lại. Điện nước theo giá nhà nước. Yêu cầu cọc 1 tháng, hợp đồng tối thiểu 6 tháng.</textarea>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">location_on</span>
+                            Địa chỉ
+                        </h2>
+                        <div>
+                            <label class="form-label">Địa chỉ đầy đủ</label>
+                            <input class="form-input" type="text" value="12 Đường Lê Lợi, Phường Hưng Dũng, TP. Vinh">
+                        </div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <label class="form-label">Tỉnh / TP</label>
+                                <input class="form-input" type="text" value="Nghệ An">
+                            </div>
+                            <div>
+                                <label class="form-label">Quận / Huyện</label>
+                                <input class="form-input" type="text" value="TP. Vinh">
+                            </div>
+                            <div>
+                                <label class="form-label">Phường / Xã</label>
+                                <input class="form-input" type="text" value="Hưng Dũng">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Existing images -->
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">photo_library</span>
+                            Hình ảnh hiện tại
+                        </h2>
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="relative group rounded-xl overflow-hidden aspect-video bg-surface-container">
+                                <img alt="Post image" class="w-full h-full object-cover"
+                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_0wfp3xfTIaU2-GDOd7dtq1UCjNdmaX0Kqx2akMJJDzLJSadkUTUbdK2dG3LCR3USiEt3YDdbDcXhxXAG9YUKE3tD4eHLdPMsKv8YfDLxUlsxBMQJMGSoc1McLG0NxOsxK39WsgFXo9SsWIhOCzZUM-FwfRMw4kvrzgBa2POUSYsYLipGem7Tanwufc8lZQlQrRIuMNxdgYx6KB579HqYNis_d88tRO7Rd9Y_7RLZU422o24fAFId0mK3VNJxUc1friLbOQe52UE">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                                    <button type="button" class="w-8 h-8 bg-white/20 hover:bg-white/40 rounded-lg flex items-center justify-center text-white transition-colors">
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                    </button>
+                                    <button type="button" class="w-8 h-8 bg-red-500/80 hover:bg-red-500 rounded-lg flex items-center justify-center text-white transition-colors">
+                                        <span class="material-symbols-outlined text-[16px]">delete</span>
+                                    </button>
+                                </div>
+                                <span class="absolute top-2 left-2 bg-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md">Ảnh chính</span>
+                            </div>
+                            <div class="relative group rounded-xl overflow-hidden aspect-video bg-surface-container">
+                                <img alt="Post image 2" class="w-full h-full object-cover"
+                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJWC5ZRdmEVxMJRWgIn5zzwm9o_NQynO2Tm7hi81pJ5p8vDmSqJXEYOMSUFGTZJdVdq-Sv6IfaqSfLc6qeih8i9-HEkohuIydcSP3txiMv_XsT-Uq3wN_Qtdo3FNgi5X8zC0B1It9TovcXAzpamhrCn_n9_xHJ3myxBNz42-z2xGARGBRRNoNsio">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                                    <button type="button" class="w-8 h-8 bg-white/20 hover:bg-white/40 rounded-lg flex items-center justify-center text-white transition-colors">
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                    </button>
+                                    <button type="button" class="w-8 h-8 bg-red-500/80 hover:bg-red-500 rounded-lg flex items-center justify-center text-white transition-colors">
+                                        <span class="material-symbols-outlined text-[16px]">delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" class="rounded-xl border-2 border-dashed border-outline-variant aspect-video flex flex-col items-center justify-center gap-1 hover:border-primary hover:bg-surface-container/50 transition-all text-on-surface-variant hover:text-primary">
+                                <span class="material-symbols-outlined text-2xl">add_photo_alternate</span>
+                                <span class="text-[10px] font-semibold">Thêm ảnh</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Pricing & Settings -->
+                <div class="space-y-5">
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">payments</span>
+                            Giá & Chi phí
+                        </h2>
+                        <div>
+                            <label class="form-label">Giá thuê / tháng</label>
+                            <div class="relative">
+                                <input class="form-input pr-10" type="number" value="3500000">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-on-surface-variant font-bold">đ</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Tiền đặt cọc</label>
+                            <div class="relative">
+                                <input class="form-input pr-10" type="number" value="3500000">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-on-surface-variant font-bold">đ</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="form-label">Tiền điện</label>
+                                <input class="form-input" type="text" value="3,500đ/kWh">
+                            </div>
+                            <div>
+                                <label class="form-label">Tiền nước</label>
+                                <input class="form-input" type="text" value="Giá nhà nước">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">straighten</span>
+                            Thông số
+                        </h2>
+                        <div>
+                            <label class="form-label">Diện tích (m²)</label>
+                            <input class="form-input" type="number" value="30">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="form-label">Phòng ngủ</label>
+                                <select class="form-input">
+                                    <option selected>Studio</option>
+                                    <option>1 PN</option>
+                                    <option>2 PN</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Toilet</label>
+                                <select class="form-input">
+                                    <option selected>Khép kín</option>
+                                    <option>Chung</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Nội thất</label>
+                            <select class="form-input">
+                                <option selected>Nội thất cơ bản</option>
+                                <option>Không nội thất</option>
+                                <option>Đầy đủ nội thất</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                        <h2 class="font-title-md text-primary font-semibold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+                            Cài đặt đăng
+                        </h2>
+                        <div>
+                            <label class="form-label">Trạng thái hiện tại</label>
+                            <div class="flex items-center gap-2 p-3 bg-amber-50 border border-amber-200 rounded-xl">
+                                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                <span class="text-xs font-bold text-amber-700">Chờ duyệt</span>
+                                <a href="Capnhattrangthai.html" class="ml-auto text-[10px] font-semibold text-primary hover:underline">Thay đổi →</a>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Ngày hết hạn</label>
+                            <input class="form-input" type="date" value="2024-06-24">
+                        </div>
+                        <div>
+                            <label class="form-label">Gói hiển thị</label>
+                            <select class="form-input">
+                                <option selected>Thường</option>
+                                <option>Ưu tiên</option>
+                                <option>VIP</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant">
+                            <input type="checkbox" id="featured-edit" class="rounded text-primary focus:ring-primary/20 border-outline-variant">
+                            <label for="featured-edit" class="text-sm text-primary font-medium cursor-pointer">Tin nổi bật</label>
+                        </div>
+                    </div>
+
+                    <!-- Danger Zone -->
+                    <div class="bg-red-50 rounded-2xl border border-red-200 p-5 space-y-3">
+                        <h2 class="font-title-md text-red-700 font-semibold flex items-center gap-2 text-sm">
+                            <span class="material-symbols-outlined text-[18px]">warning</span>
+                            Vùng nguy hiểm
+                        </h2>
+                        <button type="button" class="w-full py-2.5 rounded-xl border border-red-300 text-red-600 text-sm font-semibold hover:bg-red-100 transition-colors">
+                            Xóa tin đăng này
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant mt-auto">
+            <span>© 2024 UrbanNest Admin Panel</span>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('edit-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.submitter;
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span> Đã lưu!';
+            btn.classList.add('bg-green-600');
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerHTML = orig;
+                btn.classList.remove('bg-green-600');
+                btn.disabled = false;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Tổng quan - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script src="../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+        .stat-card { background: #fff; border-radius: 16px; border: 1px solid #e1e2e9; padding: 24px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 1px 3px rgba(9,20,38,.04); transition: box-shadow .2s, transform .2s; }
+        .stat-card:hover { box-shadow: 0 4px 16px rgba(9,20,38,.08); transform: translateY(-2px); }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+
+    <!-- Main Content (sidebar injected by JS) -->
+    <main class="admin-main">
+        <!-- Top Header Bar -->
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center justify-between">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg text-primary font-bold">Tổng quan</h1>
+                <p class="text-on-surface-variant font-body-sm text-sm">Chào mừng trở lại! Đây là tình trạng hệ thống hôm nay.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-xs text-on-surface-variant bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant">Thứ Sáu, 24/05/2024</span>
+                <button class="relative w-10 h-10 flex items-center justify-center rounded-xl border border-outline-variant hover:bg-surface-container transition-all">
+                    <span class="material-symbols-outlined text-[20px]">notifications</span>
+                    <span class="absolute top-2 right-2.5 w-2 h-2 bg-error rounded-full"></span>
+                </button>
+                <div class="w-9 h-9 rounded-xl overflow-hidden ring-2 ring-primary/20">
+                    <img alt="Admin" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTJYw52tysZ0-Jm7PBYw5dDfDPNL_mLJKAvH-EuCxEJjD5rDulqSNfe41SeaJ689dYASLDl6e7Q849Pe1jfKvSfBMBeioRYQ9p64Mh37Jl1SIi-A7yFtTF4JbZd9Dx8glFrcZcYzZZWNdjC98yY107hszjmXYNAwMXhTYiHHk1jGl5cW0bbBovzoDZaVA94iLOtnR9-mBoUlZZl9kWqBA1cGPQEcMbJ0BxnFWK3P2B0I5hh7gmkESLp--9t2cwIv7M2CijqHCdws">
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-1 px-8 py-6 space-y-6">
+            <!-- Stats Row -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="stat-card">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-[20px]">home_work</span>
+                        </div>
+                        <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">+12%</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-2">Tổng số tin đăng</p>
+                    <p class="text-2xl font-black text-primary">1,284</p>
+                </div>
+                <div class="stat-card">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-blue-600 text-[20px]">person_add</span>
+                        </div>
+                        <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">+5.4%</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-2">Người dùng mới</p>
+                    <p class="text-2xl font-black text-primary">342</p>
+                </div>
+                <div class="stat-card">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-amber-600 text-[20px]">pending_actions</span>
+                        </div>
+                        <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Chờ duyệt</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-2">Tin chờ duyệt</p>
+                    <p class="text-2xl font-black text-primary">14</p>
+                </div>
+                <div class="stat-card">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-green-600 text-[20px]">payments</span>
+                        </div>
+                        <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">+8%</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-2">Doanh thu (vnđ)</p>
+                    <p class="text-2xl font-black text-primary">45.2M</p>
+                </div>
+            </div>
+
+            <!-- Middle: Chart + Quick Actions -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div class="lg:col-span-2 bg-white rounded-2xl border border-outline-variant p-6 shadow-sm">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-title-md text-primary font-semibold">Tăng trưởng người dùng</h3>
+                        <select class="text-xs bg-surface-container border border-outline-variant rounded-lg py-1.5 px-3 focus:ring-0 focus:border-primary">
+                            <option>7 ngày qua</option>
+                            <option>30 ngày qua</option>
+                        </select>
+                    </div>
+                    <div class="h-44 flex items-end justify-between gap-2">
+                        <div class="flex-1 bg-primary/10 hover:bg-primary/25 rounded-t-lg transition-colors cursor-pointer" style="height:40%"></div>
+                        <div class="flex-1 bg-primary/10 hover:bg-primary/25 rounded-t-lg transition-colors cursor-pointer" style="height:65%"></div>
+                        <div class="flex-1 bg-primary/10 hover:bg-primary/25 rounded-t-lg transition-colors cursor-pointer" style="height:50%"></div>
+                        <div class="flex-1 bg-primary/20 hover:bg-primary/35 rounded-t-lg transition-colors cursor-pointer" style="height:85%"></div>
+                        <div class="flex-1 bg-primary/10 hover:bg-primary/25 rounded-t-lg transition-colors cursor-pointer" style="height:70%"></div>
+                        <div class="flex-1 bg-primary/25 hover:bg-primary/40 rounded-t-lg transition-colors cursor-pointer" style="height:95%"></div>
+                        <div class="flex-1 bg-primary/15 hover:bg-primary/30 rounded-t-lg transition-colors cursor-pointer" style="height:60%"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold mt-3">
+                        <span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span>
+                    </div>
+                </div>
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm">
+                    <h3 class="font-title-md text-primary font-semibold mb-4">Thao tác nhanh</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="Quanlynguoidung/Themnguoidung.html" class="flex flex-col items-center justify-center p-4 border border-outline-variant rounded-xl hover:bg-surface-container hover:border-primary/30 transition-all gap-2 group">
+                            <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">person_add</span>
+                            <span class="text-xs font-semibold text-center">Thêm User</span>
+                        </a>
+                        <a href="Quanlytindang/Themtindang.html" class="flex flex-col items-center justify-center p-4 border border-outline-variant rounded-xl hover:bg-surface-container hover:border-primary/30 transition-all gap-2 group">
+                            <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">add_box</span>
+                            <span class="text-xs font-semibold text-center">Thêm tin</span>
+                        </a>
+                        <a href="Duyetbai.html" class="flex flex-col items-center justify-center p-4 border border-outline-variant rounded-xl hover:bg-surface-container hover:border-primary/30 transition-all gap-2 group">
+                            <span class="material-symbols-outlined text-amber-600 group-hover:scale-110 transition-transform">fact_check</span>
+                            <span class="text-xs font-semibold text-center">Duyệt bài</span>
+                        </a>
+                        <a href="Phantichdulieu.html" class="flex flex-col items-center justify-center p-4 border border-outline-variant rounded-xl hover:bg-surface-container hover:border-primary/30 transition-all gap-2 group">
+                            <span class="material-symbols-outlined text-blue-600 group-hover:scale-110 transition-transform">insights</span>
+                            <span class="text-xs font-semibold text-center">Phân tích</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom: Table + Activity -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <!-- Listings Table -->
+                <div class="lg:col-span-2 bg-white rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-outline-variant flex flex-wrap items-center justify-between gap-3">
+                        <h3 class="font-title-md text-primary font-semibold">Tin đăng mới nhất</h3>
+                        <div class="flex items-center gap-2">
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+                                <input class="pl-9 pr-4 py-2 text-xs rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none bg-surface-container-low" placeholder="Tìm kiếm..." type="text">
+                            </div>
+                            <a href="Quanlytindang/Quanlytindang.html" class="text-xs font-semibold text-primary hover:underline">Xem tất cả →</a>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-surface-container-low">
+                                <tr>
+                                    <th class="px-6 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">ID</th>
+                                    <th class="px-6 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Tiêu đề</th>
+                                    <th class="px-6 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Trạng thái</th>
+                                    <th class="px-6 py-3 text-[11px] text-on-surface-variant uppercase tracking-wider font-bold text-right">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant">
+                                <tr class="hover:bg-surface-container/40 transition-colors">
+                                    <td class="px-6 py-4 text-xs font-bold text-primary">#9281</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-xs font-semibold text-primary">Phòng trọ cao cấp gần ĐH Vinh</span>
+                                            <span class="text-[10px] text-on-surface-variant">Nguyễn Văn An • 24/05/2024</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-[10px] font-bold px-2 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">Chờ duyệt</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="Duyetbai.html" class="text-xs font-bold text-primary hover:underline px-3 py-1 rounded-lg hover:bg-surface-container transition-colors">Duyệt</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container/40 transition-colors">
+                                    <td class="px-6 py-4 text-xs font-bold text-primary">#9275</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-xs font-semibold text-primary">Chung cư mini có thang máy</span>
+                                            <span class="text-[10px] text-on-surface-variant">Trần Thị Bích • 23/05/2024</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-[10px] font-bold px-2 py-1 rounded-full bg-green-50 text-green-700 border border-green-200">Đã duyệt</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="Quanlytindang/Suatindang.html" class="text-xs text-on-surface-variant hover:text-primary px-3 py-1 rounded-lg hover:bg-surface-container transition-colors">Xem</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container/40 transition-colors">
+                                    <td class="px-6 py-4 text-xs font-bold text-primary">#9268</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-xs font-semibold text-primary">Nhà nguyên căn 3 tầng, Hưng Dũng</span>
+                                            <span class="text-[10px] text-on-surface-variant">Lê Hoàng Nam • 22/05/2024</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-[10px] font-bold px-2 py-1 rounded-full bg-red-50 text-red-700 border border-red-200">Bị từ chối</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="Quanlytindang/Capnhattrangthai.html" class="text-xs text-on-surface-variant hover:text-primary px-3 py-1 rounded-lg hover:bg-surface-container transition-colors">Cập nhật</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Activity Feed -->
+                <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm">
+                    <h3 class="font-title-md text-primary font-semibold mb-4">Hoạt động gần đây</h3>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex gap-3 items-start">
+                            <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-blue-600 text-sm">post_add</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-primary"><span class="font-bold">Lê Quốc Khánh</span> đã đăng 1 tin mới.</p>
+                                <span class="text-[10px] text-on-surface-variant">2 phút trước</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <div class="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-600 text-sm">how_to_reg</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-primary"><span class="font-bold">Hệ thống</span> xác minh 3 người dùng.</p>
+                                <span class="text-[10px] text-on-surface-variant">15 phút trước</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-red-600 text-sm">report</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-primary"><span class="font-bold">Admin</span> đã gỡ 1 bài vi phạm.</p>
+                                <span class="text-[10px] text-on-surface-variant">1 giờ trước</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <div class="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-amber-600 text-sm">account_balance_wallet</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-primary"><span class="font-bold">User #812</span> gia hạn gói Premium.</p>
+                                <span class="text-[10px] text-on-surface-variant">2 giờ trước</span>
+                            </div>
+                        </div>
+                        <button class="text-xs font-semibold text-primary mt-2 hover:underline text-left">Xem tất cả hoạt động →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant">
+            <span>© 2024 UrbanNest Admin Panel • v2.1.0</span>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-primary transition-colors">Hỗ trợ</a>
+                <a href="#" class="hover:text-primary transition-colors">Điều khoản</a>
+                <a href="#" class="hover:text-primary transition-colors">Bảo mật</a>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

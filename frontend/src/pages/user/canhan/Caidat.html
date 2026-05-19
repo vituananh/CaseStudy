@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+
+<title>Caidat</title>
+</head>
+
+<body  class="bg-background text-on-background font-body-md unified-layout">
+    <!-- Top Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant h-20">
+        <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+            <div class="flex items-center gap-12">
+                <a class="text-title-lg font-display font-black tracking-tight text-primary" href="Trangchu.html">UrbanNest</a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-primary font-bold border-b-2 border-primary py-1 text-body-md" href="Trangchu.html">Trang chủ</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="Trangchu.html">Tin đăng</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="Trangchu.html">Blog</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden sm:flex text-on-surface-variant hover:text-primary font-title-md px-4 py-2 transition-all">Đăng
+                    nhập</button>
+                <button
+                    class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-title-md hover:bg-primary/90 active:scale-95 transition-all shadow-md">Đăng
+                    tin</button>
+            </div>
+        </div>
+    </header>
+    <div class="flex flex-1 pt-20">
+        <!-- SideNavBar (Shared Component) -->
+        <aside
+            class="bg-surface-container-lowest border-r border-outline-variant shadow-md h-[calc(100vh-5rem)] w-64 fixed left-0 top-20 flex flex-col p-4 space-y-2 hidden md:flex z-40">
+            <!-- Header / Profile -->
+            <div class="flex items-center gap-3 mb-6 p-2">
+                <img alt="Admin Profile" class="w-12 h-12 rounded-full object-cover border border-outline-variant"
+                    data-alt="A professional headshot of a young male property manager in a well-lit, minimalist modern office. The lighting is bright and soft, creating a clean, high-end corporate aesthetic. The man is subtly smiling, dressed in a crisp white shirt against a neutral slate background. The mood is approachable yet highly professional and trustworthy."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_oesoV75mZN1cAjthWegrdxS4fA8wgGMcN5Yu2b_YLRWrUldOkYeBUuZSlXncK6jZF5oh0OLorOecM_ooR-IAy7QXCBwlg-ZyTyCR9jwrDFiR5QZ5QZEHzIpXTGhQzVzIPJ_IiQLvnwJ8F4MPtw36PIeQ5nD4qFrEg9buLuvEWXUq20nmGGPnGJFjqYkJKSwUbWBp1ByjKU7PMpvYbcPfXBazo41Mlr8Dl_9dOenwjXkPHr_Um79qfmnVkua33-v58KVXpSsmGKg" />
+                <div>
+                    <h2 class="font-title-md text-title-md font-bold text-primary">Quản lý tài khoản</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Thành viên Premium</p>
+                </div>
+            </div>
+            <!-- CTA -->
+            <button
+                class="w-full bg-primary-container text-on-primary text-center py-2.5 rounded-lg font-title-md text-title-md mb-4 hover:opacity-90 transition-opacity">
+                Đăng tin mới
+            </button>
+            <!-- Main Navigation -->
+            <nav class="flex-1 space-y-1">
+                <!-- Inactive Tab 1 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="font-label-md text-label-md">Tổng quan</span>
+                </a>
+                <!-- Inactive Tab 2 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">description</span>
+                    <span class="font-label-md text-label-md">Tin đăng của tôi</span>
+                </a>
+                <!-- Active Tab 3 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">event</span>
+                    <span class="font-label-md text-label-md">Lịch xem phòng</span>
+                </a>
+                <!-- Inactive Tab 4 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">mail</span>
+                    <span class="font-label-md text-label-md">Tin nhắn</span>
+                </a>
+                <!-- Inactive Tab 5 -->
+                <a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 font-semibold hover:translate-x-1 transition-transform duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+                    <span class="font-label-md text-label-md">Cài đặt</span>
+                </a>
+            </nav>
+            <!-- Footer Navigation -->
+            <div class="mt-auto pt-4 border-t border-outline-variant space-y-1">
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">help</span>
+                    <span class="font-label-md text-label-md">Hỗ trợ</span>
+                </a>
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="font-label-md text-label-md">Đăng xuất</span>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="flex-grow md:ml-64 p-margin-desktop max-w-5xl mx-auto w-full">
+            <!-- Profile Hero Section -->
+            <section class="relative mb-12">
+                <div class="h-48 w-full rounded-2xl profile-backdrop relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent">
+                    </div>
+                </div>
+                <div class="px-8 -mt-16 relative flex flex-col md:flex-row items-end gap-6">
+                    <div class="relative">
+                        <div class="w-32 h-32 rounded-2xl border-4 border-white shadow-xl overflow-hidden bg-white">
+                            <img alt="Profile" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMYbCFhhvA-VB_pphuZHyH4nZgvZ0mi4B7RCfFWHotQFzJ1skl74HYjZck9jCUMIiO6iFmtw8vvx2eLaRaHabXOaYJvKd59jphLuw-I9ZENdLkfsFYyeDbYsPOsGrIEjH1FomwEZ9J2ztU2r6foLAn7dPwQbQuTby767MLU-4vkaZ41wfwfrl4tXVi6ztb4CJlqrpMeTwBN77PNQXjLVSWdguy_j0Uy_R-LqayDsBMwk8QnRzoxodfHmLZ2Ll13vqA1I0G0ze4zDY">
+                        </div>
+                        <button
+                            class="absolute bottom-2 right-2 p-2 bg-primary text-white rounded-lg shadow-lg hover:scale-105 transition-transform">
+                            <span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                        </button>
+                    </div>
+                    <div class="flex-grow pb-2">
+                        <h1 class="text-headline-lg font-bold text-on-surface">Nguyễn Minh Quân</h1>
+                        <p class="text-body-md text-on-surface-variant">Thành viên từ tháng 10, 2023 • <span
+                                class="text-primary font-bold">Thành viên Premium</span></p>
+                    </div>
+                    <div class="pb-2">
+                        <button
+                            class="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-bold shadow-md hover:bg-slate-800 transition-all active:scale-95">
+                            <span class="material-symbols-outlined text-sm" data-icon="edit_square">edit_square</span>
+                            Chỉnh sửa
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- User Info Form / Display -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+                <div class="md:col-span-2 space-y-gutter">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant">
+                        <div class="flex justify-between items-center mb-8">
+                            <h2 class="text-title-lg font-bold text-primary">Thông tin cá nhân</h2>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="grid grid-cols-1 gap-8">
+                                <div>
+                                    <label
+                                        class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-2">Họ
+                                        và tên</label>
+                                    <p
+                                        class="text-body-md text-on-surface font-medium pb-4 border-b border-outline-variant/60">
+                                        Nguyễn Minh Quân</p>
+                                </div>
+                                <div>
+                                    <label
+                                        class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-2">Số
+                                        điện thoại</label>
+                                    <p
+                                        class="text-body-md text-on-surface font-medium pb-4 border-b border-outline-variant/60">
+                                        +84 987 654 321</p>
+                                </div>
+                                <div>
+                                    <label
+                                        class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-2">Tiểu
+                                        sử (Bio)</label>
+                                    <p
+                                        class="text-body-md text-on-surface leading-relaxed pb-4 border-b border-outline-variant/60">
+                                        Chuyên gia tư vấn bất động sản tại Vinh với hơn 5 năm kinh nghiệm. Luôn mong
+                                        muốn mang đến những không gian sống chất lượng và tiện nghi nhất cho các bạn
+                                        trẻ.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Statistics Bento Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div
+                            class="bg-white p-6 rounded-2xl border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center">
+                            <span class="text-3xl font-bold text-primary mb-1">12</span>
+                            <span class="text-xs font-medium text-on-surface-variant uppercase tracking-tight">Tin đã
+                                đăng</span>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center">
+                            <span class="text-3xl font-bold text-primary mb-1">4.8</span>
+                            <span class="text-xs font-medium text-on-surface-variant uppercase tracking-tight">Đánh
+                                giá</span>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center">
+                            <span class="text-3xl font-bold text-primary mb-1">150</span>
+                            <span class="text-xs font-medium text-on-surface-variant uppercase tracking-tight">Lượt xem
+                                tin</span>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center">
+                            <span class="text-3xl font-bold text-primary mb-1">9</span>
+                            <span class="text-xs font-medium text-on-surface-variant uppercase tracking-tight">Lượt đặt
+                                lịch</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Account Security Card -->
+                <div class="space-y-6">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant">
+                        <h2 class="text-title-lg font-bold text-primary mb-6">Bảo mật</h2>
+                        <div class="space-y-4">
+                            <div
+                                class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer border border-outline-variant/40">
+                                <span class="material-symbols-outlined text-on-surface-variant"
+                                    data-icon="lock">lock</span>
+                                <div class="flex-grow">
+                                    <p class="text-sm font-bold text-on-surface">Đổi mật khẩu</p>
+                                    <p class="text-[10px] text-on-surface-variant font-medium">Cập nhật mật khẩu định kỳ
+                                    </p>
+                                </div>
+                                <span class="material-symbols-outlined text-sm"
+                                    data-icon="chevron_right">chevron_right</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer border border-outline-variant/40">
+                                <span class="material-symbols-outlined text-primary"
+                                    data-icon="verified_user">verified_user</span>
+                                <div class="flex-grow">
+                                    <p class="text-sm font-bold text-on-surface">Xác minh 2 lớp</p>
+                                    <p class="text-[10px] text-primary font-bold uppercase">Đã kích hoạt</p>
+                                </div>
+                                <span class="material-symbols-outlined text-sm"
+                                    data-icon="chevron_right">chevron_right</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 p-8 rounded-2xl shadow-lg text-white">
+                        <span class="material-symbols-outlined text-4xl mb-4 text-primary-fixed"
+                            data-icon="workspace_premium"
+                            style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                        <h3 class="text-title-md font-bold mb-2">UrbanNest Gold</h3>
+                        <p class="text-sm text-slate-400 mb-8 leading-relaxed">Bạn đang sử dụng gói dịch vụ cao cấp
+                            nhất. Mọi tin đăng sẽ được ưu tiên hiển thị đầu trang.</p>
+                        <button
+                            class="w-full py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-all">Gia
+                            hạn ngay</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Tabs Section -->
+            <section class="mb-20">
+                <div class="flex border-b border-outline-variant mb-8 overflow-x-auto no-scrollbar">
+                    <button
+                        class="px-8 py-4 text-sm font-bold text-primary border-b-2 border-primary whitespace-nowrap">Tin
+                        đăng của tôi</button>
+                    <button
+                        class="px-8 py-4 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Tin
+                        đã lưu</button>
+                    <button
+                        class="px-8 py-4 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Lịch
+                        sử giao dịch</button>
+                </div>
+                <!-- Active Tab Content: Tin đăng của tôi -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                    <!-- Property Card 1 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-outline-variant hover:shadow-md transition-all duration-300 overflow-hidden group">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img alt="Listing"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd4S7-bpXZ134si440cR7CCePEkX9dnEtke2U3JQ8kEX2u5PXe-tcXvgKOcagGckWAUdsoNGrO3Ga3FCkSAZym7iG3FoxUrrMkWbx33-IxNVhY2DeXiEwapontctPpHYoNbL13G3ixxt-ThZ33oudooK9XDEwfbqyXtwvnLDa-yNXmYD346GVg11fjI4INkDLXeW-PBx2-a9fz2Ua799HB5DUb-nhoZ8CpkV_zEqQzBiWafxYuboRThas6tGyPyo3B7dKIEthB4rY">
+                            <span
+                                class="absolute top-4 left-4 bg-emerald-500 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest shadow-sm">Đang
+                                trống</span>
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-primary px-4 py-2 rounded-xl font-bold shadow-lg border border-outline-variant/30">
+                                4,500,000đ / tháng</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-title-md font-bold text-primary mb-2">Căn hộ Studio cao cấp - Vinhomes</h3>
+                            <div class="flex items-center gap-2 text-on-surface-variant mb-6">
+                                <span class="material-symbols-outlined text-sm"
+                                    data-icon="location_on">location_on</span>
+                                <span class="text-sm">P. Quang Trung, TP. Vinh</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary text-sm"
+                                        data-icon="visibility">visibility</span>
+                                    <span class="text-sm font-bold">124 lượt xem</span>
+                                </div>
+                                <button class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+                                    Chi tiết <span class="material-symbols-outlined text-sm"
+                                        data-icon="arrow_forward">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Property Card 2 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-outline-variant hover:shadow-md transition-all duration-300 overflow-hidden group">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img alt="Listing"
+                                class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhjXce285o3c4BEmPt4emz-ahLecq5kaKDkVy55hTq8PTaTubRoMsm6vxw5MG1HUcpOu4dHSkU1HGkL5T4kNiDSLC6Bq9QyiZmbozy7AWmFECgbUjrNQjoMHQUqiy7qqdUxewNDJG8Dw71HNlOUmQyRq3KsX97qoGvxIihNPeqodnSLVN3vu2VJ4EjfUl4mEq02Gb2TxUr4DihwD6goxk-mkAbjcj3O2Hu3gDghzI7VwUnXYe8-5EiwIPFQJEKX5ME544Qcwq017Q">
+                            <span
+                                class="absolute top-4 left-4 bg-rose-500 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest shadow-sm">Đã
+                                thuê</span>
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-primary px-4 py-2 rounded-xl font-bold shadow-lg border border-outline-variant/30">
+                                2,800,000đ / tháng</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-title-md font-bold text-primary mb-2">Phòng trọ tiện nghi P. Hưng Dũng</h3>
+                            <div class="flex items-center gap-2 text-on-surface-variant mb-6">
+                                <span class="material-symbols-outlined text-sm"
+                                    data-icon="location_on">location_on</span>
+                                <span class="text-sm">P. Hưng Dũng, TP. Vinh</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary text-sm"
+                                        data-icon="visibility">visibility</span>
+                                    <span class="text-sm font-bold">89 lượt xem</span>
+                                </div>
+                                <button class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+                                    Chi tiết <span class="material-symbols-outlined text-sm"
+                                        data-icon="arrow_forward">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-outline-variant">
+        <div class="w-full py-12 px-margin-desktop flex flex-col items-center gap-8 max-w-container-max mx-auto">
+            <div class="flex flex-col items-center gap-2">
+                <span class="text-title-lg font-bold text-primary">UrbanNest</span>
+                <p class="text-sm text-on-surface-variant text-center max-w-md">Nền tảng tìm kiếm và quản lý phòng trọ
+                    uy tín hàng đầu tại khu vực Nghệ An.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="Trangchu.html">Về
+                    chúng tôi</a>
+                <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="Trangchu.html">Quy
+                    định đăng tin</a>
+                <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
+                    href="Trangchu.html">Chính sách bảo mật</a>
+                <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
+                    href="Trangchu.html">Liên hệ hỗ trợ</a>
+            </div>
+            <div class="pt-8 border-t border-outline-variant w-full text-center">
+                <p class="text-xs text-on-surface-variant opacity-70">© 2024 UrbanNest - Nền tảng tìm kiếm phòng trọ uy
+                    tín tại Vinh.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Xóa người dùng - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+    <main class="admin-main">
+        <!-- Header -->
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center gap-4">
+            <a href="Suanguoidung.html" class="w-9 h-9 flex items-center justify-center rounded-xl border border-outline-variant hover:bg-surface-container transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+            </a>
+            <div class="flex flex-col">
+                <h1 class="font-headline-lg text-headline-lg text-red-600 font-bold leading-tight">Xóa người dùng</h1>
+                <nav class="flex items-center gap-1.5 text-[11px] text-on-surface-variant">
+                    <a href="../Dashboard.html" class="hover:text-primary transition-colors">Admin</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <a href="Quanlynguoidung.html" class="hover:text-primary transition-colors">Quản lý người dùng</a>
+                    <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                    <span class="text-red-600 font-semibold">Xóa #UN-1042</span>
+                </nav>
+            </div>
+        </header>
+
+        <div class="flex-1 px-8 py-6 flex items-start justify-center">
+            <div class="w-full max-w-lg space-y-5">
+                <!-- User Card -->
+                <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-red-200 flex-shrink-0">
+                        <img alt="User" class="w-full h-full object-cover"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTJYw52tysZ0-Jm7PBYw5dDfDPNL_mLJKAvH-EuCxEJjD5rDulqSNfe41SeaJ689dYASLDl6e7Q849Pe1jfKvSfBMBeioRYQ9p64Mh37Jl1SIi-A7yFtTF4JbZd9Dx8glFrcZcYzZZWNdjC98yY107hszjmXYNAwMXhTYiHHk1jGl5cW0bbBovzoDZaVA94iLOtnR9-mBoUlZZl9kWqBA1cGPQEcMbJ0BxnFWK3P2B0I5hh7gmkESLp--9t2cwIv7M2CijqHCdws">
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-bold text-primary">Nguyễn Văn A</p>
+                        <p class="text-xs text-on-surface-variant">nva.admin@urbannest.vn</p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-50 text-green-700 border border-green-200">Hoạt động</span>
+                            <span class="text-[10px] text-on-surface-variant">ID: #UN-1042 • Admin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Card -->
+                <div class="bg-red-50 border border-red-200 rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-red-600 text-[22px]">warning</span>
+                        </div>
+                        <h2 class="font-semibold text-red-700 text-base">Hành động này không thể hoàn tác!</h2>
+                    </div>
+                    <p class="text-sm text-red-600">Khi xóa tài khoản, toàn bộ dữ liệu sau đây sẽ bị xóa vĩnh viễn:</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-red-700">
+                            <span class="material-symbols-outlined text-[16px]">cancel</span>
+                            <strong>12 tin đăng</strong> đã tạo (kể cả đã duyệt)
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-red-700">
+                            <span class="material-symbols-outlined text-[16px]">cancel</span>
+                            Toàn bộ <strong>lịch sử giao dịch</strong> và nhật ký
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-red-700">
+                            <span class="material-symbols-outlined text-[16px]">cancel</span>
+                            Tất cả <strong>tin nhắn</strong> và cuộc hội thoại
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-red-700">
+                            <span class="material-symbols-outlined text-[16px]">cancel</span>
+                            Dữ liệu <strong>xác minh danh tính (KYC)</strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Alternative: Soft Lock -->
+                <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex items-center gap-4">
+                    <span class="material-symbols-outlined text-amber-600 text-[24px] flex-shrink-0">lock</span>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-semibold text-amber-700">Thay thế: Khóa tài khoản tạm thời?</p>
+                        <p class="text-xs text-amber-600">Người dùng sẽ không thể đăng nhập nhưng dữ liệu vẫn được giữ lại.</p>
+                    </div>
+                    <button type="button" class="flex-shrink-0 px-4 py-2 rounded-xl bg-amber-100 border border-amber-300 text-amber-700 text-xs font-bold hover:bg-amber-200 transition-colors">
+                        Khóa tài khoản
+                    </button>
+                </div>
+
+                <!-- Confirmation -->
+                <div class="bg-white rounded-2xl border border-outline-variant p-6 shadow-sm space-y-4">
+                    <h3 class="font-semibold text-primary text-sm">Xác nhận xóa</h3>
+                    <p class="text-xs text-on-surface-variant">Nhập tên người dùng <strong class="text-primary">Nguyễn Văn A</strong> để xác nhận:</p>
+                    <input id="confirm-input" class="w-full px-4 py-2.5 border border-outline-variant rounded-xl text-sm outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400/20 transition-all"
+                           type="text" placeholder="Nguyễn Văn A">
+                    <div class="flex gap-3">
+                        <a href="Suanguoidung.html"
+                           class="flex-1 py-2.5 rounded-xl border border-outline-variant text-sm text-on-surface-variant font-semibold hover:bg-surface-container transition-colors text-center">
+                            Hủy bỏ
+                        </a>
+                        <button id="delete-btn" onclick="confirmDelete()"
+                                class="flex-1 py-2.5 rounded-xl bg-red-600 text-white text-sm font-semibold hover:bg-red-700 transition-colors opacity-50 cursor-not-allowed">
+                            Xóa vĩnh viễn
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant mt-auto">
+            <span>© 2024 UrbanNest Admin Panel</span>
+        </footer>
+    </main>
+
+    <script>
+        const input = document.getElementById('confirm-input');
+        const btn   = document.getElementById('delete-btn');
+        const EXPECTED = 'Nguyễn Văn A';
+
+        input.addEventListener('input', () => {
+            const match = input.value.trim() === EXPECTED;
+            btn.classList.toggle('opacity-50', !match);
+            btn.classList.toggle('cursor-not-allowed', !match);
+            btn.disabled = !match;
+        });
+
+        function confirmDelete() {
+            if (input.value.trim() !== EXPECTED) return;
+            btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">progress_activity</span> Đang xóa...';
+            btn.disabled = true;
+            setTimeout(() => window.location.href = 'Quanlynguoidung.html', 1500);
+        }
+    </script>
+</body>
+</html>

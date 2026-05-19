@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Cài đặt - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script src="../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+        .form-input { width: 100%; padding: 10px 14px; border: 1px solid #e1e2e9; border-radius: 12px; font-size: 14px; outline: none; background: #fff; transition: border-color .2s, box-shadow .2s; }
+        .form-input:focus { border-color: #091426; box-shadow: 0 0 0 3px rgba(9,20,38,.08); }
+        .form-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #666; margin-bottom: 6px; }
+        .toggle { position: relative; display: inline-block; width: 42px; height: 24px; }
+        .toggle input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #e1e2e9; transition: .3s; border-radius: 24px; }
+        .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%; }
+        input:checked + .slider { background-color: #091426; }
+        input:checked + .slider:before { transform: translateX(18px); }
+        .settings-section { background: #fff; border-radius: 16px; border: 1px solid #e1e2e9; box-shadow: 0 1px 3px rgba(9,20,38,.04); overflow: hidden; }
+        .settings-section-header { padding: 20px 24px; border-bottom: 1px solid #e1e2e9; }
+        .settings-row { padding: 16px 24px; border-bottom: 1px solid #f0f1f5; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .settings-row:last-child { border-bottom: none; }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+    <main class="admin-main">
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center justify-between">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg text-primary font-bold">Cài đặt hệ thống</h1>
+                <p class="text-on-surface-variant text-sm">Quản lý cấu hình và thông số vận hành của UrbanNest Admin.</p>
+            </div>
+            <button id="save-all-btn"
+                    class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary/90 active:scale-95 transition-all shadow-sm">
+                <span class="material-symbols-outlined text-[18px]">save</span>
+                Lưu tất cả thay đổi
+            </button>
+        </header>
+
+        <div class="flex-1 px-8 py-6">
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- Site Settings -->
+                <div class="settings-section">
+                    <div class="settings-section-header flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px] text-on-surface-variant">public</span>
+                        <h2 class="font-title-md text-primary font-semibold">Thông tin website</h2>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <label class="form-label">Tên website</label>
+                            <input class="form-input" type="text" value="UrbanNest">
+                        </div>
+                        <div>
+                            <label class="form-label">Mô tả</label>
+                            <textarea class="form-input" rows="2">Nền tảng tìm kiếm phòng trọ, căn hộ hàng đầu Việt Nam.</textarea>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="form-label">Email liên hệ</label>
+                                <input class="form-input" type="email" value="admin@urbannest.vn">
+                            </div>
+                            <div>
+                                <label class="form-label">Hotline</label>
+                                <input class="form-input" type="tel" value="1900 1234">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moderation Settings -->
+                <div class="settings-section">
+                    <div class="settings-section-header flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px] text-on-surface-variant">fact_check</span>
+                        <h2 class="font-title-md text-primary font-semibold">Kiểm duyệt nội dung</h2>
+                    </div>
+                    <div class="settings-row">
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Duyệt tự động bằng AI</p>
+                            <p class="text-xs text-on-surface-variant">Cho phép AI tự động duyệt tin đăng có điểm tin cậy &gt; 85%</p>
+                        </div>
+                        <label class="toggle flex-shrink-0">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-row">
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Yêu cầu xác minh ảnh</p>
+                            <p class="text-xs text-on-surface-variant">Bắt buộc người dùng upload tối thiểu 3 ảnh chất lượng cao</p>
+                        </div>
+                        <label class="toggle flex-shrink-0">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-row">
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Gắn cờ giá bất thường</p>
+                            <p class="text-xs text-on-surface-variant">Tự động gắn cờ khi giá thấp hơn 40% so với mặt bằng chung</p>
+                        </div>
+                        <label class="toggle flex-shrink-0">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-row">
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Phát hiện nội dung trùng lặp</p>
+                            <p class="text-xs text-on-surface-variant">Từ chối tự động các tin đăng có nội dung trùng &gt; 70%</p>
+                        </div>
+                        <label class="toggle flex-shrink-0">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="settings-section">
+                    <div class="settings-section-header flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px] text-on-surface-variant">notifications</span>
+                        <h2 class="font-title-md text-primary font-semibold">Thông báo</h2>
+                    </div>
+                    <div class="settings-row">
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Email khi có tin mới chờ duyệt</p>
+                            <p class="text-xs text-on-surface-variant">Gửi email tổng hợp mỗi 4 tiếng nếu có tin chờ duyệt</p>
+                        </div>
+                        <label class="toggle flex-shrink-0">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-row">
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Cảnh báo báo cáo người dùng</p>
+                            <p class="text-xs text-on-surface-variant">Thông báo ngay khi có &gt; 3 báo cáo cho cùng 1 tin đăng</p>
+                        </div>
+                        <label class="toggle flex-shrink-0">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-row">
+                        <div>
+                            <p class="text-sm font-semibold text-primary">Báo cáo thống kê hàng tuần</p>
+                            <p class="text-xs text-on-surface-variant">Email tóm tắt số liệu mỗi thứ Hai lúc 8:00 sáng</p>
+                        </div>
+                        <label class="toggle flex-shrink-0">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Listing Rules -->
+                <div class="settings-section">
+                    <div class="settings-section-header flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px] text-on-surface-variant">rule</span>
+                        <h2 class="font-title-md text-primary font-semibold">Quy định tin đăng</h2>
+                    </div>
+                    <div class="p-6 grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="form-label">Thời hạn tin đăng mặc định (ngày)</label>
+                            <input class="form-input" type="number" value="30">
+                        </div>
+                        <div>
+                            <label class="form-label">Số ảnh tối đa / tin</label>
+                            <input class="form-input" type="number" value="10">
+                        </div>
+                        <div>
+                            <label class="form-label">Kích thước ảnh tối đa (MB)</label>
+                            <input class="form-input" type="number" value="5">
+                        </div>
+                        <div>
+                            <label class="form-label">Số tin đăng tối đa / người dùng</label>
+                            <input class="form-input" type="number" value="5">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Account -->
+                <div class="settings-section">
+                    <div class="settings-section-header flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px] text-on-surface-variant">manage_accounts</span>
+                        <h2 class="font-title-md text-primary font-semibold">Tài khoản admin</h2>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-4 mb-4 pb-4 border-b border-outline-variant">
+                            <div class="w-16 h-16 rounded-2xl overflow-hidden ring-2 ring-primary/20">
+                                <img alt="Admin" class="w-full h-full object-cover"
+                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTJYw52tysZ0-Jm7PBYw5dDfDPNL_mLJKAvH-EuCxEJjD5rDulqSNfe41SeaJ689dYASLDl6e7Q849Pe1jfKvSfBMBeioRYQ9p64Mh37Jl1SIi-A7yFtTF4JbZd9Dx8glFrcZcYzZZWNdjC98yY107hszjmXYNAwMXhTYiHHk1jGl5cW0bbBovzoDZaVA94iLOtnR9-mBoUlZZl9kWqBA1cGPQEcMbJ0BxnFWK3P2B0I5hh7gmkESLp--9t2cwIv7M2CijqHCdws">
+                            </div>
+                            <div>
+                                <p class="font-bold text-primary">Nguyễn Văn Admin</p>
+                                <p class="text-xs text-on-surface-variant">Quản trị viên hệ thống</p>
+                                <p class="text-xs text-on-surface-variant mt-0.5">admin@urbannest.vn</p>
+                            </div>
+                            <button class="ml-auto text-sm text-primary border border-outline-variant px-4 py-2 rounded-xl hover:bg-surface-container transition-colors font-semibold">
+                                Đổi ảnh đại diện
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="form-label">Họ và tên</label>
+                                <input class="form-input" type="text" value="Nguyễn Văn Admin">
+                            </div>
+                            <div>
+                                <label class="form-label">Email</label>
+                                <input class="form-input" type="email" value="admin@urbannest.vn">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Mật khẩu mới (để trống nếu không đổi)</label>
+                            <input class="form-input" type="password" placeholder="••••••••">
+                        </div>
+                        <div>
+                            <label class="form-label">Xác nhận mật khẩu mới</label>
+                            <input class="form-input" type="password" placeholder="••••••••">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Danger Zone -->
+                <div class="bg-red-50 rounded-2xl border border-red-200 p-6 space-y-3">
+                    <h2 class="font-title-md text-red-700 font-semibold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">warning</span>
+                        Vùng nguy hiểm
+                    </h2>
+                    <p class="text-xs text-red-600">Những thao tác này không thể hoàn tác. Hãy thực hiện cẩn thận.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="px-4 py-2 rounded-xl border border-red-300 text-red-600 text-sm font-semibold hover:bg-red-100 transition-colors">
+                            Xóa tất cả tin đăng đã hết hạn
+                        </button>
+                        <button class="px-4 py-2 rounded-xl border border-red-300 text-red-600 text-sm font-semibold hover:bg-red-100 transition-colors">
+                            Xóa log hệ thống cũ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant mt-auto">
+            <span>© 2024 UrbanNest Admin Panel</span>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('save-all-btn').addEventListener('click', function() {
+            const orig = this.innerHTML;
+            this.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span> Đã lưu!';
+            this.classList.add('bg-green-600');
+            this.disabled = true;
+            setTimeout(() => {
+                this.innerHTML = orig;
+                this.classList.remove('bg-green-600');
+                this.disabled = false;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

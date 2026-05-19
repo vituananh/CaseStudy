@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Tin đăng của tôi - UrbanNest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/auth.js"></script>
+
+</head>
+
+<body class="bg-surface text-on-surface min-h-screen flex antialiased">
+    <!-- SideNavBar Component -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant h-20">
+        <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+            <div class="flex items-center gap-12">
+                <a class="text-title-lg font-display font-black tracking-tight text-primary" href="../Trangchu.html">UrbanNest</a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium" href="../Trangchu.html">Trang chủ</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="../Dangtin.html">Tin đăng</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="#">Blog</a>
+                </nav>
+            </div>
+            <div id="header-auth-group" class="flex items-center gap-4">
+                <a href="../Dangnhap.html"
+                    class="flex text-on-surface-variant hover:text-primary font-title-md px-4 py-2 transition-all">Đăng
+                    nhập</a>
+                <a href="../Dangtin.html"
+                    class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-title-md hover:bg-primary/90 active:scale-95 transition-all shadow-md">Đăng
+                    tin</a>
+            </div>
+        </div>
+    </header>
+    <div class="flex flex-1 pt-20">
+        <!-- SideNavBar (Shared Component) -->
+        <aside
+            class="bg-surface-container-lowest border-r border-outline-variant shadow-md h-[calc(100vh-5rem)] w-64 fixed left-0 top-20 flex flex-col p-4 space-y-2 hidden md:flex z-40">
+            <!-- Header / Profile -->
+            <div class="flex items-center gap-3 mb-6 p-2">
+                <img alt="Admin Profile" class="w-12 h-12 rounded-full object-cover border border-outline-variant"
+                    data-alt="A professional headshot of a young male property manager in a well-lit, minimalist modern office. The lighting is bright and soft, creating a clean, high-end corporate aesthetic. The man is subtly smiling, dressed in a crisp white shirt against a neutral slate background. The mood is approachable yet highly professional and trustworthy."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_oesoV75mZN1cAjthWegrdxS4fA8wgGMcN5Yu2b_YLRWrUldOkYeBUuZSlXncK6jZF5oh0OLorOecM_ooR-IAy7QXCBwlg-ZyTyCR9jwrDFiR5QZ5QZEHzIpXTGhQzVzIPJ_IiQLvnwJ8F4MPtw36PIeQ5nD4qFrEg9buLuvEWXUq20nmGGPnGJFjqYkJKSwUbWBp1ByjKU7PMpvYbcPfXBazo41Mlr8Dl_9dOenwjXkPHr_Um79qfmnVkua33-v58KVXpSsmGKg" />
+                <div>
+                    <h2 class="font-title-md text-title-md font-bold text-primary">Quản lý tài khoản</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Thành viên Premium</p>
+                </div>
+            </div>
+            <!-- CTA -->
+            <button
+                class="w-full bg-primary-container text-on-primary text-center py-2.5 rounded-lg font-title-md text-title-md mb-4 hover:opacity-90 transition-opacity">
+                Đăng tin mới
+            </button>
+            <!-- Main Navigation -->
+            <nav class="flex-1 space-y-1">
+                <!-- Inactive Tab 1 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="font-label-md text-label-md">Tổng quan</span>
+                </a>
+                <!-- Inactive Tab 2 -->
+                <a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 font-semibold hover:translate-x-1 transition-transform duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined"
+                        style="font-variation-settings: 'FILL' 1;">description</span>
+                    <span class="font-label-md text-label-md">Tin đăng của tôi</span>
+                </a>
+                <!-- Active Tab 3 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">mail</span>
+                    <span class="font-label-md text-label-md">Tin nhắn</span>
+                </a>
+                <!-- Inactive Tab 4 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">event</span>
+                    <span class="font-label-md text-label-md">Lịch xem phòng</span>
+                </a>
+                <!-- Inactive Tab 5 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="font-label-md text-label-md">Cài đặt</span>
+                </a>
+            </nav>
+            <!-- Footer Navigation -->
+            <div class="mt-auto pt-4 border-t border-outline-variant space-y-1">
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">help</span>
+                    <span class="font-label-md text-label-md">Hỗ trợ</span>
+                </a>
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="font-label-md text-label-md">Đăng xuất</span>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="ml-64 flex-1 p-margin-desktop max-w-container-max mx-auto">
+            <!-- Page Header -->
+            <header class="mb-stack-lg flex justify-between items-end">
+                <div>
+                    <h1 class="font-headline-lg text-headline-lg text-primary">Tin đăng của tôi</h1>
+                    <p class="font-body-md text-body-md text-on-surface-variant mt-2">Quản lý và cập nhật thông tin các
+                        phòng trọ bạn đang cho thuê.</p>
+                </div>
+                <!-- Quick Stats/Filter Context -->
+                <div class="flex gap-4">
+                    <div
+                        class="bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-2 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-on-surface-variant text-sm">visibility</span>
+                        <span class="font-body-sm text-body-sm text-on-surface-variant">Lượt xem: <strong
+                                class="text-primary">1.2k</strong></span>
+                    </div>
+                </div>
+            </header>
+            <!-- Tab Navigation -->
+            <div class="border-b border-outline-variant mb-stack-lg">
+                <nav aria-label="Tabs" class="flex space-x-8">
+                    <button
+                        class="border-primary text-primary font-title-md text-title-md border-b-2 py-4 px-1 flex items-center gap-2">
+                        Tất cả
+                        <span
+                            class="bg-surface-container-high text-on-surface px-2 py-0.5 rounded-full font-label-md text-label-md">12</span>
+                    </button>
+                    <button
+                        class="border-transparent text-on-surface-variant hover:text-primary hover:border-outline-variant font-title-md text-title-md border-b-2 py-4 px-1 transition-colors flex items-center gap-2">
+                        Đang hiển thị
+                        <span
+                            class="bg-surface-container-high text-on-surface px-2 py-0.5 rounded-full font-label-md text-label-md">8</span>
+                    </button>
+                    <button
+                        class="border-transparent text-on-surface-variant hover:text-primary hover:border-outline-variant font-title-md text-title-md border-b-2 py-4 px-1 transition-colors flex items-center gap-2">
+                        Đã cho thuê
+                        <span
+                            class="bg-surface-container-high text-on-surface px-2 py-0.5 rounded-full font-label-md text-label-md">3</span>
+                    </button>
+                    <button
+                        class="border-transparent text-on-surface-variant hover:text-primary hover:border-outline-variant font-title-md text-title-md border-b-2 py-4 px-1 transition-colors flex items-center gap-2">
+                        Đang chờ duyệt
+                        <span
+                            class="bg-surface-container-high text-on-surface px-2 py-0.5 rounded-full font-label-md text-label-md">1</span>
+                    </button>
+                </nav>
+            </div>
+            <!-- Listings Grid (Bento/Card Layout) -->
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-gutter">
+                <!-- Listing Card 1 (Active) -->
+                <article
+                    class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row transition-shadow hover:border-outline hover:shadow-sm">
+                    <!-- Image Section -->
+                    <div class="w-full md:w-48 h-48 md:h-auto relative shrink-0">
+                        <img alt="Phòng trọ cao cấp Lê Lợi" class="w-full h-full object-cover"
+                            data-alt="A bright, minimalist interior of a modern apartment for rent. The room features clean white walls, light wood flooring, and large windows letting in abundant natural daylight. The design aesthetic is clinical yet inviting, utilizing an achromatic palette with subtle slate accents, characteristic of a high-end urban rental marketplace."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX6jdlKY2GJGiOI2raXa29qfUGLnx2dNLE4bj2jTz4KIl_Gkj_r954nYR3U2xMwMHpsreCaesBvn3XaaryfpnDyKOGj_ihBr4jhjUccEpoPssfnpnYpFMED1K2ETYcvacRKMlaoFg31BaLIqPfDYhGWWLOdyTgXME5mNnmYK3uJmZZu0zSaZokdx6bdsTjlLbJl0oLn6Glui9NFuHNeLO0vSQL_GhvrUyxgkXJN_dJpP8kWntzjIdMbxx04sDwzc-TNyf-rbYu61A">
+                        <div
+                            class="absolute top-2 left-2 bg-[#F1F5F9] text-primary px-2 py-1 rounded font-label-md text-label-md flex items-center gap-1 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            Đang hiển thị
+                        </div>
+                    </div>
+                    <!-- Content Section -->
+                    <div class="p-4 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-title-md text-title-md text-primary leading-tight">Phòng trọ cao cấp Studio,
+                                Full Nội Thất Lê Lợi</h3>
+                            <p class="font-title-md text-title-md text-primary whitespace-nowrap ml-4">3.5tr/tháng</p>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mb-4 line-clamp-2">Số 12 ngõ 4, Lê
+                            Lợi,
+                            TP Vinh. Phòng mới 100%, thoáng mát, an ninh tốt, gần chợ và trường đại học.</p>
+                        <!-- Meta Stats -->
+                        <div class="flex gap-4 mb-4 mt-auto">
+                            <div class="flex items-center gap-1 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-sm">visibility</span>
+                                <span class="font-body-sm text-body-sm">342</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-sm">favorite</span>
+                                <span class="font-body-sm text-body-sm">15</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                <span class="font-body-sm text-body-sm">Cập nhật: Hôm nay</span>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex gap-2 border-t border-outline-variant pt-3">
+                            <button
+                                class="flex-1 bg-surface-container-lowest border border-outline-variant text-primary py-2 rounded-lg font-body-sm text-body-sm hover:bg-surface-container-low transition-colors">
+                                Chỉnh sửa
+                            </button>
+                            <button
+                                class="flex-1 bg-surface-container-lowest border border-outline-variant text-on-surface-variant py-2 rounded-lg font-body-sm text-body-sm hover:text-error hover:border-error-container transition-colors">
+                                Gỡ tin
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!-- Listing Card 2 (Active) -->
+                <article
+                    class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row transition-shadow hover:border-outline hover:shadow-sm">
+                    <div class="w-full md:w-48 h-48 md:h-auto relative shrink-0">
+                        <img alt="Căn hộ dịch vụ Hưng Phúc" class="w-full h-full object-cover"
+                            data-alt="A clean, minimalist bedroom in a modern rental unit. The room features a neatly made bed with white linens, a simple wooden nightstand, and soft, natural light filtering through sheer curtains. The overall aesthetic is calm, sophisticated, and strictly adheres to an achromatic-plus palette with high clarity and no visual clutter."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu88Qg__FSwHLqbOf2UnUd61mimSWIpxVElD6L0rGVeR8rIUpm9d_PJnePYb-9nRc-AtFpF7i_jGfSfEYDUEBKT_nqiyghv_ph4XG6D8M3BYhMWdrzY7STJ1YKyKVaBvDyFl2f5-Pl6SYCXPIQai4fpbuoE5-nh-n3AHDtqpsfG8vgq_LLGKWPx_lGUUWUZc592GEgb4V1pZbMAg6nNc0KwuGw2mojVMIEa7jf_R5s1Azu7T_i-trSVGqMjVTOhd6D15jgqPqfwqc">
+                        <div
+                            class="absolute top-2 left-2 bg-[#F1F5F9] text-primary px-2 py-1 rounded font-label-md text-label-md flex items-center gap-1 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            Đang hiển thị
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-title-md text-title-md text-primary leading-tight">Căn hộ dịch vụ 1PN khu
+                                vực
+                                Hưng Phúc</h3>
+                            <p class="font-title-md text-title-md text-primary whitespace-nowrap ml-4">4.2tr/tháng</p>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mb-4 line-clamp-2">Đầy đủ tiện nghi,
+                            chỉ
+                            việc xách vali vào ở. Dịch vụ dọn vệ sinh 2 lần/tuần, wifi tốc độ cao miễn phí.</p>
+                        <div class="flex gap-4 mb-4 mt-auto">
+                            <div class="flex items-center gap-1 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-sm">visibility</span>
+                                <span class="font-body-sm text-body-sm">215</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-sm">favorite</span>
+                                <span class="font-body-sm text-body-sm">8</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                <span class="font-body-sm text-body-sm">Cập nhật: 2 ngày trước</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 border-t border-outline-variant pt-3">
+                            <button
+                                class="flex-1 bg-surface-container-lowest border border-outline-variant text-primary py-2 rounded-lg font-body-sm text-body-sm hover:bg-surface-container-low transition-colors">
+                                Chỉnh sửa
+                            </button>
+                            <button
+                                class="flex-1 bg-surface-container-lowest border border-outline-variant text-on-surface-variant py-2 rounded-lg font-body-sm text-body-sm hover:text-error hover:border-error-container transition-colors">
+                                Gỡ tin
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!-- Listing Card 3 (Rented) -->
+                <article
+                    class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row transition-shadow hover:border-outline hover:shadow-sm opacity-80">
+                    <div class="w-full md:w-48 h-48 md:h-auto relative shrink-0">
+                        <img alt="Phòng trọ giá rẻ Bến Thủy" class="w-full h-full object-cover grayscale"
+                            data-alt="A small, neat room in an urban setting, presented in black and white to indicate unavailability. The space is minimalist, featuring basic furnishings and a window showing a city view. The lighting is balanced, maintaining the clean, professional, and slightly austere visual identity of the high-end rental platform."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoerlT1RVEQcuKmTEFhosizSSgBWvAG4ydMPOSVgJBQiq-nLpBBKAfpeuG-r_2OqoweV4Ad-KChkzzjiSxjMJIq2opmXknt17jWPBDM7nYfVkEO_JnTFuRA-8o2wjiNw3mv22_kJSy8W5Q5Olj8ipuox9t4GShUks6HKgOfo2msqj-_qCgK2B09rl4748bXY8RrpsOkyW5SUnvpZN1zFKWTNzn8QnE5oNnisDL65xgI02s9M1Ftq0cMw8nH0o0b_KAkWQ1VZW9POU">
+                        <div
+                            class="absolute top-2 left-2 bg-[#F1F5F9] text-on-surface-variant px-2 py-1 rounded font-label-md text-label-md flex items-center gap-1 shadow-sm border border-outline-variant">
+                            <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+                            Đã cho thuê
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-title-md text-title-md text-on-surface-variant leading-tight">Phòng trọ giá
+                                rẻ
+                                sinh viên gần ĐH Vinh, Bến Thủy</h3>
+                            <p class="font-title-md text-title-md text-on-surface-variant whitespace-nowrap ml-4">
+                                1.8tr/tháng</p>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-outline mb-4 line-clamp-2">Phòng trọ khép kín, an ninh
+                            tốt,
+                            giờ giấc tự do. Phù hợp cho 1-2 sinh viên.</p>
+                        <div class="flex gap-4 mb-4 mt-auto">
+                            <div class="flex items-center gap-1 text-outline">
+                                <span class="material-symbols-outlined text-sm">visibility</span>
+                                <span class="font-body-sm text-body-sm">560</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-outline">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                <span class="font-body-sm text-body-sm">Cho thuê: 15/10/2023</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 border-t border-outline-variant pt-3">
+                            <button
+                                class="flex-1 bg-surface-container-lowest border border-outline-variant text-primary py-2 rounded-lg font-body-sm text-body-sm hover:bg-surface-container-low transition-colors">
+                                Đăng lại
+                            </button>
+                            <button
+                                class="flex-1 bg-surface-container-lowest border border-outline-variant text-on-surface-variant py-2 rounded-lg font-body-sm text-body-sm hover:bg-surface-container-low transition-colors">
+                                Ẩn tin
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!-- Listing Card 4 (Pending) -->
+                <article
+                    class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row transition-shadow hover:border-outline hover:shadow-sm">
+                    <div
+                        class="w-full md:w-48 h-48 md:h-auto relative shrink-0 bg-surface-container flex items-center justify-center">
+                        <span class="material-symbols-outlined text-4xl text-outline-variant">image</span>
+                        <div
+                            class="absolute top-2 left-2 bg-[#F1F5F9] text-tertiary-container px-2 py-1 rounded font-label-md text-label-md flex items-center gap-1 shadow-sm border border-tertiary-fixed-dim">
+                            <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+                            Đang chờ duyệt
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-title-md text-title-md text-primary leading-tight">Mặt bằng kinh doanh đường
+                                Nguyễn Văn Cừ</h3>
+                            <p class="font-title-md text-title-md text-primary whitespace-nowrap ml-4">12tr/tháng</p>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mb-4 line-clamp-2">Diện tích 50m2,
+                            mặt
+                            tiền 5m, vỉa hè rộng. Thích hợp mở shop quần áo, tiệm nail, văn phòng nhỏ.</p>
+                        <div class="flex gap-4 mb-4 mt-auto">
+                            <div class="flex items-center gap-1 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-sm">schedule</span>
+                                <span class="font-body-sm text-body-sm">Đã gửi: 2 giờ trước</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 border-t border-outline-variant pt-3">
+                            <button
+                                class="flex-1 bg-surface-container-lowest border border-outline-variant text-primary py-2 rounded-lg font-body-sm text-body-sm hover:bg-surface-container-low transition-colors">
+                                Xem trước
+                            </button>
+                            <button
+                                class="flex-1 bg-surface-container-lowest border border-outline-variant text-on-surface-variant py-2 rounded-lg font-body-sm text-body-sm hover:text-error hover:border-error-container transition-colors">
+                                Hủy đăng
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <!-- Pagination (Minimalist) -->
+            <div class="mt-stack-lg flex justify-center items-center gap-2">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container-low disabled:opacity-50"
+                    disabled="">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded bg-primary text-on-primary font-body-sm text-body-sm">1</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-body-sm text-body-sm">2</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-body-sm text-body-sm">3</button>
+                <span class="text-on-surface-variant px-2">...</span>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container-low disabled:opacity-50">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </main>
+</body>
+
+</html>

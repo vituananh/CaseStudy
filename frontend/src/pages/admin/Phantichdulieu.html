@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Phân tích dữ liệu nâng cao - UrbanNest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body  class="bg-surface-container-low text-on-surface font-body-md antialiased min-h-screen flex unified-layout">
+    <!-- Shared Component: SideNavBar -->
+    <aside
+        class="h-screen w-64 fixed left-0 top-0 bg-white border-r border-outline-variant flex flex-col p-4 space-y-2 z-50">
+        <div class="mb-8 px-2 flex items-center gap-3">
+            <span class="font-title-md text-title-md font-bold text-primary">UrbanNest</span>
+        </div>
+        <div class="flex items-center gap-3 mb-6 px-2">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+                <img alt="Admin Profile" class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTJYw52tysZ0-Jm7PBYw5dDfDPNL_mLJKAvH-EuCxEJjD5rDulqSNfe41SeaJ689dYASLDl6e7Q849Pe1jfKvSfBMBeioRYQ9p64Mh37Jl1SIi-A7yFtTF4JbZd9Dx8glFrcZcYzZZWNdjC98yY107hszjmXYNAwMXhTYiHHk1jGl5cW0bbBovzoDZaVA94iLOtnR9-mBoUlZZl9kWqBA1cGPQEcMbJ0BxnFWK3P2B0I5hh7gmkESLp--9t2cwIv7M2CijqHCdws">
+            </div>
+            <div class="flex flex-col">
+                <span class="font-label-md text-label-md text-primary font-semibold">Admin Profile</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Quản trị viên</span>
+            </div>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Dashboard.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                <span class="font-label-md text-label-md">Tổng quan</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Quanlynguoidung/Quanlynguoidung.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+                <span class="font-label-md text-label-md">Quản lý người dùng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Quanlytindang.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+                <span class="font-label-md text-label-md">Quản lý tin đăng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Duyetbai.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="fact_check">fact_check</span>
+                <span class="font-label-md text-label-md">Duyệt bài</span>
+            </a>
+            <a class="flex items-center gap-3 bg-secondary-container text-primary rounded-lg px-4 py-3 font-semibold transition-all"
+                href="Phantichdulieu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="insights">insights</span>
+                <span class="font-label-md text-label-md">Phân tích dữ liệu</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Caidat.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                <span class="font-label-md text-label-md">Cài đặt</span>
+            </a>
+        </nav>
+        <div class="pt-4 border-t border-outline-variant space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                <span class="font-label-md text-label-md">Hỗ trợ</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                <span class="font-label-md text-label-md">Đăng xuất</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="admin-main-container">
+        <!-- Header Section -->
+        <header class="admin-page-header">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">Phân tích dữ liệu
+                </h1>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Tổng quan hiệu suất nền tảng và tương
+                    tác người dùng</p>
+            </div>
+            <!-- Time Filter (Segmented Control) -->
+            <div class="flex items-center bg-surface-container-highest p-1 rounded-lg border border-outline-variant/30">
+                <button
+                    class="px-4 py-1.5 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">7
+                    ngày</button>
+                <button
+                    class="px-4 py-1.5 bg-surface-container-lowest rounded-md font-label-md text-label-md text-primary shadow-sm border border-outline-variant/20 transition-colors">30
+                    ngày</button>
+                <button
+                    class="px-4 py-1.5 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Năm
+                    nay</button>
+            </div>
+        </header>
+        <!-- KPI Cards Section (Bento Grid Style) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-gap">
+            <!-- KPI 1: Total Users -->
+            <div class="admin-card flex flex-col justify-between">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="admin-label">Tổng người dùng</span>
+                    <div
+                        class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-sm">group</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-display-lg text-display-lg text-primary">15,240</div>
+                    <div class="flex items-center gap-1 mt-2 text-[#059669]">
+                        <span class="material-symbols-outlined text-sm">trending_up</span>
+                        <span class="font-body-sm text-body-sm font-medium">+12.5% so với kỳ trước</span>
+                    </div>
+                </div>
+            </div>
+            <!-- KPI 2: Conversion Rate -->
+            <div class="admin-card flex flex-col justify-between">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="admin-label">Tỷ lệ chuyển đổi</span>
+                    <div
+                        class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-sm">monitoring</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-display-lg text-display-lg text-primary">4.8%</div>
+                    <div class="flex items-center gap-1 mt-2 text-[#059669]">
+                        <span class="material-symbols-outlined text-sm">trending_up</span>
+                        <span class="font-body-sm text-body-sm font-medium">+0.5% so với kỳ trước</span>
+                    </div>
+                </div>
+            </div>
+            <!-- KPI 3: New User Growth -->
+            <div class="admin-card flex flex-col justify-between">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="admin-label">Tăng trưởng người dùng mới</span>
+                    <div
+                        class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-sm">person_add</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-display-lg text-display-lg text-primary">840</div>
+                    <div class="flex items-center gap-1 mt-2 text-[#DC2626]">
+                        <span class="material-symbols-outlined text-sm">trending_down</span>
+                        <span class="font-body-sm text-body-sm font-medium">-2.1% so với kỳ trước</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Charts Section (Asymmetric Layout) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+            <!-- Revenue Line Chart (Spans 2 columns) -->
+            <div class="lg:col-span-2 admin-card">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h3 class="font-title-lg text-title-lg text-primary">Doanh thu theo tháng</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Đơn vị: Triệu VNĐ</p>
+                    </div>
+                    <button class="text-on-surface-variant hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                </div>
+                <!-- Mock SVG Line Chart -->
+                <div class="w-full h-[280px] relative mt-4">
+                    <!-- Y-Axis labels -->
+                    <div
+                        class="absolute left-0 top-0 h-full flex flex-col justify-between text-on-surface-variant font-label-md text-label-md text-right pr-4 w-12 border-r border-outline-variant/30 pb-6">
+                        <span>400</span>
+                        <span>300</span>
+                        <span>200</span>
+                        <span>100</span>
+                        <span>0</span>
+                    </div>
+                    <!-- Graph Area -->
+                    <div class="absolute left-12 right-0 top-0 h-full pb-6">
+                        <!-- Horizontal Grid Lines -->
+                        <div class="h-1/4 border-b border-outline-variant/10 w-full"></div>
+                        <div class="h-1/4 border-b border-outline-variant/10 w-full"></div>
+                        <div class="h-1/4 border-b border-outline-variant/10 w-full"></div>
+                        <div class="h-1/4 border-b border-outline-variant/30 w-full"></div>
+                        <!-- SVG Line -->
+                        <svg class="absolute inset-0 h-full w-full overflow-visible" preserveaspectratio="none"
+                            viewbox="0 0 100 100">
+                            <!-- Gradient for fill -->
+                            <defs>
+                                <lineargradient id="lineGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#091426" stop-opacity="0.2"></stop>
+                                    <stop offset="100%" stop-color="#091426" stop-opacity="0"></stop>
+                                </lineargradient>
+                            </defs>
+                            <!-- Fill Area -->
+                            <polygon fill="url(#lineGrad)"
+                                points="0,100 0,60 16,40 33,50 50,20 66,35 83,10 100,25 100,100"></polygon>
+                            <!-- Line -->
+                            <polyline fill="none" points="0,60 16,40 33,50 50,20 66,35 83,10 100,25" stroke="#091426"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline>
+                            <!-- Data Points -->
+                            <circle cx="16" cy="40" fill="#ffffff" r="1.5" stroke="#091426" stroke-width="1"></circle>
+                            <circle cx="50" cy="20" fill="#ffffff" r="1.5" stroke="#091426" stroke-width="1"></circle>
+                            <circle cx="83" cy="10" fill="#ffffff" r="1.5" stroke="#091426" stroke-width="1"></circle>
+                        </svg>
+                    </div>
+                    <!-- X-Axis Labels -->
+                    <div
+                        class="absolute bottom-0 left-12 right-0 flex justify-between text-on-surface-variant font-label-md text-label-md pt-2">
+                        <span>T1</span>
+                        <span>T2</span>
+                        <span>T3</span>
+                        <span>T4</span>
+                        <span>T5</span>
+                        <span>T6</span>
+                        <span>T7</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Occupancy Donut Chart -->
+            <div class="admin-card flex flex-col items-center">
+                <div class="w-full flex justify-between items-center mb-8">
+                    <h3 class="font-title-lg text-title-lg text-primary">Tỷ lệ lấp đầy</h3>
+                    <button class="text-on-surface-variant hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                </div>
+                <!-- Custom CSS Donut -->
+                <div class="donut-chart mb-6">
+                    <div class="absolute z-10 flex flex-col items-center">
+                        <span class="font-display-lg text-[32px] font-bold text-primary leading-none">85%</span>
+                        <span class="font-label-md text-label-md text-on-surface-variant mt-1">Đã cho thuê</span>
+                    </div>
+                </div>
+                <!-- Legend -->
+                <div class="w-full flex flex-col gap-3 mt-auto">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-primary"></div>
+                            <span class="font-body-sm text-body-sm text-on-surface">Đã cho thuê</span>
+                        </div>
+                        <span class="font-title-md text-title-md text-primary">85%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-surface-container-highest"></div>
+                            <span class="font-body-sm text-body-sm text-on-surface">Trống</span>
+                        </div>
+                        <span class="font-title-md text-title-md text-primary">15%</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Area Distribution Bar Chart (Full Width Bottom) -->
+            <div class="lg:col-span-3 admin-card mt-gutter">
+                <div class="flex justify-between items-center mb-8">
+                    <div>
+                        <h3 class="font-title-lg text-title-lg text-primary">Phân bổ tin đăng theo khu vực tại Vinh</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Số lượng tin đang hoạt động</p>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 text-on-surface-variant border border-outline-variant/30 px-3 py-1.5 rounded-md hover:bg-surface-container-lowest transition-colors font-label-md text-label-md">
+                        <span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Lọc khu vực
+                    </button>
+                </div>
+                <!-- Custom CSS Bar Chart -->
+                <div class="bar-chart-container mt-4">
+                    <div class="bar" style="height: 90%;">
+                        <span class="bar-label font-label-md text-label-md text-on-surface-variant">P. Hưng Bình</span>
+                    </div>
+                    <div class="bar" style="height: 60%; opacity: 0.8;">
+                        <span class="bar-label font-label-md text-label-md text-on-surface-variant">P. Lê Lợi</span>
+                    </div>
+                    <div class="bar" style="height: 75%; opacity: 0.9;">
+                        <span class="bar-label font-label-md text-label-md text-on-surface-variant">P. Bến Thủy</span>
+                    </div>
+                    <div class="bar" style="height: 40%; opacity: 0.6;">
+                        <span class="bar-label font-label-md text-label-md text-on-surface-variant">P. Trường Thi</span>
+                    </div>
+                    <div class="bar" style="height: 30%; opacity: 0.5;">
+                        <span class="bar-label font-label-md text-label-md text-on-surface-variant">P. Quang
+                            Trung</span>
+                    </div>
+                    <div class="bar" style="height: 50%; opacity: 0.7;">
+                        <span class="bar-label font-label-md text-label-md text-on-surface-variant">P. Hà Huy Tập</span>
+                    </div>
+                    <div class="bar" style="height: 20%; opacity: 0.4;">
+                        <span class="bar-label font-label-md text-label-md text-on-surface-variant">Khác</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

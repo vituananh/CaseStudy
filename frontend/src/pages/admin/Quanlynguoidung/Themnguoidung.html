@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Thêm người dùng - UrbanNest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body  class="text-on-background font-body-md antialiased flex unified-layout">
+    <!-- SideNavBar -->
+    <aside
+        class="h-screen w-64 fixed left-0 top-0 bg-white border-r border-outline-variant flex flex-col p-4 space-y-2 z-50">
+        <div class="mb-8 px-2 flex items-center gap-3">
+            <span class="font-title-md text-title-md font-bold text-primary">UrbanNest</span>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="../Dashboard.html">
+                <span class="material-symbols-outlined text-[20px]">dashboard</span>
+                <span class="font-label-md text-label-md">Tổng quan</span>
+            </a>
+            <a class="flex items-center gap-3 bg-secondary-container text-primary rounded-lg px-4 py-3 font-semibold transition-all"
+                href="Quanlynguoidung.html">
+                <span class="material-symbols-outlined text-[20px]">group</span>
+                <span class="font-label-md text-label-md">Quản lý người dùng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="../Quanlytindang.html">
+                <span class="material-symbols-outlined text-[20px]">description</span>
+                <span class="font-label-md text-label-md">Quản lý tin đăng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="../Duyetbai.html">
+                <span class="material-symbols-outlined text-[20px]">fact_check</span>
+                <span class="font-label-md text-label-md">Duyệt bài</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="admin-main-container">
+        <header class="admin-page-header">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Tạo người dùng mới</h1>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Thiết lập tài khoản và phân quyền truy
+                    cập</p>
+            </div>
+            <div class="flex gap-3">
+                <a href="Quanlynguoidung.html" class="admin-btn admin-btn-secondary">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Quay lại
+                </a>
+                <button form="addUserForm" type="submit" class="admin-btn admin-btn-primary">
+                    <span class="material-symbols-outlined">person_add</span>
+                    Tạo tài khoản
+                </button>
+            </div>
+        </header>
+
+        <form id="addUserForm" class="space-y-gutter">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+                <!-- Left Column: Avatar Upload -->
+                <div class="lg:col-span-1">
+                    <section class="admin-card p-6 flex flex-col items-center">
+                        <h3 class="font-title-sm text-title-sm text-primary mb-6 self-start">Ảnh đại diện</h3>
+                        <div class="relative group">
+                            <div
+                                class="w-40 h-40 rounded-full border-2 border-dashed border-outline-variant flex items-center justify-center bg-surface-container-lowest overflow-hidden">
+                                <span
+                                    class="material-symbols-outlined text-[48px] text-on-surface-variant group-hover:scale-110 transition-transform">add_photo_alternate</span>
+                            </div>
+                            <input type="file" class="absolute inset-0 opacity-0 cursor-pointer">
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-4 text-center">Định dạng JPG,
+                            PNG. Tối đa 2MB.</p>
+                    </section>
+                </div>
+
+                <!-- Right Column: Details -->
+                <div class="lg:col-span-2 space-y-gutter">
+                    <section class="admin-card p-6">
+                        <h3 class="font-title-md text-title-md text-primary mb-6 border-b border-outline-variant pb-2">
+                            Thông tin cá nhân</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="admin-form-group">
+                                <label class="admin-label">Họ và tên <span class="text-error">*</span></label>
+                                <input class="admin-input" placeholder="Nhập họ và tên..." type="text" required />
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="admin-label">Email <span class="text-error">*</span></label>
+                                <input class="admin-input" placeholder="example@email.com" type="email" required />
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="admin-label">Số điện thoại</label>
+                                <input class="admin-input" placeholder="090..." type="tel" />
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="admin-label">Vai trò</label>
+                                <div class="relative">
+                                    <select class="admin-select pr-10">
+                                        <option value="tenant">Người thuê</option>
+                                        <option value="owner">Chủ nhà</option>
+                                        <option value="broker">Môi giới</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+                                </div>
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="admin-label">Mật khẩu ban đầu <span class="text-error">*</span></label>
+                                <input class="admin-input" type="password" required />
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

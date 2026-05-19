@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Tổng quan - UrbanNest Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/auth.js"></script>
+
+</head>
+
+<body class="bg-surface-container-lowest text-on-surface antialiased flex">
+    <!-- SideNavBar (From JSON) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant h-20">
+        <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+            <div class="flex items-center gap-12">
+                <a class="text-title-lg font-display font-black tracking-tight text-primary" href="../Trangchu.html">UrbanNest</a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium" href="../Trangchu.html">Trang chủ</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="../Dangtin.html">Tin đăng</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="#">Blog</a>
+                </nav>
+            </div>
+            <div id="header-auth-group" class="flex items-center gap-4">
+                <a href="../Dangnhap.html"
+                    class="flex text-on-surface-variant hover:text-primary font-title-md px-4 py-2 transition-all">Đăng
+                    nhập</a>
+                <a href="../Dangtin.html"
+                    class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-title-md hover:bg-primary/90 active:scale-95 transition-all shadow-md">Đăng
+                    tin</a>
+            </div>
+        </div>
+    </header>
+    <div class="flex flex-1 pt-20">
+        <!-- SideNavBar (Shared Component) -->
+        <aside
+            class="bg-surface-container-lowest border-r border-outline-variant shadow-md h-[calc(100vh-5rem)] w-64 fixed left-0 top-20 flex flex-col p-4 space-y-2 hidden md:flex z-40">
+            <!-- Header / Profile -->
+            <div class="flex items-center gap-3 mb-6 p-2">
+                <img alt="Admin Profile" class="w-12 h-12 rounded-full object-cover border border-outline-variant"
+                    data-alt="A professional headshot of a young male property manager in a well-lit, minimalist modern office. The lighting is bright and soft, creating a clean, high-end corporate aesthetic. The man is subtly smiling, dressed in a crisp white shirt against a neutral slate background. The mood is approachable yet highly professional and trustworthy."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_oesoV75mZN1cAjthWegrdxS4fA8wgGMcN5Yu2b_YLRWrUldOkYeBUuZSlXncK6jZF5oh0OLorOecM_ooR-IAy7QXCBwlg-ZyTyCR9jwrDFiR5QZ5QZEHzIpXTGhQzVzIPJ_IiQLvnwJ8F4MPtw36PIeQ5nD4qFrEg9buLuvEWXUq20nmGGPnGJFjqYkJKSwUbWBp1ByjKU7PMpvYbcPfXBazo41Mlr8Dl_9dOenwjXkPHr_Um79qfmnVkua33-v58KVXpSsmGKg" />
+                <div>
+                    <h2 class="font-title-md text-title-md font-bold text-primary">Quản lý tài khoản</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Thành viên Premium</p>
+                </div>
+            </div>
+            <!-- CTA -->
+            <button
+                class="w-full bg-primary-container text-on-primary text-center py-2.5 rounded-lg font-title-md text-title-md mb-4 hover:opacity-90 transition-opacity">
+                Đăng tin mới
+            </button>
+            <!-- Main Navigation -->
+            <nav class="flex-1 space-y-1">
+                <!-- Inactive Tab 1 -->
+                <a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 font-semibold hover:translate-x-1 transition-transform duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    <span class="font-label-md text-label-md">Tổng quan</span>
+                </a>
+                <!-- Inactive Tab 2 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">description</span>
+                    <span class="font-label-md text-label-md">Tin đăng của tôi</span>
+                </a>
+                <!-- Active Tab 3 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">mail</span>
+                    <span class="font-label-md text-label-md">Tin nhắn</span>
+                </a>
+                <!-- Inactive Tab 4 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">event</span>
+                    <span class="font-label-md text-label-md">Lịch xem phòng</span>
+                </a>
+                <!-- Inactive Tab 5 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="font-label-md text-label-md">Cài đặt</span>
+                </a>
+            </nav>
+            <!-- Footer Navigation -->
+            <div class="mt-auto pt-4 border-t border-outline-variant space-y-1">
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">help</span>
+                    <span class="font-label-md text-label-md">Hỗ trợ</span>
+                </a>
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="font-label-md text-label-md">Đăng xuất</span>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="ml-64 w-full min-h-screen bg-surface-container-lowest p-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+                <!-- Header -->
+                <header class="mb-stack-lg flex justify-between items-end">
+                    <div>
+                        <h1 class="font-display-lg text-display-lg text-primary tracking-tight">Chào mừng trở lại,</h1>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Dưới đây là tổng quan hiệu
+                            suất
+                            các tin đăng của bạn trong tuần qua.</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Cập
+                            nhật lần cuối</p>
+                        <p class="font-title-md text-title-md text-primary">Hôm nay, 08:30 AM</p>
+                    </div>
+                </header>
+                <!-- Key Stats Cards -->
+                <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-section-gap">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 transition-all duration-300 hover:border-outline-variant hover:shadow-sm group">
+                        <div class="flex justify-between items-start mb-6">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center border border-surface-variant group-hover:bg-primary-fixed transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">description</span>
+                            </div>
+                            <span
+                                class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary bg-secondary/10 px-2 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-[14px]">arrow_upward</span> 12%
+                            </span>
+                        </div>
+                        <div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Số tin đăng</p>
+                            <p class="font-headline-lg text-headline-lg text-primary">24</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 transition-all duration-300 hover:border-outline-variant hover:shadow-sm group">
+                        <div class="flex justify-between items-start mb-6">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center border border-surface-variant group-hover:bg-primary-fixed transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">visibility</span>
+                            </div>
+                            <span
+                                class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary bg-secondary/10 px-2 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-[14px]">arrow_upward</span> 34%
+                            </span>
+                        </div>
+                        <div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Lượt xem</p>
+                            <p class="font-headline-lg text-headline-lg text-primary">8,402</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 transition-all duration-300 hover:border-outline-variant hover:shadow-sm group">
+                        <div class="flex justify-between items-start mb-6">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center border border-surface-variant group-hover:bg-primary-fixed transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">mail</span>
+                            </div>
+                            <span
+                                class="inline-flex items-center gap-1 font-label-md text-label-md text-outline bg-surface-container px-2 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-[14px]">horizontal_rule</span> 0%
+                            </span>
+                        </div>
+                        <div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Tin nhắn mới</p>
+                            <p class="font-headline-lg text-headline-lg text-primary">15</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 transition-all duration-300 hover:border-outline-variant hover:shadow-sm group">
+                        <div class="flex justify-between items-start mb-6">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center border border-surface-variant group-hover:bg-primary-fixed transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">event</span>
+                            </div>
+                            <span
+                                class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary bg-secondary/10 px-2 py-1 rounded-full">
+                                <span class="material-symbols-outlined text-[14px]">arrow_upward</span> 5%
+                            </span>
+                        </div>
+                        <div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Lịch hẹn</p>
+                            <p class="font-headline-lg text-headline-lg text-primary">7</p>
+                        </div>
+                    </div>
+                </section>
+                <!-- Main Content Split -->
+                <section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+                    <!-- Growth Chart (Span 2) -->
+                    <div
+                        class="lg:col-span-2 bg-surface-container-lowest border border-surface-variant rounded-xl p-8 flex flex-col">
+                        <div class="flex justify-between items-center mb-8">
+                            <div>
+                                <h2 class="font-title-lg text-title-lg text-primary mb-1">Biểu đồ tăng trưởng</h2>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Lượt xem tin đăng trong 30
+                                    ngày
+                                    qua</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="px-4 py-2 text-label-md font-label-md border border-surface-variant rounded-lg hover:bg-surface-container-low text-on-surface-variant">Tuần
+                                    này</button>
+                                <button
+                                    class="px-4 py-2 text-label-md font-label-md bg-primary text-on-primary rounded-lg">Tháng
+                                    này</button>
+                            </div>
+                        </div>
+                        <!-- Chart Placeholder (Minimalist CSS representation) -->
+                        <div class="flex-1 w-full relative min-h-[300px] flex items-end gap-2 pt-8">
+                            <!-- Y-axis lines -->
+                            <div
+                                class="absolute inset-0 flex flex-col justify-between z-0 pointer-events-none pb-[30px]">
+                                <div class="border-t border-surface-variant w-full h-0"></div>
+                                <div class="border-t border-surface-variant w-full h-0"></div>
+                                <div class="border-t border-surface-variant w-full h-0"></div>
+                                <div class="border-t border-surface-variant w-full h-0"></div>
+                                <div class="border-t border-surface-variant w-full h-0"></div>
+                            </div>
+                            <!-- Bars -->
+                            <div
+                                class="relative z-10 flex-1 bg-surface-container hover:bg-primary-fixed transition-colors rounded-t-sm h-[40%] group">
+                                <div
+                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                    120</div>
+                            </div>
+                            <div
+                                class="relative z-10 flex-1 bg-surface-container hover:bg-primary-fixed transition-colors rounded-t-sm h-[55%] group">
+                                <div
+                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                    165</div>
+                            </div>
+                            <div
+                                class="relative z-10 flex-1 bg-surface-container hover:bg-primary-fixed transition-colors rounded-t-sm h-[35%] group">
+                                <div
+                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                    105</div>
+                            </div>
+                            <div
+                                class="relative z-10 flex-1 bg-surface-container hover:bg-primary-fixed transition-colors rounded-t-sm h-[80%] group">
+                                <div
+                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                    240</div>
+                            </div>
+                            <div
+                                class="relative z-10 flex-1 bg-surface-container hover:bg-primary-fixed transition-colors rounded-t-sm h-[65%] group">
+                                <div
+                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                    195</div>
+                            </div>
+                            <div
+                                class="relative z-10 flex-1 bg-primary rounded-t-sm h-[95%] group shadow-[0_0_15px_rgba(9,20,38,0.1)]">
+                                <div
+                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                    285</div>
+                            </div>
+                            <div
+                                class="relative z-10 flex-1 bg-surface-container hover:bg-primary-fixed transition-colors rounded-t-sm h-[50%] group">
+                                <div
+                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                    150</div>
+                            </div>
+                        </div>
+                        <!-- X-axis labels -->
+                        <div class="flex justify-between text-label-md font-label-md text-on-surface-variant mt-4 px-2">
+                            <span>T2</span>
+                            <span>T3</span>
+                            <span>T4</span>
+                            <span>T5</span>
+                            <span>T6</span>
+                            <span class="text-primary font-bold">T7</span>
+                            <span>CN</span>
+                        </div>
+                    </div>
+                    <!-- Recent Activity (Span 1) -->
+                    <div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="font-title-lg text-title-lg text-primary">Hoạt động gần đây</h2>
+                            <button
+                                class="text-label-md font-label-md text-secondary hover:text-primary transition-colors">Xem
+                                tất cả</button>
+                        </div>
+                        <div class="space-y-6">
+                            <!-- Activity Item 1 -->
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span
+                                        class="material-symbols-outlined text-[16px] text-on-secondary-container">mail</span>
+                                </div>
+                                <div>
+                                    <p class="font-body-md text-body-md text-primary font-medium">Tin nhắn mới từ Nguyễn
+                                        Văn
+                                        A</p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-1">"Tôi
+                                        muốn
+                                        hỏi về căn hộ tại quận 1..."</p>
+                                    <p class="font-label-md text-label-md text-outline mt-2">10 phút trước</p>
+                                </div>
+                            </div>
+                            <!-- Activity Item 2 -->
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span
+                                        class="material-symbols-outlined text-[16px] text-on-surface">event_available</span>
+                                </div>
+                                <div>
+                                    <p class="font-body-md text-body-md text-primary font-medium">Xác nhận lịch xem
+                                        phòng
+                                    </p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Căn hộ Dịch vụ
+                                        Studio
+                                        - Mai Chí Thọ</p>
+                                    <p class="font-label-md text-label-md text-outline mt-2">2 giờ trước</p>
+                                </div>
+                            </div>
+                            <!-- Activity Item 3 -->
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span
+                                        class="material-symbols-outlined text-[16px] text-on-surface">check_circle</span>
+                                </div>
+                                <div>
+                                    <p class="font-body-md text-body-md text-primary font-medium">Tin đăng được duyệt
+                                    </p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Phòng trọ cao cấp
+                                        có
+                                        gác lửng</p>
+                                    <p class="font-label-md text-label-md text-outline mt-2">Hôm qua, 14:30</p>
+                                </div>
+                            </div>
+                            <!-- Activity Item 4 -->
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="material-symbols-outlined text-[16px] text-on-surface">star</span>
+                                </div>
+                                <div>
+                                    <p class="font-body-md text-body-md text-primary font-medium">Đánh giá mới 5 sao</p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">"Chủ nhà nhiệt
+                                        tình,
+                                        phòng đẹp như hình."</p>
+                                    <p class="font-label-md text-label-md text-outline mt-2">Hôm qua, 09:15</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lịch xem phòng - UrbanNest (Full Layout)</title>
+    <!-- Material Symbols Outlined -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config -->
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/auth.js"></script>
+
+</head>
+
+<body class="bg-surface-container-low text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+    <!-- TopNavBar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant h-20">
+        <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+            <div class="flex items-center gap-12">
+                <a class="text-title-lg font-display font-black tracking-tight text-primary" href="../Trangchu.html">UrbanNest</a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium" href="../Trangchu.html">Trang chủ</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="../Dangtin.html">Tin đăng</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="#">Blog</a>
+                </nav>
+            </div>
+            <div id="header-auth-group" class="flex items-center gap-4">
+                <a href="../Dangnhap.html"
+                    class="flex text-on-surface-variant hover:text-primary font-title-md px-4 py-2 transition-all">Đăng
+                    nhập</a>
+                <a href="../Dangtin.html"
+                    class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-title-md hover:bg-primary/90 active:scale-95 transition-all shadow-md">Đăng
+                    tin</a>
+            </div>
+        </div>
+    </header>
+    <div class="flex flex-1 pt-20">
+        <!-- SideNavBar (Shared Component) -->
+        <aside
+            class="bg-surface-container-lowest border-r border-outline-variant shadow-md h-[calc(100vh-5rem)] w-64 fixed left-0 top-20 flex flex-col p-4 space-y-2 hidden md:flex z-40">
+            <!-- Header / Profile -->
+            <div class="flex items-center gap-3 mb-6 p-2">
+                <img alt="Admin Profile" class="w-12 h-12 rounded-full object-cover border border-outline-variant"
+                    data-alt="A professional headshot of a young male property manager in a well-lit, minimalist modern office. The lighting is bright and soft, creating a clean, high-end corporate aesthetic. The man is subtly smiling, dressed in a crisp white shirt against a neutral slate background. The mood is approachable yet highly professional and trustworthy."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_oesoV75mZN1cAjthWegrdxS4fA8wgGMcN5Yu2b_YLRWrUldOkYeBUuZSlXncK6jZF5oh0OLorOecM_ooR-IAy7QXCBwlg-ZyTyCR9jwrDFiR5QZ5QZEHzIpXTGhQzVzIPJ_IiQLvnwJ8F4MPtw36PIeQ5nD4qFrEg9buLuvEWXUq20nmGGPnGJFjqYkJKSwUbWBp1ByjKU7PMpvYbcPfXBazo41Mlr8Dl_9dOenwjXkPHr_Um79qfmnVkua33-v58KVXpSsmGKg" />
+                <div>
+                    <h2 class="font-title-md text-title-md font-bold text-primary">Quản lý tài khoản</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Thành viên Premium</p>
+                </div>
+            </div>
+            <!-- CTA -->
+            <button
+                class="w-full bg-primary-container text-on-primary text-center py-2.5 rounded-lg font-title-md text-title-md mb-4 hover:opacity-90 transition-opacity">
+                Đăng tin mới
+            </button>
+            <!-- Main Navigation -->
+            <nav class="flex-1 space-y-1">
+                <!-- Inactive Tab 1 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="font-label-md text-label-md">Tổng quan</span>
+                </a>
+                <!-- Inactive Tab 2 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">description</span>
+                    <span class="font-label-md text-label-md">Tin đăng của tôi</span>
+                </a>
+                <!-- Active Tab 3 -->
+                <a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 font-semibold hover:translate-x-1 transition-transform duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event</span>
+                    <span class="font-label-md text-label-md">Lịch xem phòng</span>
+                </a>
+                <!-- Inactive Tab 4 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">mail</span>
+                    <span class="font-label-md text-label-md">Tin nhắn</span>
+                </a>
+                <!-- Inactive Tab 5 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="font-label-md text-label-md">Cài đặt</span>
+                </a>
+            </nav>
+            <!-- Footer Navigation -->
+            <div class="mt-auto pt-4 border-t border-outline-variant space-y-1">
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">help</span>
+                    <span class="font-label-md text-label-md">Hỗ trợ</span>
+                </a>
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="font-label-md text-label-md">Đăng xuất</span>
+                </a>
+            </div>
+        </aside>
+        <div class="flex-1 flex flex-col md:ml-64">
+            <!-- Main Content Area -->
+            <main class="flex-1 p-margin-mobile md:p-margin-desktop bg-surface-container-low min-h-[calc(100vh-5rem)]">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Page Header -->
+                    <header class="mb-stack-lg flex justify-between items-end border-b border-outline-variant/50 pb-4">
+                        <div>
+                            <h1 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">Lịch xem
+                                phòng</h1>
+                            <p class="font-body-md text-body-md text-on-surface-variant mt-2">Quản lý các cuộc hẹn xem
+                                bất động sản của bạn.</p>
+                        </div>
+                        <div
+                            class="hidden sm:flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-lg border border-outline-variant shadow-sm">
+                            <span class="material-symbols-outlined text-secondary">calendar_today</span>
+                            <span class="font-label-md text-label-md font-medium text-primary">Tháng 10, 2024</span>
+                        </div>
+                    </header>
+                    <!-- Appointment List Container -->
+                    <div class="space-y-section-gap">
+                        <!-- Date Group: Today -->
+                        <section>
+                            <h3 class="font-title-md text-title-md text-primary mb-stack-md flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-error"></span>
+                                Hôm nay, 24/10
+                            </h3>
+                            <div class="flex flex-col gap-stack-sm">
+                                <!-- Appointment Card 1 (Confirmed) -->
+                                <div
+                                    class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center hover:border-outline transition-colors relative overflow-hidden group">
+                                    <!-- Left: Time -->
+                                    <div
+                                        class="w-full sm:w-24 shrink-0 flex flex-row sm:flex-col items-baseline sm:items-start gap-2 border-b sm:border-b-0 sm:border-r border-outline-variant/50 pb-3 sm:pb-0 sm:pr-4">
+                                        <span class="font-title-lg text-title-lg text-primary">09:00</span>
+                                        <span
+                                            class="font-label-md text-label-md text-on-surface-variant uppercase">Sáng</span>
+                                    </div>
+                                    <!-- Middle: Details -->
+                                    <div class="flex-1 flex flex-col sm:flex-row gap-4 w-full">
+                                        <div
+                                            class="w-16 h-16 rounded-lg bg-surface-container shrink-0 overflow-hidden hidden sm:block border border-outline-variant/30">
+                                            <img alt="Studio Apartment" class="w-full h-full object-cover"
+                                                data-alt="A minimalist interior view of a modern studio apartment. The space features clean lines, white walls, and warm wooden flooring. Natural daylight streams in through a large invisible window, creating soft shadows. The decor is highly refined and uncluttered, matching a high-end urban aesthetic."
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJWC5ZRdmEVxMJRWgIn5zzwm9o_NQynO2Tm7hi81pJ5p8vDmSrXoJMoVbrwQncZx0QbxLnjzMu6CiP4LkcZ8omFXjmesbL7bire3Exeq3OwvETBlpPo1Jkl-QqTqqUMpMZbdmSqJXEYOMSUFGTZJdVdq-Sv6IfaqSfLc6qeih8i9-HEkohuIydcSP3txiMv_XsT-Uq3wN_Qtdo3FNgi5X8zC0B1It9TovcXAzpamhrCn_n9_xHJ3myxBNz42-z2xGARGBRRNoNsio" />
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="font-title-md text-title-md text-primary mb-1">Căn hộ Studio
+                                                Vinhomes Central Park</h4>
+                                            <div
+                                                class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+                                                <span class="material-symbols-outlined text-[18px]">person</span>
+                                                <span>Khách: Nguyễn Văn An</span>
+                                                <span class="mx-1">•</span>
+                                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                                <span>090 123 4567</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Right: Status & Actions -->
+                                    <div
+                                        class="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center w-full sm:w-auto mt-4 sm:mt-0 pt-4 sm:pt-0 border-t sm:border-t-0 border-outline-variant/50 gap-3">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md whitespace-nowrap">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                                            Đã xác nhận
+                                        </span>
+                                        <button
+                                            class="text-secondary hover:text-primary transition-colors font-label-md text-label-md underline opacity-0 group-hover:opacity-100 hidden sm:block">Chi
+                                            tiết</button>
+                                    </div>
+                                </div>
+                                <!-- Appointment Card 2 (Pending) -->
+                                <div
+                                    class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center hover:border-outline transition-colors relative overflow-hidden group">
+                                    <!-- Left: Time -->
+                                    <div
+                                        class="w-full sm:w-24 shrink-0 flex flex-row sm:flex-col items-baseline sm:items-start gap-2 border-b sm:border-b-0 sm:border-r border-outline-variant/50 pb-3 sm:pb-0 sm:pr-4">
+                                        <span class="font-title-lg text-title-lg text-primary">14:30</span>
+                                        <span
+                                            class="font-label-md text-label-md text-on-surface-variant uppercase">Chiều</span>
+                                    </div>
+                                    <!-- Middle: Details -->
+                                    <div class="flex-1 flex flex-col sm:flex-row gap-4 w-full">
+                                        <div
+                                            class="w-16 h-16 rounded-lg bg-surface-container shrink-0 overflow-hidden hidden sm:block border border-outline-variant/30 flex items-center justify-center">
+                                            <span
+                                                class="material-symbols-outlined text-outline-variant text-3xl">home</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="font-title-md text-title-md text-primary mb-1">Phòng trọ cao cấp
+                                                có gác lửng, Lê Duẩn</h4>
+                                            <div
+                                                class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+                                                <span class="material-symbols-outlined text-[18px]">person</span>
+                                                <span>Khách: Trần Thị Bích</span>
+                                                <span class="mx-1">•</span>
+                                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                                <span>098 765 4321</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Right: Status & Actions -->
+                                    <div
+                                        class="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center w-full sm:w-auto mt-4 sm:mt-0 pt-4 sm:pt-0 border-t sm:border-t-0 border-outline-variant/50 gap-3">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant border border-outline-variant/50 font-label-md text-label-md whitespace-nowrap">
+                                            <span class="material-symbols-outlined text-[14px]">schedule</span>
+                                            Chờ xác nhận
+                                        </span>
+                                        <div
+                                            class="flex gap-2 hidden sm:flex opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <button
+                                                class="w-8 h-8 flex items-center justify-center rounded-md bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary transition-colors"
+                                                title="Xác nhận">
+                                                <span class="material-symbols-outlined text-[18px]">check</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Date Group: Tomorrow -->
+                        <section>
+                            <h3
+                                class="font-title-md text-title-md text-on-surface-variant mb-stack-md flex items-center gap-2">
+                                Ngày mai, 25/10
+                            </h3>
+                            <div class="flex flex-col gap-stack-sm">
+                                <!-- Appointment Card 3 -->
+                                <div
+                                    class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center hover:border-outline transition-colors relative overflow-hidden group opacity-80 hover:opacity-100">
+                                    <!-- Left: Time -->
+                                    <div
+                                        class="w-full sm:w-24 shrink-0 flex flex-row sm:flex-col items-baseline sm:items-start gap-2 border-b sm:border-b-0 sm:border-r border-outline-variant/50 pb-3 sm:pb-0 sm:pr-4">
+                                        <span class="font-title-lg text-title-lg text-primary">10:00</span>
+                                        <span
+                                            class="font-label-md text-label-md text-on-surface-variant uppercase">Sáng</span>
+                                    </div>
+                                    <!-- Middle: Details -->
+                                    <div class="flex-1 flex flex-col sm:flex-row gap-4 w-full">
+                                        <div
+                                            class="w-16 h-16 rounded-lg bg-surface-container shrink-0 overflow-hidden hidden sm:block border border-outline-variant/30">
+                                            <img alt="House facade" class="w-full h-full object-cover"
+                                                data-alt="A clean, modern residential house facade seen during daytime. The architecture features minimalist white walls with dark grey slate accents around the windows. The lighting is natural and bright, highlighting the neat, uncluttered aesthetic of the property. The image conveys a sense of high-end urban living."
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVgcG7STIe2T8TwEZu5hxeXmyUJTfHs8u2QtDaXnWlT4K5B8GNGZJ5Tq1OFFe6uEzqyAECAj9KxHJCZ1TRePCch2xr0SQwt489bn2ztGgfQ6-wj6ZXapPuUi1yil7AWHr1OGwrM-hV-P2Lw5rxs6A9xmqj9QOYxnEz0hOl9zElr3w213mnOFV8BfsG-rvK7BT94C_mIKRcdDubALi3Y5EnOTxhLvCsAJimXNfrXWF3MgXhIzeWGG9B9_vFRcDQJuJH_lCwWtkhi-k" />
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="font-title-md text-title-md text-primary mb-1">Nhà nguyên căn 3
+                                                tầng, phường Hưng Dũng</h4>
+                                            <div
+                                                class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+                                                <span class="material-symbols-outlined text-[18px]">person</span>
+                                                <span>Khách: Lê Hoàng Nam</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Right: Status -->
+                                    <div
+                                        class="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center w-full sm:w-auto mt-4 sm:mt-0 pt-4 sm:pt-0 border-t sm:border-t-0 border-outline-variant/50 gap-3">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md whitespace-nowrap">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                                            Đã xác nhận
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer class="bg-white border-t border-outline-variant mt-20">
+                <div
+                    class="w-full py-20 px-margin-desktop flex flex-col items-center gap-12 max-w-container-max mx-auto">
+                    <div class="w-full flex flex-col md:flex-row justify-between items-start gap-16">
+                        <div class="max-w-sm">
+                            <h2 class="font-display text-headline-lg text-primary mb-6">UrbanNest</h2>
+                            <p class="text-on-surface-variant font-medium text-body-md leading-relaxed">Cung cấp giải
+                                pháp tìm kiếm bất động sản và phòng trọ chuyên nghiệp, minh bạch và hiệu quả nhất tại
+                                thành phố Vinh.</p>
+                            <div class="flex gap-4 mt-8">
+                                <a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-primary hover:text-white transition-all"
+                                    href="#"><span class="material-symbols-outlined text-[20px]">description</span></a>
+                                <a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-primary hover:text-white transition-all"
+                                    href="#"><span
+                                        class="material-symbols-outlined text-[20px]">alternate_email</span></a>
+                                <a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-primary hover:text-white transition-all"
+                                    href="#"><span class="material-symbols-outlined text-[20px]">call</span></a>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+                            <div class="flex flex-col gap-6">
+                                <h4 class="text-primary font-black font-display uppercase tracking-wider text-sm">Khám
+                                    phá</h4>
+                                <div class="flex flex-col gap-4">
+                                    <a class="text-on-surface-variant hover:text-primary font-medium text-body-md transition-colors"
+                                        href="#">Về chúng tôi</a>
+                                    <a class="text-on-surface-variant hover:text-primary font-medium text-body-md transition-colors"
+                                        href="#">Quy định đăng tin</a>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-6">
+                                <h4 class="text-primary font-black font-display uppercase tracking-wider text-sm">Hỗ trợ
+                                </h4>
+                                <div class="flex flex-col gap-4">
+                                    <a class="text-on-surface-variant hover:text-primary font-medium text-body-md transition-colors"
+                                        href="#">Liên hệ hỗ trợ</a>
+                                    <a class="text-on-surface-variant hover:text-primary font-medium text-body-md transition-colors"
+                                        href="#">Câu hỏi thường gặp</a>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-6">
+                                <h4 class="text-primary font-black font-display uppercase tracking-wider text-sm">Pháp
+                                    lý</h4>
+                                <div class="flex flex-col gap-4">
+                                    <a class="text-on-surface-variant hover:text-primary font-medium text-body-md transition-colors"
+                                        href="#">Bảo mật</a>
+                                    <a class="text-on-surface-variant hover:text-primary font-medium text-body-md transition-colors"
+                                        href="#">Điều khoản</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full h-px bg-outline-variant"></div>
+                    <div class="w-full flex flex-col md:flex-row justify-between items-center gap-6">
+                        <p class="text-on-surface-variant font-medium text-body-sm text-center">© 2024 UrbanNest. Nền
+                            tảng tìm kiếm phòng trọ hàng đầu tại Vinh.</p>
+                        <div class="flex items-center gap-6 text-on-surface-variant font-bold text-body-sm">
+                            <a class="hover:text-primary transition-colors" href="#">Vietnamese</a>
+                            <span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+                            <a class="hover:text-primary transition-colors" href="#">English</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

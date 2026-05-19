@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Duyệt bài - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body  class="bg-surface text-on-surface h-screen overflow-hidden flex unified-layout">
+    <!-- SideNavBar -->
+    <aside
+        class="h-screen w-64 fixed left-0 top-0 bg-white border-r border-outline-variant flex flex-col p-4 space-y-2 z-50">
+        <div class="mb-8 px-2 flex items-center gap-3">
+            <span class="font-title-md text-title-md font-bold text-primary">UrbanNest</span>
+        </div>
+        <div class="flex items-center gap-3 mb-6 px-2">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+                <img alt="Admin Profile" class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTJYw52tysZ0-Jm7PBYw5dDfDPNL_mLJKAvH-EuCxEJjD5rDulqSNfe41SeaJ689dYASLDl6e7Q849Pe1jfKvSfBMBeioRYQ9p64Mh37Jl1SIi-A7yFtTF4JbZd9Dx8glFrcZcYzZZWNdjC98yY107hszjmXYNAwMXhTYiHHk1jGl5cW0bbBovzoDZaVA94iLOtnR9-mBoUlZZl9kWqBA1cGPQEcMbJ0BxnFWK3P2B0I5hh7gmkESLp--9t2cwIv7M2CijqHCdws">
+            </div>
+            <div class="flex flex-col">
+                <span class="font-label-md text-label-md text-primary font-semibold">Admin Profile</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Quản trị viên</span>
+            </div>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Dashboard.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                <span class="font-label-md text-label-md">Tổng quan</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Quanlynguoidung/Quanlynguoidung.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+                <span class="font-label-md text-label-md">Quản lý người dùng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Quanlytindang.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+                <span class="font-label-md text-label-md">Quản lý tin đăng</span>
+            </a>
+            <a class="flex items-center gap-3 bg-secondary-container text-primary rounded-lg px-4 py-3 font-semibold transition-all"
+                href="Duyetbai.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="fact_check">fact_check</span>
+                <span class="font-label-md text-label-md">Duyệt bài</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Phantichdulieu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="insights">insights</span>
+                <span class="font-label-md text-label-md">Phân tích dữ liệu</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all"
+                href="Caidat.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                <span class="font-label-md text-label-md">Cài đặt</span>
+            </a>
+        </nav>
+        <div class="pt-4 border-t border-outline-variant space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                <span class="font-label-md text-label-md">Hỗ trợ</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-colors"
+                href="Trangchu.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                <span class="font-label-md text-label-md">Đăng xuất</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="admin-main-container h-screen overflow-hidden p-0 relative">
+        <!-- Top App Bar equivalent for Main Content -->
+        <header class="admin-page-header sticky top-0 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 px-6 py-4 z-10 mb-0">
+            <div>
+                <h1 class="font-headline-md text-headline-md text-primary">Hàng đợi duyệt bài</h1>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">3 bài đăng đang chờ được kiểm tra</p>
+            </div>
+            <div class="flex gap-4">
+                <div class="relative">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                    <input class="admin-input pl-10" placeholder="Tìm kiếm bài đăng..." type="text" />
+                </div>
+                <button class="admin-btn admin-btn-secondary p-2">
+                    <span class="material-symbols-outlined text-on-surface-variant">filter_list</span>
+                </button>
+            </div>
+        </header>
+        <!-- Main Workspace: Split View -->
+        <div class="flex-1 flex overflow-hidden">
+            <!-- Queue List (Left Pane) -->
+            <div
+                class="w-1/3 min-w-[350px] border-r border-outline-variant/30 overflow-y-auto bg-surface-container-lowest">
+                <!-- Queue Item 1 (Active) -->
+                <div
+                    class="p-gutter border-b border-outline-variant/30 bg-secondary-container/20 cursor-pointer transition-colors relative">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full"></div>
+                    <div class="flex justify-between items-start mb-2">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container border border-outline-variant/50 rounded-full font-label-md text-label-md text-primary">
+                            Chờ duyệt
+                        </span>
+                        <span class="font-label-md text-label-md text-on-surface-variant">10 phút trước</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-primary mb-1">Căn hộ Studio Dịch Vọng Hậu,
+                        Cầu Giấy</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Cho thuê căn hộ mini
+                        full đồ mới tinh 100%. Giờ giấc tự do, không chung chủ, có thang máy, máy giặt riêng...</p>
+                    <div class="flex items-center gap-2">
+                        <img alt="User Avatar" class="w-6 h-6 rounded-full"
+                            data-alt="A small circular avatar of a young professional male in a white background, representing a user profile picture in a sleek modern UI context."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmMOdNPwsYCPEQxOEr9BVC3nsw9XmGl_c3nsaxa-zFVkx5qVK1-tYYTAi4mzEyDC7oevkxvowsY5o7V02VNhNcuEffGtXzncLs9nCRqj5jJB2dTZAVvQ-k82E3PoY_AMA7dknmTUIQj6h2AJb4wTDxkuIJP5AHypyChucf3dQ9Gg-VWCA2VHAEr4x8PGgYMZzXNu_68xFvcPC5u3YDYFSVg74ArYc0_jfOes6B41xKerhaBvPX7fveh1ni0zpWNzJdnP3V4exhMwk" />
+                        <span class="font-label-md text-label-md text-on-surface">Nguyễn Văn A</span>
+                    </div>
+                </div>
+                <!-- Queue Item 2 -->
+                <div
+                    class="p-gutter border-b border-outline-variant/30 hover:bg-surface-container-low cursor-pointer transition-colors">
+                    <div class="flex justify-between items-start mb-2">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container border border-outline-variant/50 rounded-full font-label-md text-label-md text-primary">
+                            Chờ duyệt
+                        </span>
+                        <span class="font-label-md text-label-md text-on-surface-variant">1 giờ trước</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-primary mb-1">Phòng trọ khép kín Xuân Thủy,
+                        gần ĐHQG</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Phòng sạch sẽ, thoáng
+                        mát, khu dân trí cao. An ninh đảm bảo, để xe tầng 1 miễn phí, điện nước giá dân...</p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center">
+                            <span class="font-label-md text-label-md text-on-surface-variant">B</span>
+                        </div>
+                        <span class="font-label-md text-label-md text-on-surface">Trần Thị B</span>
+                    </div>
+                </div>
+                <!-- Queue Item 3 -->
+                <div
+                    class="p-gutter border-b border-outline-variant/30 hover:bg-surface-container-low cursor-pointer transition-colors">
+                    <div class="flex justify-between items-start mb-2">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container border border-outline-variant/50 rounded-full font-label-md text-label-md text-primary">
+                            Chờ duyệt
+                        </span>
+                        <span class="font-label-md text-label-md text-on-surface-variant">Hôm qua</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-primary mb-1">Cho thuê nhà nguyên căn ngõ
+                        175 Xuân Thủy</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Nhà 4 tầng, 4 phòng
+                        ngủ, phù hợp cho nhóm sinh viên hoặc hộ gia đình. Ngõ rộng xe ba gác vào tận cửa...</p>
+                    <div class="flex items-center gap-2">
+                        <img alt="User Avatar" class="w-6 h-6 rounded-full"
+                            data-alt="A small circular avatar of a professional female smiling softly, set against a pristine white background, suitable for a minimalist user interface."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJ6LkUJhxDidgZ83L1nInojseVkMj_4zKCT5A6pLz7JUwUN1m6B9rds1h-thUcTIxGmt2XNu4tTwKUlC0sOcC9jXMj3dnEzsXQi9QNPv0LVp0Fb95gkl8ecc3c8McJsN2AympSU4ZAAgSSm7FHHG9BETvA-NIxFap7Zx0fmhew3YiW1XFUFxr_H0rGkCpC5HIs0TKix7H4jCOabsWOz52bbu0QsJekii9wcJUtDGydmTvWGjll_4920AEKTEG0odyq-bTo5SjkIw" />
+                        <span class="font-label-md text-label-md text-on-surface">Lê Hoàng C</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Detail View (Right Pane) -->
+            <div class="flex-1 overflow-y-auto bg-surface px-6 py-gutter">
+                <div class="space-y-stack-lg pb-section-gap">
+                    <!-- Post Header Info -->
+                    <div>
+                        <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Căn hộ Studio Dịch Vọng Hậu, Cầu
+                            Giấy</h2>
+                        <div
+                            class="flex flex-wrap items-center gap-4 text-on-surface-variant font-body-sm text-body-sm">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">location_on</span>
+                                <span>Ngõ 45 Dịch Vọng Hậu, Cầu Giấy, Hà Nội</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">payments</span>
+                                <span class="font-title-md text-title-md text-primary">4.500.000 VNĐ/tháng</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Image Gallery Bento -->
+                    <div class="grid grid-cols-3 gap-unit h-[400px]">
+                        <div class="col-span-2 row-span-2 rounded-xl overflow-hidden border border-outline-variant/30">
+                            <img alt="Main Room" class="w-full h-full object-cover"
+                                data-alt="A brightly lit, modern studio apartment interior with white walls, light wood flooring, and a neatly made bed. Natural light streams in from a large window, creating a serene, sophisticated minimalist atmosphere. The overall palette is achomatic with warm wood accents."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIONY0-SmfW5CCiX3d-775Abowd_yH98w8ybgbAl77nCRxo82kAPe1fZADhVc3dlJ_fDOH65_MzrP1UXzgzkyk4hNav2mpOC3PmpZlaEOHdFhPjVfmswBjbRAMAyewnA7Nc7dPVxmxpSSRcjegJsAX_Dddch-LWWzwG92sfF5Kr1xiOBOXjGDXd2JFEV1uXIDkNNi4J4H2_F7mY8PtkrKIuSQb69cjUbBorlq5fimVO3k_FBxRCdHVOYhgTUcEIFDPsD19wb3Bcy0" />
+                        </div>
+                        <div class="col-span-1 row-span-1 rounded-xl overflow-hidden border border-outline-variant/30">
+                            <img alt="Kitchen" class="w-full h-full object-cover"
+                                data-alt="A clean, minimalist kitchenette in a modern apartment. White cabinetry, a small induction stove, and a sleek sink are visible. The lighting is high-key and soft, emphasizing a clinical, efficient, and sophisticated urban living space."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFlAIwGPll7qoHU9bJe1jdSsc3r8rehAJivjsXSTxZeFxkxIp95anjxCJvpBNO6CLrQ3lhDoM4gFon0jqb9ToONau5befwuzKNim48gfnJ0LnE1D2-7RTcbUEVkUmFZMvWwRL4bJXPf6i-9SXL9XMavU9LwfC7SPhIXIG4RBIiju5NLuIOrKZnZm0PBHgjdk2-tRevlHYHJAVkr-tlF8kFvZR6v_uTmr3fxrRNWIprpI7Ory8k4GeUBh-IUtEFRqXVmz7B-faR_Mc" />
+                        </div>
+                        <div
+                            class="col-span-1 row-span-1 rounded-xl overflow-hidden border border-outline-variant/30 relative group">
+                            <img alt="Bathroom" class="w-full h-full object-cover"
+                                data-alt="A pristine, modern bathroom with white subway tiles and a frameless glass shower enclosure. The space feels airy and impeccably clean, adhering to a high-end, sophisticated minimalist aesthetic with purely functional fixtures."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuADgDyKb3hzkAC4EfZfsa6KdYOzZYdTpFVT0BRRYEc4xdDaNSaLl9LBiFJ1QsoYf1pUstsLdZ8Qn9ewyVip33R9OgscAb4o9LNUq5URi9L1shFPSfByk1EvGwChPAL0HoV_lpJPBgcAf-z8ecRyK4HUuyTBWhEkMJlzJ1uXbR_o3mkXl_nOooFkK-BCLFfie65O19mv3aGsSRO6E4hhYluTQXd6wGMy5qjdkTMWIKKddmvzMPlJjaqMEpk1npCOVL1rM_zQHUejPQo" />
+                            <div class="absolute inset-0 bg-primary/40 flex items-center justify-center">
+                                <span class="font-title-md text-title-md text-on-primary">+3 Ảnh</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Details Data Grid -->
+                    <div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-gutter">
+                        <h3
+                            class="font-title-lg text-title-lg text-primary mb-4 border-b border-outline-variant/30 pb-2">
+                            Thông tin chi tiết</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-8">
+                            <div>
+                                <p class="font-label-md text-label-md text-on-surface-variant mb-1">Diện tích</p>
+                                <p class="font-body-md text-body-md text-on-surface">25 m²</p>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-label-md text-on-surface-variant mb-1">Loại phòng</p>
+                                <p class="font-body-md text-body-md text-on-surface">Căn hộ dịch vụ</p>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-label-md text-on-surface-variant mb-1">Tình trạng</p>
+                                <p class="font-body-md text-body-md text-on-surface">Trống</p>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-label-md text-on-surface-variant mb-1">Đặt cọc</p>
+                                <p class="font-body-md text-body-md text-on-surface">1 tháng</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Description Text -->
+                    <div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-gutter">
+                        <h3
+                            class="font-title-lg text-title-lg text-primary mb-4 border-b border-outline-variant/30 pb-2">
+                            Mô tả nội dung</h3>
+                        <div class="font-body-md text-body-md text-on-surface space-y-2">
+                            <p>Cho thuê căn hộ mini full đồ mới tinh 100%.</p>
+                            <p>- Giờ giấc tự do, không chung chủ, có thang máy, máy giặt riêng, cửa vân tay an ninh.</p>
+                            <p>- Nội thất bao gồm: Điều hòa, nóng lạnh, giường nệm, tủ quần áo, bệ bếp, tủ lạnh, máy
+                                giặt.</p>
+                            <p>- Điện 3.8k/số, nước 100k/người, mạng 100k/phòng, dịch vụ chung 150k/người (rác, thang
+                                máy, vệ sinh).</p>
+                            <p>Vui lòng liên hệ trực tiếp để xem phòng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sticky Action Bar (Bottom of Main Content) -->
+        <div
+            class="absolute bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-md border-t border-outline-variant/30 p-gutter flex justify-end gap-4 z-20">
+            <button class="admin-btn admin-btn-secondary">
+                Bỏ qua
+            </button>
+            <button class="admin-btn admin-btn-secondary text-error hover:bg-error-container border-error/20">
+                <span class="material-symbols-outlined text-[20px]">block</span>
+                Từ chối
+            </button>
+            <button class="admin-btn admin-btn-primary px-8">
+                <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                Duyệt bài này
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Tin nhắn - UrbanNest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body  class="bg-surface text-on-surface flex min-h-screen unified-layout">
+    <!-- SideNavBar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant h-20">
+        <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+            <div class="flex items-center gap-12">
+                <a class="text-title-lg font-display font-black tracking-tight text-primary" href="Trangchu.html">UrbanNest</a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-primary font-bold border-b-2 border-primary py-1 text-body-md" href="Trangchu.html">Trang chủ</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="Trangchu.html">Tin đăng</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-medium"
+                        href="Trangchu.html">Blog</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden sm:flex text-on-surface-variant hover:text-primary font-title-md px-4 py-2 transition-all">Đăng
+                    nhập</button>
+                <button
+                    class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-title-md hover:bg-primary/90 active:scale-95 transition-all shadow-md">Đăng
+                    tin</button>
+            </div>
+        </div>
+    </header>
+    <div class="flex flex-1 pt-20">
+        <!-- SideNavBar (Shared Component) -->
+        <aside
+            class="bg-surface-container-lowest border-r border-outline-variant shadow-md h-[calc(100vh-5rem)] w-64 fixed left-0 top-20 flex flex-col p-4 space-y-2 hidden md:flex z-40">
+            <!-- Header / Profile -->
+            <div class="flex items-center gap-3 mb-6 p-2">
+                <img alt="Admin Profile" class="w-12 h-12 rounded-full object-cover border border-outline-variant"
+                    data-alt="A professional headshot of a young male property manager in a well-lit, minimalist modern office. The lighting is bright and soft, creating a clean, high-end corporate aesthetic. The man is subtly smiling, dressed in a crisp white shirt against a neutral slate background. The mood is approachable yet highly professional and trustworthy."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_oesoV75mZN1cAjthWegrdxS4fA8wgGMcN5Yu2b_YLRWrUldOkYeBUuZSlXncK6jZF5oh0OLorOecM_ooR-IAy7QXCBwlg-ZyTyCR9jwrDFiR5QZ5QZEHzIpXTGhQzVzIPJ_IiQLvnwJ8F4MPtw36PIeQ5nD4qFrEg9buLuvEWXUq20nmGGPnGJFjqYkJKSwUbWBp1ByjKU7PMpvYbcPfXBazo41Mlr8Dl_9dOenwjXkPHr_Um79qfmnVkua33-v58KVXpSsmGKg" />
+                <div>
+                    <h2 class="font-title-md text-title-md font-bold text-primary">Quản lý tài khoản</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Thành viên Premium</p>
+                </div>
+            </div>
+            <!-- CTA -->
+            <button
+                class="w-full bg-primary-container text-on-primary text-center py-2.5 rounded-lg font-title-md text-title-md mb-4 hover:opacity-90 transition-opacity">
+                Đăng tin mới
+            </button>
+            <!-- Main Navigation -->
+            <nav class="flex-1 space-y-1">
+                <!-- Inactive Tab 1 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="font-label-md text-label-md">Tổng quan</span>
+                </a>
+                <!-- Inactive Tab 2 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">description</span>
+                    <span class="font-label-md text-label-md">Tin đăng của tôi</span>
+                </a>
+                <!-- Inactive Tab 3 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">event</span>
+                    <span class="font-label-md text-label-md">Lịch xem phòng</span>
+                </a>
+                <!-- Active Tab 4 -->
+                <a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 font-semibold hover:translate-x-1 transition-transform duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+                    <span class="font-label-md text-label-md">Tin nhắn</span>
+                </a>
+                <!-- Inactive Tab 5 -->
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="font-label-md text-label-md">Cài đặt</span>
+                </a>
+            </nav>
+            <!-- Footer Navigation -->
+            <div class="mt-auto pt-4 border-t border-outline-variant space-y-1">
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">help</span>
+                    <span class="font-label-md text-label-md">Hỗ trợ</span>
+                </a>
+                <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg px-4 py-3 transition-colors hover:translate-x-1 duration-200"
+                    href="Trangchu.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="font-label-md text-label-md">Đăng xuất</span>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content Area (Messages Layout) -->
+        <main class="flex-1 ml-0 md:ml-64 h-screen flex flex-col bg-surface-bright">
+            <!-- Header for Messages -->
+            <header
+                class="px-gutter py-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center shrink-0">
+                <h2 class="font-title-lg text-title-lg text-primary">Tin nhắn</h2>
+            </header>
+            <!-- Messages Container -->
+            <div class="flex-1 flex overflow-hidden">
+                <!-- Left Column: Contact List -->
+                <div
+                    class="w-full md:w-1/3 lg:w-80 border-r border-outline-variant bg-surface-container-lowest flex flex-col h-full">
+                    <!-- Search Bar -->
+                    <div class="p-4 border-b border-outline-variant">
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+                            <input
+                                class="w-full pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded-full font-body-sm text-body-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-on-surface placeholder-on-surface-variant"
+                                placeholder="Tìm kiếm tin nhắn..." type="text">
+                        </div>
+                    </div>
+                    <!-- Contacts -->
+                    <div class="flex-1 overflow-y-auto">
+                        <!-- Contact Item 1 (Active) -->
+                        <div
+                            class="p-4 border-b border-outline-variant/30 bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="relative">
+                                    <img alt="Nguyễn Văn A"
+                                        class="w-12 h-12 rounded-full object-cover border border-outline-variant"
+                                        data-alt="A close up portrait of a young woman smiling warmly. She has dark hair and is wearing a light colored top. The background is a slightly blurred, bright indoor setting. High key lighting, modern aesthetic."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3n_-C0eA-i-0Qx_b8urCblUeIHCpE9EypmTOI4A2_hhGQCED3PicYDDG3qrIKyEeqVPNSW0qgHx3MUrxtGz3sotBZwACrPeFRTFhuEj1YeBESssGPPCabnBA5RF4dDpgNoz_xfFZ2j39k50Qi1tvZh04qI9zZAPEb-VjlypNh-Ao0IxofKxfucJthvtuE56HEmY-gDS8cgONAZVGnvFKYoz5-hb7fOxvTxCFZTu8mZEVkt4FQcgYmC4SZQBZ2-I3poLe5rbYSNKU">
+                                    <span
+                                        class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex justify-between items-baseline mb-1">
+                                        <h4 class="font-title-md text-title-md text-primary truncate">Trần Thị Bích</h4>
+                                        <span class="font-label-md text-label-md text-on-surface-variant shrink-0">10:42
+                                            AM</span>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant truncate">Căn hộ ở Quận
+                                        1 còn trống không ạ?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Contact Item 2 -->
+                        <div
+                            class="p-4 border-b border-outline-variant/30 cursor-pointer hover:bg-surface-container transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="relative">
+                                    <img alt="Lê Hoàng C"
+                                        class="w-12 h-12 rounded-full object-cover border border-outline-variant"
+                                        data-alt="A portrait of a young man with short dark hair, looking off camera thoughtfully. He wears a dark casual shirt. The lighting is dramatic, emphasizing his features against a blurred grey background. Clean, minimalist composition."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu-K4kjv-6NVa2f2YOIP1oL7nqnVFyc46Sujwn0QLzhUbQKtcLyg9J_UfUmNFQH0U5guGMed3NXCA8Q-oAWI1iukL4wk6h8wxlalF3qpV6KsjbXZwr1mAZb2UDxnWJ_u1rwDx4uDyQRivg-Yu8FUZgkBH4hArVoerO7UGgXD2zg8ICGtQzeyvSYxzD5pksl73velHTUHUDPFBUg8IbVEonzJ017-706PzQRkeXZoXW8XUlaMMj7IMUEk8opDkzf8bNcAlIRAH8G5w">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex justify-between items-baseline mb-1">
+                                        <h4 class="font-title-md text-title-md text-primary truncate">Lê Hoàng Nam</h4>
+                                        <span class="font-label-md text-label-md text-on-surface-variant shrink-0">Hôm
+                                            qua</span>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant truncate font-semibold">
+                                        Dạ vâng, cảm ơn anh.</p>
+                                </div>
+                                <!-- Unread badge -->
+                                <div class="w-2 h-2 bg-primary-container rounded-full shrink-0"></div>
+                            </div>
+                        </div>
+                        <!-- Contact Item 3 -->
+                        <div
+                            class="p-4 border-b border-outline-variant/30 cursor-pointer hover:bg-surface-container transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="relative">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary font-title-md text-title-md">
+                                        P
+                                    </div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex justify-between items-baseline mb-1">
+                                        <h4 class="font-title-md text-title-md text-primary truncate">Phạm Văn Dũng</h4>
+                                        <span
+                                            class="font-label-md text-label-md text-on-surface-variant shrink-0">T2</span>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant truncate">Mình muốn hẹn
+                                        lịch xem phòng vào cuối tuần.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Active Conversation -->
+                <div class="hidden md:flex flex-col flex-1 bg-surface-bright h-full relative">
+                    <!-- Conversation Header -->
+                    <div
+                        class="px-gutter py-4 border-b border-outline-variant bg-surface-container-lowest flex items-center justify-between shrink-0">
+                        <div class="flex items-center gap-3">
+                            <img alt="Trần Thị Bích"
+                                class="w-10 h-10 rounded-full object-cover border border-outline-variant"
+                                data-alt="A close up portrait of a young woman smiling warmly. She has dark hair and is wearing a light colored top. The background is a slightly blurred, bright indoor setting. High key lighting, modern aesthetic."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwWwwzInxKBRjMsJSDzl9DjQXPzZsU4wSSl38-1a6sHRkdcm2znjWrM3fCM0rxwQB98Az92B0_xt9wPVecuUR0Pn7LsCRyaY7RcIpycNzhGI_i0b1OBckVASGu798bGzX7VqbMVH24mEztGY1mg4MRqmYvoEFcMjW-k4k8V2yHHfKY7eaUiUCS7YV99uEPLNvqz7B5Rvpvxou1iTkqF1lfN6wziUJ4IUYL41A3NCRpQn-ERXvid9cQ_ExtlpMDlLZcPhdveOwiuJQ">
+                            <div>
+                                <h3 class="font-title-md text-title-md text-primary">Trần Thị Bích</h3>
+                                <p class="font-label-md text-label-md text-green-600 flex items-center gap-1">
+                                    <span class="w-2 h-2 rounded-full bg-green-500 inline-block"></span> Đang hoạt động
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container">
+                                <span class="material-symbols-outlined">call</span>
+                            </button>
+                            <button
+                                class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container">
+                                <span class="material-symbols-outlined">more_vert</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Chat Area -->
+                    <div class="flex-1 overflow-y-auto p-gutter space-y-6 flex flex-col">
+                        <!-- Date Divider -->
+                        <div class="flex justify-center">
+                            <span
+                                class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full font-label-md text-label-md text-xs">Hôm
+                                nay</span>
+                        </div>
+                        <!-- Received Message -->
+                        <div class="flex items-end gap-2">
+                            <img alt="Avatar" class="w-8 h-8 rounded-full object-cover mb-1 shrink-0"
+                                data-alt="A close up portrait of a young woman smiling warmly. She has dark hair and is wearing a light colored top. The background is a slightly blurred, bright indoor setting. High key lighting, modern aesthetic."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4_UlXa5UNgYnfpp-wUqwvfZ_m6HXVBc9Tn29dpFlvdmgWw8VNm34Y_CbO-BR9nyryLjmYatMy_xJtcsqu_7oSM4M5m-9O5fGjnkaj0mDvzANMol7uAqFqqNuzJ6AU36ZpPdCh36yXeBfvEVN1F73uMF-Ay92ZuwcwJUGIuGuVFDQPtL2iv5CjUXQn30cDBWRBXB1_3bNlCIv8c3sO02UFOqJQiUBP84_UlaqDv7puyC9eM8CUhFoYHx8bYcuFVqQtOWTAhOr82I">
+                            <div class="max-w-[70%]">
+                                <div
+                                    class="bg-surface-container-low border border-outline-variant p-3 rounded-2xl rounded-bl-sm text-on-surface font-body-sm text-body-sm shadow-sm">
+                                    Chào bạn, mình thấy tin đăng căn hộ ở Quận 1. Không biết căn này còn trống không ạ?
+                                </div>
+                                <span
+                                    class="font-label-md text-label-md text-on-surface-variant text-[10px] ml-1 mt-1 block">10:40
+                                    AM</span>
+                            </div>
+                        </div>
+                        <!-- Sent Message -->
+                        <div class="flex items-end justify-end gap-2">
+                            <div class="max-w-[70%] flex flex-col items-end">
+                                <div
+                                    class="bg-primary-container text-on-primary-container p-3 rounded-2xl rounded-br-sm font-body-sm text-body-sm shadow-sm">
+                                    Chào bạn, căn hộ đó hiện tại vẫn còn trống nhé. Bạn muốn hẹn lịch qua xem trực tiếp
+                                    không?
+                                </div>
+                                <div class="flex items-center gap-1 mt-1 mr-1">
+                                    <span class="font-label-md text-label-md text-on-surface-variant text-[10px]">10:45
+                                        AM</span>
+                                    <span class="material-symbols-outlined text-[14px] text-primary">done_all</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Received Message -->
+                        <div class="flex items-end gap-2">
+                            <img alt="Avatar" class="w-8 h-8 rounded-full object-cover mb-1 shrink-0"
+                                data-alt="A close up portrait of a young woman smiling warmly. She has dark hair and is wearing a light colored top. The background is a slightly blurred, bright indoor setting. High key lighting, modern aesthetic."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASmatWP-G6OoGQdAFCD7bqmZV_Ur7l5Du2GjAINjAAszekdpbnhWeFtkhzFzvf9Y33LAAOp1MZKrVbW9Fh8EB8_uD64GK4T_vs9IyxZqc57mMdeTWbT4ogVmvydC7WGfYp9RvfNyXYmTy_ewucEixqjAe7aX_IUq11J5TyQXhpd9rrzsaUZfm9Pun7MH0EQo9s9WcwrNR6l5eN2pEBKFb6KDcjW0OZ1Sk0i9ZX4TRJ_5Gf98VeqVEyzQE8-j_zSPhiRXmWlRbBsgw">
+                            <div class="max-w-[70%]">
+                                <div
+                                    class="bg-surface-container-low border border-outline-variant p-3 rounded-2xl rounded-bl-sm text-on-surface font-body-sm text-body-sm shadow-sm">
+                                    Dạ vâng, khoảng 5h chiều nay mình qua xem được không ạ?
+                                </div>
+                                <span
+                                    class="font-label-md text-label-md text-on-surface-variant text-[10px] ml-1 mt-1 block">10:48
+                                    AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Input Area -->
+                    <div class="p-4 bg-surface-container-lowest border-t border-outline-variant shrink-0">
+                        <div
+                            class="flex items-end gap-2 bg-surface-container-low border border-outline-variant rounded-xl p-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+                            <button
+                                class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full shrink-0">
+                                <span class="material-symbols-outlined">attach_file</span>
+                            </button>
+                            <button
+                                class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full shrink-0">
+                                <span class="material-symbols-outlined">image</span>
+                            </button>
+                            <textarea
+                                class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-sm text-body-sm py-2 max-h-32 text-on-surface placeholder-on-surface-variant"
+                                placeholder="Nhập tin nhắn..." rows="1" style="min-height: 40px;"></textarea>
+                            <button
+                                class="p-2 bg-primary-container text-on-primary-container rounded-full hover:opacity-90 transition-opacity shrink-0 flex items-center justify-center h-10 w-10">
+                                <span class="material-symbols-outlined text-[20px]">send</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile empty state (visible only on small screens when a chat is selected, would normally be toggled via JS) -->
+                <div
+                    class="md:hidden flex-1 bg-surface-bright flex flex-col items-center justify-center p-8 text-center hidden">
+                    <div
+                        class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-4 border border-outline-variant">
+                        <span class="material-symbols-outlined text-[32px] text-on-surface-variant">chat</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-primary mb-2">Chọn một cuộc trò chuyện</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Bắt đầu nhắn tin với khách hàng để trao
+                        đổi chi tiết.</p>
+                </div>
+            </div>
+        </main>
+</body>
+
+</html>

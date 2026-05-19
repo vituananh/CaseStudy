@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Phân quyền - UrbanNest Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <script src="../../../assets/js/admin-sidebar.js"></script>
+    <style>
+        body { background: #f8f9fa; }
+        .admin-main { margin-left: 256px; min-height: 100vh; display: flex; flex-direction: column; }
+        .toggle { position: relative; display: inline-block; width: 36px; height: 20px; }
+        .toggle input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #e1e2e9; transition: .25s; border-radius: 20px; }
+        .slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background: white; transition: .25s; border-radius: 50%; }
+        input:checked + .slider { background: #091426; }
+        input:checked + .slider:before { transform: translateX(16px); }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+    <main class="admin-main">
+        <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-outline-variant px-8 py-4 flex items-center justify-between">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg text-primary font-bold">Phân quyền</h1>
+                <p class="text-on-surface-variant text-sm">Quản lý vai trò và quyền hạn của từng nhóm người dùng.</p>
+            </div>
+            <button id="save-btn"
+                    class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary/90 active:scale-95 transition-all shadow-sm">
+                <span class="material-symbols-outlined text-[18px]">save</span>
+                Lưu cài đặt
+            </button>
+        </header>
+
+        <div class="flex-1 px-8 py-6 space-y-5">
+            <!-- Sub-nav -->
+            <div class="bg-white rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
+                <div class="flex border-b border-outline-variant px-2">
+                    <a href="Quanlynguoidung.html" class="px-5 py-3.5 font-semibold text-sm text-on-surface-variant hover:text-primary transition-colors">Danh sách</a>
+                    <a href="Lichsu.html" class="px-5 py-3.5 font-semibold text-sm text-on-surface-variant hover:text-primary transition-colors">Nhật ký hoạt động</a>
+                    <a href="Phanquyen.html" class="px-5 py-3.5 font-semibold text-sm text-primary border-b-2 border-primary -mb-px">Phân quyền</a>
+                </div>
+            </div>
+
+            <!-- Role Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                <!-- Admin Role -->
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-outline-variant flex items-center gap-3">
+                        <div class="w-9 h-9 bg-primary rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-[18px]">admin_panel_settings</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-primary text-sm">Admin</p>
+                            <p class="text-[10px] text-on-surface-variant">Toàn quyền quản trị hệ thống</p>
+                        </div>
+                        <span class="ml-auto text-xs font-bold bg-primary text-white px-2 py-0.5 rounded-full">3 người</span>
+                    </div>
+                    <div class="divide-y divide-outline-variant">
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Quản lý người dùng</p>
+                                <p class="text-[10px] text-on-surface-variant">Xem, thêm, sửa, xóa tài khoản</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Quản lý tin đăng</p>
+                                <p class="text-[10px] text-on-surface-variant">Thêm, sửa, xóa, duyệt tin</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Phân tích dữ liệu</p>
+                                <p class="text-[10px] text-on-surface-variant">Xem thống kê và xuất báo cáo</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Phân quyền</p>
+                                <p class="text-[10px] text-on-surface-variant">Thay đổi vai trò người dùng</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Cài đặt hệ thống</p>
+                                <p class="text-[10px] text-on-surface-variant">Thay đổi cấu hình nền tảng</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moderator Role -->
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-outline-variant flex items-center gap-3">
+                        <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-[18px]">manage_accounts</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-primary text-sm">Kiểm duyệt viên</p>
+                            <p class="text-[10px] text-on-surface-variant">Xem xét và phê duyệt nội dung</p>
+                        </div>
+                        <span class="ml-auto text-xs font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">5 người</span>
+                    </div>
+                    <div class="divide-y divide-outline-variant">
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Xem danh sách người dùng</p>
+                                <p class="text-[10px] text-on-surface-variant">Chỉ xem, không được sửa</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Duyệt bài / Từ chối</p>
+                                <p class="text-[10px] text-on-surface-variant">Phê duyệt hoặc từ chối tin đăng</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Chỉnh sửa tin đăng</p>
+                                <p class="text-[10px] text-on-surface-variant">Sửa nội dung, trạng thái tin</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox"><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Phân tích dữ liệu</p>
+                                <p class="text-[10px] text-on-surface-variant">Xem thống kê (không xuất)</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Cài đặt hệ thống</p>
+                                <p class="text-[10px] text-on-surface-variant">Không có quyền truy cập</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" disabled><span class="slider opacity-50"></span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Owner Role -->
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-outline-variant flex items-center gap-3">
+                        <div class="w-9 h-9 bg-green-600 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-[18px]">home</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-primary text-sm">Chủ nhà / Môi giới</p>
+                            <p class="text-[10px] text-on-surface-variant">Đăng tin và quản lý tin của mình</p>
+                        </div>
+                        <span class="ml-auto text-xs font-bold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">842 người</span>
+                    </div>
+                    <div class="divide-y divide-outline-variant">
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Đăng tin mới</p>
+                                <p class="text-[10px] text-on-surface-variant">Tạo và gửi tin để duyệt</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Chỉnh sửa tin của mình</p>
+                                <p class="text-[10px] text-on-surface-variant">Sửa nội dung tin đã đăng</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Xóa tin của mình</p>
+                                <p class="text-[10px] text-on-surface-variant">Gỡ tin đang đăng</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Nhắn tin với người thuê</p>
+                                <p class="text-[10px] text-on-surface-variant">Trao đổi qua hệ thống tin nhắn</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Xem số liệu tin đăng</p>
+                                <p class="text-[10px] text-on-surface-variant">Thống kê lượt xem tin của mình</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tenant Role -->
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-outline-variant flex items-center gap-3">
+                        <div class="w-9 h-9 bg-amber-600 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-[18px]">person</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-primary text-sm">Người thuê</p>
+                            <p class="text-[10px] text-on-surface-variant">Tìm kiếm và liên hệ chủ nhà</p>
+                        </div>
+                        <span class="ml-auto text-xs font-bold bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">11,990 người</span>
+                    </div>
+                    <div class="divide-y divide-outline-variant">
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Tìm kiếm & xem tin đăng</p>
+                                <p class="text-[10px] text-on-surface-variant">Truy cập danh sách phòng trọ</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Nhắn tin với chủ nhà</p>
+                                <p class="text-[10px] text-on-surface-variant">Hỏi thông tin qua hệ thống</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Lưu tin yêu thích</p>
+                                <p class="text-[10px] text-on-surface-variant">Đánh dấu tin để xem lại</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Đặt lịch xem phòng</p>
+                                <p class="text-[10px] text-on-surface-variant">Gửi yêu cầu xem phòng trực tuyến</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-primary">Đăng tin rao vặt</p>
+                                <p class="text-[10px] text-on-surface-variant">Tính phí thêm, cần nâng gói</p>
+                            </div>
+                            <label class="toggle"><input type="checkbox"><span class="slider"></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="px-8 py-4 border-t border-outline-variant flex items-center justify-between text-[11px] text-on-surface-variant mt-auto">
+            <span>© 2024 UrbanNest Admin Panel</span>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('save-btn').addEventListener('click', function() {
+            const orig = this.innerHTML;
+            this.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span> Đã lưu!';
+            this.classList.add('bg-green-600');
+            this.disabled = true;
+            setTimeout(() => {
+                this.innerHTML = orig;
+                this.classList.remove('bg-green-600');
+                this.disabled = false;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Phân quyền người dùng - UrbanNest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet" />
+    <script src="../../../assets/js/tailwind-config.js"></script>
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body  class="text-on-background font-body-md antialiased flex unified-layout">
+    <!-- SideNavBar -->
+    <aside class="h-screen w-64 fixed left-0 top-0 bg-white border-r border-outline-variant flex flex-col p-4 space-y-2 z-50">
+        <div class="mb-8 px-2 flex items-center gap-3">
+            <span class="font-title-md text-title-md font-bold text-primary">UrbanNest</span>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all" href="../Dashboard.html">
+                <span class="material-symbols-outlined text-[20px]">dashboard</span>
+                <span class="font-label-md text-label-md">Tổng quan</span>
+            </a>
+            <a class="flex items-center gap-3 bg-secondary-container text-primary rounded-lg px-4 py-3 font-semibold transition-all" href="Quanlynguoidung.html">
+                <span class="material-symbols-outlined text-[20px]">group</span>
+                <span class="font-label-md text-label-md">Quản lý người dùng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all" href="../Quanlytindang.html">
+                <span class="material-symbols-outlined text-[20px]">description</span>
+                <span class="font-label-md text-label-md">Quản lý tin đăng</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-lg px-4 py-3 transition-all" href="../Duyetbai.html">
+                <span class="material-symbols-outlined text-[20px]">fact_check</span>
+                <span class="font-label-md text-label-md">Duyệt bài</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="admin-main-container">
+        <header class="admin-page-header mb-0 border-b-0 pb-0">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Phân quyền vai trò</h1>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Quản lý các nhóm quyền và truy cập cho từng loại tài khoản</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <button class="admin-btn admin-btn-primary">
+                    <span class="material-symbols-outlined">add</span>
+                    Thêm vai trò mới
+                </button>
+            </div>
+        </header>
+
+        <!-- Sub-navigation Tabs -->
+        <div class="flex border-b border-outline-variant mb-6 px-1">
+            <a href="Quanlynguoidung.html" class="px-6 py-3 font-title-sm text-title-sm text-on-surface-variant hover:text-primary transition-colors">Danh sách</a>
+            <a href="Phanquyen.html" class="px-6 py-3 font-title-sm text-title-sm border-b-2 border-primary text-primary -mb-[1px]">Phân quyền</a>
+            <a href="Lichsu.html" class="px-6 py-3 font-title-sm text-title-sm text-on-surface-variant hover:text-primary transition-colors">Nhật ký hoạt động</a>
+        </div>
+
+        <!-- Roles Table Section -->
+        <section class="admin-card overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-surface-container-low border-b border-outline-variant">
+                            <th class="py-4 px-6 font-title-sm text-title-sm text-primary">Vai trò</th>
+                            <th class="py-4 px-6 font-title-sm text-title-sm text-primary">Mô tả</th>
+                            <th class="py-4 px-6 font-title-sm text-title-sm text-primary text-center">Số người dùng</th>
+                            <th class="py-4 px-6 font-title-sm text-title-sm text-primary">Quyền hạn chính</th>
+                            <th class="py-4 px-6 font-title-sm text-title-sm text-primary text-right">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant/30">
+                        <tr class="hover:bg-surface-bright transition-colors">
+                            <td class="py-4 px-6">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                    <span class="font-title-md text-title-md text-primary font-bold">Quản trị viên (Admin)</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">Toàn quyền kiểm soát hệ thống, người dùng và dữ liệu.</td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-center font-bold">5</td>
+                            <td class="py-4 px-6">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="px-2 py-0.5 bg-surface-container rounded text-[10px] uppercase font-bold text-primary">Full Control</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 text-right">
+                                <button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-bright transition-colors">
+                            <td class="py-4 px-6">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                    <span class="font-title-md text-title-md text-primary font-bold">Chủ nhà (Owner)</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-on-surface-variant">Đăng tin, quản lý lịch xem và phản hồi khách thuê.</td>
+                            <td class="py-4 px-6 font-body-sm text-body-sm text-center font-bold">452</td>
+                            <td class="py-4 px-6">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="px-2 py-0.5 bg-surface-container rounded text-[10px] uppercase font-bold">Đăng tin</span>
+                                    <span class="px-2 py-0.5 bg-surface-container rounded text-[10px] uppercase font-bold">Chat</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 text-right">
+                                <button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
